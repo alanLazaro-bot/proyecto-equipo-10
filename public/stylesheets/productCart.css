@@ -1,0 +1,273 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+footer .titulo-footer{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 10%;
+    top: 10px;
+}
+footer #titulo-footer p{
+   font: bold;
+   size: 20px;
+}
+footer .titulo-footer img{
+    width: 100%;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    
+}
+.bloque-img{
+    border: 3px solid black;
+    height: 280px;
+}
+body .head{
+    width: 100%;
+    background: gold;
+    height: 80px;
+    margin: 0%;
+}
+body main{
+    background: floralwhite;
+}
+.item .item1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    left: 16%;
+    position: relative;
+    width: 84%;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0px;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    position: relative;
+    right: 10%;
+    margin: 15px 15px;
+}
+.item p{
+    position: relative;
+    left: 18%;
+}
+.item-img{
+    display: flex;
+    width: 25%;
+    padding: 15px 0px;
+    height: 250px;
+}
+.item-img img{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10%;
+}
+.item-remover{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    left: 33.5%;
+}
+.item-descrip div{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 25%;
+}
+.item-descrip{
+    display: flex;
+    flex-direction: row;
+}
+.deta-pagar{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    position: relative;
+    right: 10%;
+}
+.deta-pagar .detalle{
+    border-bottom: 3px solid black;
+    display: flex;
+    flex-direction: row;
+}
+.pagar{
+    width: 50%;
+}
+section{
+    display: flex;
+    position: relative;
+    top: 0.9vh;
+    margin: 0.9vh 1vw;
+
+}
+.espacio-detalle{
+    width: 20%;
+    position: relative;
+    left: 80%;
+}
+.pagar input{
+    width: 250%;
+    position: relative;
+    left: 20%;
+}
+#precios-compra{
+    position: relative;
+    left: 50%;
+}
+#totall{
+    display: flex;
+    flex-direction: row;
+}
+#pp{
+    position: relative;
+    left: 150%;
+}
+/*footer*/
+.d-flex.foot{
+    justify-content: space-between;
+    
+}
+.ft{
+    background-color: #BCAD29;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left:5%;
+    padding-right:5%;
+    
+}
+.icon-measures{
+    width:42px;
+    height:42px;
+}
+.title-ft{
+font: size 20px;
+font-family: 'Roboto', sans-serif;
+font-weight: bold;
+color: white;
+
+}
+.ft-area{
+    margin-top: 50px;
+    padding-top: 50px;
+    
+}
+
+.ft-text{
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    
+    
+
+}
+.flex-icon{
+    justify-content: space-around;
+}
+.redes-icon{
+    font-size: 18px;
+    color: white;
+    margin-right: 10px;
+}
+.copyright{
+    margin-top:2% ;
+    
+    
+}
+.ft-space{
+    margin-top: 5%;
+
+}
+a.footer{
+    color: white;
+}
+
+.margin-ft-elements{
+    margin-top: 10px;
+}
+.ali-textos{
+    position: relative;
+    right: 18%;
+}
+/*fin footer*/
+.d-flex{
+
+    display: flex;
+}
+article a{
+    text-decoration: none;
+ }
+ article a:visited{
+     color: white;
+ }
+ ul{
+    list-style-type: none;
+}
+/*header*/
+.principal{
+    display: flex;
+    flex-direction: column;
+    background-color: #BCAD29;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
+    position: relative;
+    left: 20%;
+    color: aliceblue;
+}
+.logo {
+    display: flex;
+}
+.logi{
+    position: relative;
+    top: 30%;
+}
+.right{
+    right: 50%;
+}
+.lupa{
+    display: flex;
+    position: relative;
+    left: 20%;
+    width: 180%;
+}
+.lup{
+    width: 30%;
+}
+.icon{
+    position: relative;
+    right: 2%;
+    top: 3px;
+}
+
+
+.titulof{
+    position: relative;
+    left: 40%;
+}
+.titulo-footer.bloque-img{
+    padding: 10px;
+}
+
+.burga{
+    width: 100%;
+    height: 100%;
+}
+.menu .categorias :hover{
+
+}
+.menu .producciones :hover{
+
+}

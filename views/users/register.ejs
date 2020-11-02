@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head class="formatohead">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+    <title>Registro</title>
+</head>
+<body>
+    <%-include('./partials/header.ejs')%>
+    <section>
+        <div>
+            <form action="confirmacion.html" method="POST">
+                <h2 class="formatotituloinvitacion">Registrate para comenzar a ser parte de nuestra comunidad!</h2>
+                <div>
+                    <label class="formatocaja">
+                        <span class="formatointeriorcaja">Nombre</span>
+                        <input aria-label="nombre" aria-required="false" autocapitalize="sentences" autocorrect="off" name="nombre" type="text" class="textointeriorcaja" value="">
+                    </label>
+                </div>
+                <div>
+                    <label class="formatocaja">
+                        <span class="formatointeriorcaja">Apellido</span>
+                        <input aria-label="apellido" aria-required="false" autocapitalize="sentences" autocorrect="off" name="apellido" type="text" class="textointeriorcaja" value="">
+                    </label>
+                </div>
+                <div>
+                    <label class="formatocaja">
+                        <span class="formatointeriorcaja">Correo Electrónico</span>
+                        <input aria-label="email" aria-required="false" autocapitalize="sentences" autocorrect="off" name="email" type="email" class="textointeriorcaja" value="">
+                    </label>
+                </div>
+                <div>
+                    <label class="formatocaja">
+                        <span class="formatointeriorcaja">Contraseña</span>
+                        <input aria-label="password" aria-required="false" autocapitalize="sentences" autocorrect="off" name="contraseña" type="password" class="textointeriorcaja" value="">
+                    </label>
+                </div>
+                <div>
+                    <label class="formatocaja">
+                        <span class="formatointeriorcaja">Teléfono</span>
+                        <input aria-label="telefono" aria-required="false" autocapitalize="sentences" autocorrect="off" name="telefono" type="tel" class="textointeriorcaja" value="">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="submit" class="botonenviar" value="Enviar">
+                    </label>
+                </div>
+                
+
+            </form>
+        </div>
+    </section>
+
+    <%-include('./partials/footer.ejs')%>
+
+
+</body>
+</html>
