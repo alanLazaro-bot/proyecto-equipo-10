@@ -1,11 +1,16 @@
 let productController ={
 
+    list: (req,res,next)=>{
+        res.render('./products');
+
+    },
+
     detail:(req,res,next)=>{
         res.render('./products/productDetail');
 
     },
 
-    add: function(req,res,next){
+    create: function(req,res,next){
         res.render('./products/productAdd');
         
     },
@@ -13,11 +18,16 @@ let productController ={
     edit: function(req,res,next){
         res.render('./products/productEdit');
     },
+
+    delete:function(req,res,next){
+        res.render('./products/productEdit');
+    },
     
     cart: function(req,res,next){
         res.render('./products/productCart');
 
     }
+    
     
     
 };
