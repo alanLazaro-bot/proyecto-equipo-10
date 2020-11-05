@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head class="formatohead">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+    <title>Log in</title>
+</head>
+<body>
+    <%-include('./partials/header.ejs')%>
+    <section>
+        <div>
+            <form action="index.html" method="POST">
+                <h2 class="formatotituloinvitacion">Ingresa tus datos para iniciar tu cesión!</h2>
+                <div>
+                    <label class="formatocaja">
+                        <span class="formatointeriorcaja">Correo Electrónico</span>
+                        <input aria-label="email" aria-required="false" autocapitalize="sentences" autocorrect="off" name="email" type="email" class="textointeriorcaja" value="">
+                    </label>
+                </div>
+                <div>
+                    <label class="formatocaja">
+                        <span class="formatointeriorcaja">Contraseña</span>
+                        <input aria-label="password" aria-required="false" autocapitalize="sentences" autocorrect="off" name="contraseña" type="password" class="textointeriorcaja" value="">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="submit" class="botonenviar" value="Ingresar">
+                    </label>
+                </div>
+                
+
+            </form>
+        </div>
+    </section>
+
+    <%-include('./partials/footer.ejs')%>
+
+
+</body>
+</html>

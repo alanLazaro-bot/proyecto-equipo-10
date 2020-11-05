@@ -1,0 +1,124 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+a{
+    text-decoration: none;
+ }
+ a:visited{
+     color: white;
+ }
+ 
+ul{
+    list-style-type: none;
+}
+.d-flex{
+
+    display: flex;
+}
+
+    
+.d-flex.cont{
+    justify-content: center;
+    
+    }
+
+    
+/*diagramacion de elementos en pantalla*/
+    
+    .header{
+        background-color:#BCAD29;
+        height: 92px;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .body{
+    
+        background-color: white;
+        height: auto;
+    }
+
+    .center{
+        text-align: center;
+    }
+.title-font{
+text-align: center;
+font-family: 'Roboto', sans-serif;
+
+}
+.space{
+    margin-top:1% ;
+    
+}
+.padding-text{
+    padding-right:2px;
+    
+}
+
+
+/*Boton enviar*/
+.button-send{
+    width:auto;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: white;
+    font-size: 12px;
+    border-radius: 5px;
+    
+    width: 7%;
+    
+    
+}
+.button-send:hover{
+background-color: #BCAD29;
+cursor: pointer;
+}
+
+/*fin boton enviar*/
+    /*Division por campo a completar*/
+
+    .wdth-bar{
+        width: 30%;
+    }
+
+
+    .nombre-prod{
+    
+        margin-top: 3%;
+        
+    }
+    .nombre-size{
+
+        font-size: 14px;
+        border-radius: 5px;
+        padding-top: 5px ;
+        padding-bottom: 5px;
+        padding-left: 2px;
+        border-style:solid;
+        
+        
+    }
+
+    .inputs{
+
+        width: 100%;
+        margin-top:1px;
+        margin-bottom: 1px;
+        border-radius: 5px;
+        padding: 2px;
+        border:0px;
+     }
+     .rob-18{
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        text-decoration: underline;
+        
+      }
+      .box-margin{
+          
+          margin-right: 1%;
+      }
+  
+

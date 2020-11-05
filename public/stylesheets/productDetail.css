@@ -1,0 +1,317 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+a{
+    text-decoration: none;
+ }
+ a:visited{
+     color: white;
+ }
+ 
+ul{
+    list-style-type: none;
+}
+.d-flex{
+
+    display: flex;
+}
+
+/*Estilo Ruta de Navegacion*/
+.d-flex.ruta-menu{
+    justify-content: flex-start;
+    
+}
+.margin-ruta{
+margin-left:2px;
+margin-right: 2px;
+}
+.style-ruta{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+a.ruta{
+    color: black;
+
+}
+a.ruta:visited{
+    color: black;
+    
+}
+.zoom{
+    justify-content: center;
+}
+/*fin rua de navegacion*/
+
+/*diagramacion de elementos en pantalla*/
+.d-flex.cont{
+justify-content: center;
+
+}
+
+
+.header{
+    background-color:#BCAD29;
+    height: 92px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.body{
+
+    background-color: white;
+    height: auto;
+}
+.ruta{
+    background-color: white;
+   
+}
+.cont-prod{
+    background-color: white;
+    height: 550px;
+   
+}
+.carr-img{
+    background-color: white;
+    height:auto;
+    width: 100px;
+}
+
+
+
+.img{
+    background-color:white;
+    height:500px ;
+    width: 350px; 
+
+}
+
+.art-data{
+    background-color: white;
+    height:500px ;
+    width: 350px;
+
+}
+.flex-data{
+    flex-grow: 0.5;
+}
+
+.banner{
+    height: 170px;
+    width: auto;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.banner-fonts{
+    font-family: 'Roboto', sans-serif;
+    font-size:14px;
+}
+.title-banner{
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 1%;
+
+}
+.margin-top{
+    margin-top: 1%;
+}
+
+
+/*Hasta acá es diagramacion de los elementos en pantalla*/
+
+.wd-100{
+    width: 100%;
+    height: auto;
+    position: relative;
+    
+}
+.img-central{
+    flex-grow: 0.15;
+}
+
+/*Carousel*/
+
+.d-flex.img-mini{
+flex-direction: column;
+}
+
+.img-mini-border:hover{
+    border-bottom: 2px solid #BCAD29;
+}
+
+
+.resize_fit{
+    max-width:70%;
+    max-height:70%;
+    text-align: center;
+    
+    
+}
+.resize_fit-side{
+    max-width:100%;
+    max-height:100%;
+}
+
+
+/*Informacion del producto*/
+.prod-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin-top:4px ;
+    
+    
+}
+.prod-price{
+font-size: 20px;
+margin-top:5%; 
+margin-bottom:5%;
+
+}
+.prod-color{
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    margin-top:5% ;
+
+
+}
+.prod-detail{
+    font-size: 11px;
+    margin-top: 1%;
+    font-family: 'Roboto', sans-serif;
+}
+.mini-color{
+    margin-top:1%;
+    width: 7%;
+    height: auto;
+    border: solid 1px black;
+}
+.prod-talle{
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    margin-top:5% ;
+
+}
+.button-size{
+        width:auto;
+        padding: 12px;
+        border: 1px solid black;
+        background-color: white;
+        font-size: 14px;
+        
+        width: 7%;
+        
+        
+}
+.button-size:hover{
+    background-color: #BCAD29;
+    cursor: pointer;
+}
+.prod-shop-cart{
+    
+        
+        margin-top:20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border-style: solid;
+        padding: 4px;
+        background-color:#BCAD29;
+        background: transparent;
+        
+
+}
+.prod-shop-cart:hover{
+    
+    cursor: pointer;
+    background-color:olive;
+   
+    
+
+
+}
+.send{
+
+    color:white;
+    background-color:#BCAD29;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif; ;
+    font: size 12px;
+    
+   
+
+ }
+.prod-border{
+    border-left: 1px solid gray;
+    padding-left: 1%;
+}
+/*fin informacion del producto*/
+
+
+/*footer*/
+.d-flex.foot{
+    justify-content: space-between;
+    
+}
+.ft{
+    background-color: #BCAD29;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left:5%;
+    padding-right:5%;
+    
+}
+.icon-measures{
+    width:42px;
+    height:42px;
+}
+.title-ft{
+font: size 20px;
+font-family: 'Roboto', sans-serif;
+font-weight: bold;
+color: white;
+
+}
+.ft-area{
+    margin-top: 50px;
+    padding-top: 50px;
+    
+}
+
+.ft-text{
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    
+    
+
+}
+.flex-icon{
+    justify-content: space-around;
+}
+.redes-icon{
+    font-size: 18px;
+    color: white;
+    margin-right: 10px;
+}
+.copyright{
+    margin-top:2% ;
+    
+    
+}
+.ft-space{
+    margin-top: 5%;
+
+}
+a.footer{
+    color: white;
+}
+
+.margin-ft-elements{
+    margin-top: 10px;
+}
+/*fin footer*/
