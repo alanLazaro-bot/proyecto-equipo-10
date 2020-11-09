@@ -1,0 +1,80 @@
+
+a{
+    text-decoration: none;
+ }
+ a:visited{
+     color: white;
+ }
+ 
+ul{
+    list-style-type: none;
+}
+.d-flex{
+
+    display: flex;
+}
+
+
+/*footer*/
+.d-flex.foot{
+    justify-content: space-between;
+    
+}
+.ft{
+    background-color: #BCAD29;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left:5%;
+    padding-right:5%;
+    
+}
+.icon-measures{
+    width:42px;
+    height:42px;
+}
+.title-ft{
+font: size 20px;
+font-family: 'Roboto', sans-serif;
+font-weight: bold;
+color: white;
+
+}
+.ft-area{
+    margin-top: 50px;
+    padding-top: 50px;
+    
+}
+
+.ft-text{
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    
+    
+
+}
+.flex-icon{
+    justify-content: space-around;
+}
+.redes-icon{
+    font-size: 18px;
+    color: white;
+    margin-right: 10px;
+}
+.copyright{
+    margin-top:2% ;
+    
+    
+}
+.ft-space{
+    margin-top: 5%;
+
+}
+a.footer{
+    color: white;
+}
+
+.margin-ft-elements{
+    margin-top: 10px;
+}
+/*fin footer*/
