@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+>>>>>>> 42a34dea3e7d6ae6db38816461778c07745ace0d
 *{
     margin: 0px;
     padding: 0px;
@@ -43,6 +46,7 @@ ul{
 /*Header*/    
     .header{
         background-color:#BCAD29;
+<<<<<<< HEAD
         height: 150px;
         
     }
@@ -69,6 +73,34 @@ ul{
     }
    
     
+=======
+        height: 130px;
+        padding-left: 20%;
+        padding-right: 20%;
+
+    }
+    .nav-sup{
+        margin-bottom: 3%;
+    }
+
+   .bg-green{
+       background-color: green;
+   }
+   .bg-red{
+       background-color: red;
+   }
+   .flex-search{
+       flex-grow: 3;
+  
+   }
+   .flex-logo{
+       flex-grow: 1;
+   }
+   .li{
+       margin-left: 6%;
+       margin-right: 6%;
+   }
+>>>>>>> 42a34dea3e7d6ae6db38816461778c07745ace0d
     
 
    .titles{
