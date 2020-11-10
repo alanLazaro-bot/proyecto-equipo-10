@@ -1,3 +1,9 @@
+
+
+
+
+
+
 *{
     margin: 0px;
     padding: 0px;
@@ -37,32 +43,32 @@ ul{
 /*Header*/    
     .header{
         background-color:#BCAD29;
-        height: 130px;
-        padding-left: 20%;
-        padding-right: 20%;
-
+        height: 150px;
+        
     }
     .nav-sup{
-        margin-bottom: 3%;
+        margin-bottom: 1%;
     }
 
-   .bg-green{
-       background-color: green;
-   }
-   .bg-red{
-       background-color: red;
-   }
+   
+   
    .flex-search{
-       flex-grow: 3;
+       flex-grow: 2;
   
    }
    .flex-logo{
-       flex-grow: 1;
+       flex-grow:0.5 ;
    }
    .li{
-       margin-left: 6%;
-       margin-right: 6%;
+       text-align: center;
+       margin-left: 3%;
+       margin-right: 3%;
    }
+   .margin-nav{
+       margin: auto;
+    }
+   
+    
     
 
    .titles{
