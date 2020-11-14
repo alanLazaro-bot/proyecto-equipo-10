@@ -26,6 +26,7 @@
     width: 100%;
     margin-bottom: 20px;
     
+    
   }
   
   a {text-decoration: none;}
@@ -66,6 +67,7 @@
     margin-top:1%;
     flex-direction: row;
     justify-content: center;
+
   }
   header input{
 
@@ -84,13 +86,20 @@
     
   }
 
-  .section-header i{
+  .icono{
 
     color: var(--texto-blanco);
     font-size: 20px;
    
     margin-top: 20px;
     
+  }
+
+  .lupa{
+    background-color: var(--main-bg-color);
+    font-size: 20px;
+    
+    margin-top: 20px;
 
   }
   .section-header p{
@@ -123,6 +132,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-top: 20px;
     margin-bottom: 20px;
+    border-bottom: var(--main-bg-color);
   }
   
   .menu{
