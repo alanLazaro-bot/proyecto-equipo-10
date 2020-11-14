@@ -1,9 +1,4 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
 
-}
 a{
     text-decoration: none;
  }
@@ -45,7 +40,7 @@ ul{
     }
 
    
-   
+
    .flex-search{
        flex-grow: 2;
   
@@ -85,7 +80,7 @@ ul{
 /*Fin del Header*/    
     .body{
     
-        background-color: white;
+        
         height: auto;
     }
 /*Carrousel*/
@@ -130,37 +125,15 @@ width: 80%;
    
 }
 
+
 /* /Ofertas */
 
-/*Promociones*/
-.promociones{
-    background-color: white;
-    height:495.2px ;
-    width: 80%;
-    padding: 2%;
-}
-
-.promo-banner{
-    background-color: burlywood;
-    width: 50%;
-   
-}
-
-.mini-banner{
-    background-color: crimson;
-    width: 200px;
-    margin: auto;
-    height: 200px;
-}
-.d-flex.wp{
-    flex-wrap: wrap;
-
-
-}
 
 
 
-/* /Promociones*/
+
+
+
 
 /*Historial*/
 .historial{
@@ -214,6 +187,7 @@ width: 80%;
     padding-bottom: 20px;
     padding-left:5%;
     padding-right:5%;
+    width: 100%;
 }
 .icon-measures{
     width:42px;
