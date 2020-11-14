@@ -1,34 +1,28 @@
-<header class="header"><!--Barra de navegacion-->  
-        <div> <!--contenedor general-->
-        <div  class="d-flex cont nav-sup"><!--contenedor parte superior-->
-          
-            <div class="flex-logo">
-
-              <img src="/images/logo-r-market-amarillo.svg" alt="">
-            </div>
-            <div class="flex-search">
-            
-
-              <input type="search" placeholder="Buscar" name="busqueda" required class="search-bar">
-
-
-              <input type="submit"></input>
-            </div>
-          
-          </div>
-        </div>
-
-          <div>
-
-            <ul class="d-flex">
-              <li class="li"><a href="">Categorias</a></li>
-              <li class="li"><a href="">Ofertas</a></li>
-              <li class="li"><a href="">Productores</a></li>
-              <li class="li"><a href="">Proveedores</a></li>
-              <li class="li"><a href="">Ayuda</a></li>
-            </ul>
-        </div>
+<header>
+  <section class="section-header">
+    <a href="/"><img class="logo margin-top-nav " src="/images/logo-rmarket-final.png"></a>
+    <form action="/products">
+        <input class="search-bar" type="search" id="search" name="nombre" placeholder="Buscar producto, marca o vendedor"/>
+    </form>
+    <div class="carrito-header ">
+        <a href="/products/users"><i class="fas fa-user-alt"></i></i></a>
         
+    </div>
+    <div class="carrito-header">
+      <a href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+    
+      
+  
+  </section>
+  <nav>
+      <a href='/products'>PRODUCTOS</a>
+      <a href='/auth/registrar'>REGISTRARSE</a>
+      <a href='/contacto'>AYUDA</a>
+  </nav>
+  <div class="menu">
+    <i class="fas fa-bars burguer"></i>
+  </div>
 </header>
 
         
