@@ -22,11 +22,8 @@
   }
   
   header{
-    
     width: 100%;
-    margin-bottom: 20px;
-    
-    
+    margin-bottom: 10px;
   }
   
   a {text-decoration: none;}
@@ -48,6 +45,7 @@
     background-color: var(--nav-container);
     padding-right: 4%;
     
+    
   }
   .item-grow-1{
   flex-grow: 0.1;
@@ -58,27 +56,33 @@
     flex-grow: 0;
     }
 
-  
-  
-
   .section-header form{
 
     width: 50%;
-    margin-top:1%;
     flex-direction: row;
-    justify-content: center;
-
-  }
-  header input{
-
-  width: 100%;
-  height: 27px;
-  border: 0px;
-  background-color: var(--main-bg-color);
-  font-size: 16px;
-  color: var(--nav-container);
+    margin-top:1%;
+    
   }
   
+  header input{
+  width: 90%;
+  height: 30px;
+  border: 0px;
+  background-color: var(--main-bg-color);
+  font-size: 14px;
+  color: var(--nav-container);
+  display: inline-block;
+  
+  }
+
+  header button{
+    background-color: var(--main-bg-color);
+    font-size: 23px;
+    
+    border: 0px;
+    
+  }
+ 
   .logo{
     width:200px;
     height: auto;
@@ -90,18 +94,10 @@
 
     color: var(--texto-blanco);
     font-size: 20px;
-   
-    margin-top: 20px;
-    
+    margin-top: 20px; 
   }
 
-  .lupa{
-    background-color: var(--main-bg-color);
-    font-size: 20px;
-    
-    margin-top: 20px;
-
-  }
+ 
   .section-header p{
     color: var(--texto-blanco);
     font-size: 14px;
@@ -112,7 +108,6 @@
     text-align: center;
   }
 
-  
 
   
   header nav{
@@ -130,8 +125,7 @@
     color: var(--nav-container);
     font-size: 16px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
     border-bottom: var(--main-bg-color);
   }
   
