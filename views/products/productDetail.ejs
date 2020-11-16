@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="/stylesheets/productDetail.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
@@ -30,36 +33,30 @@
         </nav>
 <div class="cont-prod d-flex cont"><!--Contenedor general de todo -->
 
-    
+   
     <div class="carr-img margin-top d-flex img-mini">
         <div>
-            <img src="/images/blusa-1.jpeg" alt="" class="resize_fit-side img-mini-border">
+            <img src="/images/products/blusa-1.jpeg" alt="" class="resize_fit-side img-mini-border">
         </div>
-        <div><img src="/images/blusa-2.jpeg" alt="" class="resize_fit-side img-mini-border" ></div>
-        <div><img src="/images/blusa-3.jpeg" alt="" class="resize_fit-side img-mini-border"></div>
-        <div><img src="/images/blusa-4.jpeg" alt="" class="resize_fit-side img-mini-border"></div>
+        <div><img src="/images/products/blusa-2.jpeg" alt="" class="resize_fit-side img-mini-border" ></div>
+        <div><img src="/images/products/blusa-3.jpeg" alt="" class="resize_fit-side img-mini-border"></div>
+        <div><img src="/images/products/blusa-4.jpeg" alt="" class="resize_fit-side img-mini-border"></div>
     </div>
     <div class="img margin-top img-central">
 
-        <img src="/images/img-blusa.jpeg" alt="blusa" class="wd-100">
+        <img src="/images/products/img-blusa.jpeg" alt="blusa" class="wd-100">
         
         <a href="" class="ruta d-flex zoom"><i class="fas fa-search-plus"></i></a>
          
     </div>
-    <div>
-       
-        
-    
-    
-    
-    </div>
+   
     <div class="art-data margin-top flex-data prod-border">
-        <h1 class="prod-title">Camisa Ruffle</h1>
-        <p class="prod-price">$2500.00</p>
+        <h1 class="prod-title"><%=resultado.name %> </h1>
+        <p class="prod-price">$<%= resultado.price  %> </p>
         <p class="prod-color margin-top" >Color:</p>
-        <img src="/images/blusa-2.jpeg" alt="color-miniatura" class="mini-color">
+        <img src="/images/products/blusa-2.jpeg" alt="color-miniatura" class="mini-color">
         <p class="prod-color margin-top">Detalle:</p>
-        <p class="prod-detail">Camisa de Seda 100%</p>
+        <p class="prod-detail"><%= resultado.description %> </p>
         <p class="prod-talle">Talle:</p>
         <div class="margin-top">
         <button type="button" class="button-size">XS</button>
@@ -90,10 +87,8 @@
            
         </div>
 
-
     </div>
     
-
 </div>
 
 <div class="banner">
@@ -104,28 +99,28 @@
 
     <div class="banner-fonts">
 
-     <img src="/images/saco-1.jpeg" alt="saco1"class="resize_fit">
+     <img src="/images/products/saco-1.jpeg" alt="saco1"class="resize_fit">
      <p>Saco</p>
     <p>$3800.00</p>   
 
     </div>
     <div class="banner-fonts">
-        <img src="/images/saco-verde.jpeg" alt=""class="resize_fit">
+        <img src="/images/products/saco-verde.jpeg" alt=""class="resize_fit">
         <p>Saco</p>
         <p>$3000.00</p>
     </div>
     <div class="banner-fonts">
-        <img src="/images/buzo-1.jpeg" alt=""class="resize_fit">
+        <img src="/images/products/buzo-1.jpeg" alt=""class="resize_fit">
         <p>Buzo</p>
         <p>$2750.00</p>
     </div>
     <div class="banner-fonts">
-        <img src="/images/buzo-marron.jpeg" alt=""class="resize_fit">
+        <img src="/images/products/buzo-marron.jpeg" alt=""class="resize_fit">
         <p>Buzo</p>
         <p>$2700.00</p>
     </div>
     <div class="banner-fonts">
-        <img src="/images/jean.jpeg" alt="" class="resize_fit">
+        <img src="/images/products/jean.jpeg" alt="" class="resize_fit">
         <p>Jean</p>
         <p>$3500.00</p>
     </div>

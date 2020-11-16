@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/stylesheets/products.css">
+	<link rel="stylesheet" href="/stylesheets/footer.css">
+	<link rel="stylesheet" href="/stylesheets/header.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+	<title>Listado de Productos</title>
+</head>
+<body>
+	<%-include('../partials/header.ejs')%>
+	
+<div class="flex-d">
+	<p class="titles">Listado de Productos</p>
+	<% products.forEach(function(product){ %> 
+	<div class="bg-green">
+		<a href="/products/<%= product.id %>">
+		<img src="/images/products/blusa-1.jpeg" alt="" class="bg-red">
+		<p class="price"><%=product.name  %> </p>
+		<p class="price">$<%= product.price %> </p>
+
+	</a>
+	</div>
+<% }) %>
+</div> 
+<%-include('../partials/footer.ejs')%>
+</body>
+</html>
