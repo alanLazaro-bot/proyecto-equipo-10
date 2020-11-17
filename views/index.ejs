@@ -32,33 +32,20 @@
   <div class="ofertas margin-top">
     <p class="title-banner titles">Ofertas</p>
   
-    <div class=" d-flex cont"> 
+    <div class="flex-prod">
+      
+      <% products.forEach(function(product){ %> 
+        <% if(product.id<6){ %> 
+      <div class="bg-green">
+        <a href="/products/<%= product.id %>">
+        <img src="/images/products/blusa-1.jpeg" alt="" class="bg-red">
+        <p class="price"><%=product.name  %> </p>
+        <p class="price">$<%= product.price %> </p>
     
-  
-        <div class="banner-fonts">
-    
-         <img src="/images/saco-1.jpeg" alt="saco1"class="resize_fit">
-          
-        </div>
-
-        <div class="banner-fonts">
-            <img src="/images/saco-verde.jpeg" alt=""class="resize_fit">
-            <p></p>
-            
-        </div>
-  
-        <div class="banner-fonts">
-            <img src="/images/buzo-1.jpeg" alt=""class="resize_fit">
-            
-        </div>
-  
-        <div class="banner-fonts">
-            <img src="/images/buzo-marron.jpeg" alt=""class="resize_fit">
-            
-        </div>
-  
-        <div class="banner-fonts">
-            <img src="/images/jean.jpeg" alt="" class="resize_fit">
+      </a>
+      </div>
+    <%}}) %>
+    </div> 
             
         </div>
   
