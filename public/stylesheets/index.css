@@ -30,9 +30,18 @@ ul{
 }
 
 /*----------------------------------------------------------*/
+.banner-fonts{
+    width: 33%;
+    margin: 10px;
+}
+.resize_fit{
+    height: 100%;
+    width: 100%;
+}
 
 .d-flex.cont{
     justify-content: center;
+    height: 100%;
     
     }
 .d-flex.space{
