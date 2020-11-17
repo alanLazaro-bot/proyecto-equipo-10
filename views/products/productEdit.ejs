@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/productAdd.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <title>Document</title>
@@ -15,16 +18,16 @@
 
 <h1 class="title-font space center">Editá tu Producto</h1>
 <!--nombre del producto-->        
-<form action="carga/nuevo" method="POST">
+<form action="/products/actualizar?_method=PUT" method="POST">
      <p class="center space"> 
         <label for="nombre-prod" class="rob-14"></label>
-        <input type="text" name="nombre-prod" id="nombre-prod" placeholder="Nombre del Producto" class="nombre-prod nombre-size  wdth-bar padding-text">
+        <input type="text" name="nombre-prod" id="nombre-prod" value="<%= resultado.name %>"  class="nombre-prod nombre-size  wdth-bar padding-text">
     </p>  
 <!-- / nombre del producto-->
 
 <!--descripcion-->
     <p class="center space"> 
-        <textarea name="comentarios" rows="10" cols="80">Descripción</textarea>
+        <textarea name="comentarios" rows="10" cols="80"  ><%= resultado.description %></textarea>
     </p> 
 <!--/descripcion-->
 
@@ -64,7 +67,7 @@
 <!--precio del producto-->
     <p class="center space"> 
         <label for="precio-prod"></label>
-        <input type="text" name="precio-prod" id="nombre-prod" placeholder="Precio" class="nombre-size">
+        <input type="text" name="precio-prod" id="nombre-prod" value="<%= resultado.price %>"  class="nombre-size">
     </p>  
     <!--/ precio del producto-->
     

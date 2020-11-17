@@ -15,10 +15,10 @@ router.get('/products/create', productController.create);
 router.post('/', productController.create);
 
 /*** EDIT ONE PRODUCT ***/
-router.get('/products/edit', productController.edit);
+router.get('/products/edit/:id', productController.edit);
 router.put('/', productController.update);
 
-router.get('/products/cart', productController.cart);
+
 
 /*** DELETE ONE PRODUCT***/
 router.delete('/products/:id', productController.destroy);

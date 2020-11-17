@@ -29,17 +29,8 @@ ul{
     
 /*diagramacion de elementos en pantalla*/
     
-    .header{
-        background-color:#BCAD29;
-        height: 92px;
-        padding-left: 20%;
-        padding-right: 20%;
-    }
-    .body{
+   
     
-        background-color: white;
-        height: auto;
-    }
 
     .center{
         text-align: center;

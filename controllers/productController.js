@@ -56,12 +56,19 @@ let productController ={
 
 
     edit: function(req,res,next){
-        res.render('./products/productEdit');
+		
+		let resultado = products.find(function(product){
+			return product.id == req.params.id
+		})
+
+		res.render('./products/productEdit',{resultado})
+
+       
     },
 
-    update: (req, res) => {
+    update: function(req, res) {
 		
-		let filePath= path.resolve('src','data','productsDataBase.json')
+		let filePath= path.resolve('data','productsList.json')
 		let data = fs.readFileSync(filePath,{encoding:'utf-8'})
 		
 
@@ -93,10 +100,6 @@ let productController ={
 	},
 
    
-    cart: function(req,res,next){
-        res.render('./products/productCart');
-
-    },
     destroy: function(req,res,next){
         res.render('./products/delete')
     }
