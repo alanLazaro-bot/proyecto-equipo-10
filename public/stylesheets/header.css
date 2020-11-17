@@ -1,6 +1,5 @@
 :root {
     --main-bg-color: #F4F4F4;
-    --bg-container: #C4B000;
     --nav-container:#C4B000;
     --grey: #dbd9d9;
     --texto-blanco: rgb(255, 255, 255);
@@ -77,10 +76,11 @@
 
   header button{
     background-color: var(--main-bg-color);
-    font-size: 23px;
-    
+    font-size: 18px;
+    position: relative;
+    right: 5%;
     border: 0px;
-    
+    top: 3%;
   }
  
   .logo{

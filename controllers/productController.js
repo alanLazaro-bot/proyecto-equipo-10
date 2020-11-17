@@ -25,14 +25,83 @@ let productController ={
         res.render('./products/productAdd');
         
     },
+    store: (req, res) => {
+		let filePath= path.resolve('data','productsList.json')
+		let content = fs.readFileSync(filePath,{encoding:'utf-8'})
+		
 
-    edit: function(req,res,next){
-        res.render('./products/productEdit');
+		content= JSON.parse(content)
+
+
+		content.push({
+
+			name: req.body.name,
+			price: req.body.price,
+			size: req.body.size,
+			category:req.body.category,
+			description:req.body.description,
+			
+			id: content[content.length-1].id+1
+
+		})
+
+		content = JSON.stringify(content)
+
+		fs.writeFileSync(filePath, content)
+
+		res.send('recibido')
+
     },
 
-    cart: function(req,res,next){
-        res.render('./products/productCart');
 
+
+    edit: function(req,res,next){
+		
+		let resultado = products.find(function(product){
+			return product.id == req.params.id
+		})
+
+		res.render('./products/productEdit',{resultado})
+
+       
+    },
+
+    update: function(req, res) {
+		
+		let filePath= path.resolve('data','productsList.json')
+		let data = fs.readFileSync(filePath,{encoding:'utf-8'})
+		
+
+		data = JSON.parse(data)
+
+		data.forEach(function(product){
+			
+			if(product.id==req.params.id){
+
+			
+			product.name= req.body.name;
+            product.description= req.body.description;
+            product.price= req.body.price;
+            product.image= req.body.image;
+            product.category= req.body.category;
+            product.keywords= req.body.keywords;
+            product.size= req.body.size;
+            product.colors= req.body.colors;
+
+			}	
+			});
+		data = JSON.stringify(data)
+
+		fs.writeFileSync(filePath, data)
+		res.redirect('./products/products')
+
+		
+		
+	},
+
+   
+    destroy: function(req,res,next){
+        res.render('./products/delete')
     }
     
     
