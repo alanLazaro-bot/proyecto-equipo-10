@@ -245,6 +245,28 @@ margin-bottom:5%;
    
 
  }
+ .delete{
+
+    color:white;
+    background-color: red;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif; ;
+    font: size 12px;
+    
+   
+
+ }
+ .edit{
+
+    color:white;
+    background-color: grey;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif; ;
+    font: size 12px;
+    
+   
+
+ }
 .prod-border{
     border-left: 1px solid gray;
     padding-left: 1%;
