@@ -19,7 +19,7 @@
 
 <h1 class="title-font space center">Cargá tu Producto</h1>
 <!--nombre del producto-->        
-<form action="carga/nuevo" method="POST">
+<form action="/products" method="POST" enctype="multipart/form-data">
      <p class="center space"> 
         <label for="nombre-prod" class="rob-14"></label>
         <input type="text" name="nombre-prod" id="nombre-prod" placeholder="Nombre del Producto" class="nombre-prod nombre-size  wdth-bar padding-text">
@@ -76,7 +76,7 @@
 
     <!--carga de imagenes-->
 
-        <p class ="center space rob-18" <label for="foto">Fotos del Producto</label></p>
+        <p class ="center space rob-18"><label for="foto"> Fotos del Producto</label></p>
         <p class="center space"><input type="file" name="foto" class=""></p>
    
     <!--/ carga imagenes-->
