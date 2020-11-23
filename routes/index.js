@@ -4,5 +4,6 @@ let router = express.Router();
 const {check,validationResult,body} = require('express-validator');
 
 router.get('/', indexController.index);
+router.get('/search', indexController.search); 
 
 module.exports=router;

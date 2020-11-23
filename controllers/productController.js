@@ -22,9 +22,12 @@ let productController ={
 	},
 
     create: function(req,res,next){
-        res.render('./products/productAdd');
+
+        res.render('./products/productCreate');
         
-    },
+	},
+	
+
     store: (req, res) => {
 		let filePath= path.resolve('data','productsList.json')
 		let content = fs.readFileSync(filePath,{encoding:'utf-8'})
@@ -61,7 +64,7 @@ let productController ={
 			return product.id == req.params.id
 		})
 
-		res.render('./products/productEdit',{resultado})
+		res.render('./products/productEdit',{resultado:resultado})
 
        
     },

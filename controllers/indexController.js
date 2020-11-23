@@ -13,7 +13,24 @@ let indexController ={
     
        
         res.render('index',{products});
-    }
+    },
+
+    search: (req, res) => {
+
+		let resultado=[];
+
+		if(req.query.search){
+			resultado = products.filter(function(product){
+
+					return product.name.includes(req.query.search) || product.description.includes(req.query.search)
+
+				})
+			}
+
+				res.render('results',{resultado});
+
+			}
+
     
     
     };
