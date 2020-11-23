@@ -18,7 +18,7 @@ let productController ={
 			return product.id == req.params.id
 		})
 
-		res.render('./products/productDetail',{resultado})
+		res.render('./products/productDetail',{resultado});
 	},
 
     create: function(req,res,next){
