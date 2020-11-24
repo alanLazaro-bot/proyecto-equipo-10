@@ -3,6 +3,7 @@
     --nav-container:#C4B000;
     --grey: #dbd9d9;
     --texto-blanco: rgb(255, 255, 255);
+    --dark-grey: #777777;
 
 }
   
@@ -69,7 +70,7 @@
   border: 0px;
   background-color: var(--main-bg-color);
   font-size: 14px;
-  color: var(--nav-container);
+  color: var(--dark-greygrey);
   display: inline-block;
   
   }

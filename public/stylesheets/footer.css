@@ -1,3 +1,11 @@
+:root {
+    --main-bg-color: #F4F4F4;
+    --grey: #dbd9d9;
+    --bg-container: #C4B000;
+    --nav-container:#C4B000;
+    --texto-blanco: rgb(255, 255, 255);
+  }  
+
 
 a{
     text-decoration: none;
@@ -83,5 +91,8 @@ footer article{
     color: var(--texto-blanco);
     
 
+}
+footer i{
+    color: var(--texto-blanco);
 }
 /*fin footer*/

@@ -53,60 +53,8 @@ ul{
     margin-left: auto ;
     margin-right: auto;
 }
-/*Header*/    
-    .header{
-        background-color: var(--bg-container);
-        height: 150px;
-        
-    }
-    .nav-sup{
-        margin-bottom: 1%;
-    }
 
-   
 
-   .flex-search{
-       flex-grow: 2;
-  
-   }
-   .flex-logo{
-       flex-grow:0.5 ;
-   }
-   .li{
-       text-align: center;
-       margin-left: 3%;
-       margin-right: 3%;
-   }
-   .margin-nav{
-       margin: auto;
-    }
-   
-    
-    
-
-   .titles{
-    font-family:'Roboto', sans-serif;
-    font-size: 1.5rem;
-   }
-    .search-bar{
-    width: 60%;
-    padding: 2px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 8px;
-    margin-top: 2%;
-    }
-    
-   
-
-/*Fin del Header*/    
-    .body{
-    
-        
-        height: auto;
-    }
 /*Carrousel*/
 
 .carrousel{
