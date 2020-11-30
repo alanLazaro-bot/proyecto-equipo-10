@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productsList.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 
@@ -29,28 +29,21 @@ let productController ={
 	
 
     store: (req, res) => {
-		let filePath= path.resolve('data','productsList.json')
-		let content = fs.readFileSync(filePath,{encoding:'utf-8'})
-		
-
-		content= JSON.parse(content)
-
-
-		content.push({
+	
+		products.push({
 
 			name: req.body.name,
 			price: req.body.price,
 			size: req.body.size,
 			category:req.body.category,
 			description:req.body.description,
-			
-			id: content[content.length-1].id+1
+			id: products[products.length-1].id+1
 
 		})
 
-		content = JSON.stringify(content)
+		products = JSON.stringify(products)
 
-		fs.writeFileSync(filePath, content)
+		fs.writeFileSync(productsFilePath, products)
 
 		res.send('recibido')
 
@@ -69,34 +62,23 @@ let productController ={
        
     },
 
-    update: function(req, res) {
+	update: (req, res) => {
 		
-		let filePath= path.resolve('data','productsList.json')
-		let data = fs.readFileSync(filePath,{encoding:'utf-8'})
-		
-
-		data = JSON.parse(data)
-
-		data.forEach(function(product){
+		products.forEach(function(product){
 			
 			if(product.id==req.params.id){
 
-			
-			product.name= req.body.name;
-            product.description= req.body.description;
-            product.price= req.body.price;
-            product.image= req.body.image;
-            product.category= req.body.category;
-            product.keywords= req.body.keywords;
-            product.size= req.body.size;
-            product.colors= req.body.colors;
-
+			product.name = req.body.name;
+			product.price = req.body.price;
+			product.discount = req.body.discount;
+			product.category = req.body.category;
+			product.description = req.body.description;
 			}	
 			});
-		data = JSON.stringify(data)
+		products = JSON.stringify(products)
 
-		fs.writeFileSync(filePath, data)
-		res.redirect('./products/products')
+		fs.writeFileSync(productsFilePath, products)
+		res.redirect('/')
 
 		
 		
