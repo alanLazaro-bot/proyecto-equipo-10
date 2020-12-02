@@ -20,48 +20,49 @@
 <h1 class="title-font space center">Cargá tu Producto</h1>
 <!--nombre del producto-->        
 <form action="/products" method="POST" enctype="multipart/form-data">
-     <p class="center space"> 
-        <label for="nombre-prod" class="rob-14"></label>
-        <input type="text" name="nombre-prod" id="nombre-prod" placeholder="Nombre del Producto" class="nombre-prod nombre-size  wdth-bar padding-text">
-    </p>  
+     <div class="center space"> 
+        <label for="name" class="rob-14"></label>
+        <input type="text" name="name" id="name" placeholder="Nombre del Producto" class="nombre-prod nombre-size wdth-bar padding-text">
+     </div>  
 <!-- / nombre del producto-->
 
 <!--descripcion-->
-    <p class="center space"> 
-        <textarea name="comentarios" rows="10" cols="80">Descripción</textarea>
-    </p> 
+    <div class="center space"> 
+        <textarea name="description" id="description" rows="10" cols="80">Descripción</textarea>
+    </div > 
 <!--/descripcion-->
 
 <!--categoria-->
-    <p class="center space rob-18"> 
-        <label for="categoria center space">Categoría</label>
-    <p class="center space">
-        <select name="categoria center">
+    <div class="center space rob-18"> 
+        <label for="category">Categoría</label>
+    <div class="center space">
+        <select name="category" id="category">
             <option value="AyB">Alimentos y Bebidas</option>
             <option value="Ind">Indumentaria</option>
             <option value="Hog">Hogar</option>
             <option value="Ser">Servicios</option>
         </select>
-    </p>
-    </p>  
+    </div>
+</div>  
     <!--/categoria-->
       <!--talles-->
-      <p class="center space rob-18">Talles</p>
+      <div class="center space rob-18">Talles</p>
       
       <div class="center">
         <div class= "space">
-        <label for="XS" class="">XS</label>
-        <input type="checkbox" name="XS" value="XS" class="box-margin">
-        <label for="S" class="">S</label>
-        <input type="checkbox" name="S" value="S" class="box-margin">
-        <label for="M" class="">M</label>
-        <input type="checkbox" name="M" value="M" class="box-margin">
-        <label for="L"class="">L</label>
-        <input type="checkbox" name="L" value="L" class="box-margin">
-        <label for="XL" class="">XL</label>
-        <input type="checkbox" name="XL" value="XL" class="box-margin">
-        <label for="XXL" class="">XXL</label>
-        <input type="checkbox" name="XXL" value="XXL" class="box-margin">
+        <label for="size" class="">XS</label>
+        <input type="checkbox" name="size" value="XS" class="box-margin">
+        <label for="size" class="">S</label>
+        <input type="checkbox" name="size" value="S" class="box-margin">
+        <label for="size" class="">M</label>
+        <input type="checkbox" name="size" value="M" class="box-margin">
+        <label for="size"class="">L</label>
+        <input type="checkbox" name="size" value="L" class="box-margin">
+        <label for="size" class="">XL</label>
+        <input type="checkbox" name="size" value="XL" class="box-margin">
+        <label for="size" class="">XXL</label>
+        <input type="checkbox" name="size" value="XXL" class="box-margin">
+    </div>   
     </div>
 
     <!--/talles-->
@@ -75,8 +76,8 @@
   
     <!--carga de imagenes-->
 
-        <p class ="center space rob-18"><label for="foto"> Fotos del Producto</label></p>
-        <p class="center space"><input type="file" name="foto" class=""></p>
+        <div class ="center space rob-18"><label for="foto"> Fotos del Producto</label></div>
+        <div class="center space"><input type="file" name="foto" class=""></div>
    
     <!--/ carga imagenes-->
 

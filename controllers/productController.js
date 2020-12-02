@@ -28,17 +28,17 @@ let productController ={
 	},
 	
 
-    store: (req, res) => {
+    store: (req, res,next) => {
 	
 		products.push({
-
+			id: products[products.length-1].id+1,
 			name: req.body.name,
 			price: req.body.price,
 			size: req.body.size,
 			category:req.body.category,
 			description:req.body.description,
-			id: products[products.length-1].id+1
-
+			
+			
 		})
 
 		products = JSON.stringify(products)
