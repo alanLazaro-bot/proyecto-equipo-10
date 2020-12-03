@@ -1,12 +1,12 @@
 var fs = require ('fs')
 let {validationResult} = require('express-validator')
-var userData = require('../data/user')
+var userData = require('../data/users')
 var bcryptjs = require('bcryptjs')
 
 module.exports = {
 
     create: function (req,res){
-        res.render('auth/register',{
+        res.render('./auth/register',{
             linkToLogin:false,
         })
     },
@@ -29,7 +29,7 @@ module.exports = {
 
         console.log(errors.mapped())
 
-        return res.render('auth/register',{
+        return res.render('./auth/register',{
             errors:errors.mapped(),
             linkToLogin: true,
         
@@ -41,17 +41,44 @@ module.exports = {
 },
 
 login: function(req,res){
-    res.render('auth/login')
+    res.render('./auth/login')
 },
 
 processLogin: function(req,res){
 let user = userData.findByEmail(req.body.email)
 
-if(user)
+if(!user){
+    return res.send('Email incorrecto')
+}else if(bcryptjs.compareSync(req.body.password, user.password)){
+    req.session.user = user.email
+
+    if(req.boy.recordame){
+        res.cookie('recordame',user.email,{maxAge:120 * 1000})
+    }
+
+    return res.redirect('/products')
+} else {
+    return res.send('Password incorrecto')
+}
 
 
+
+
+},
+
+
+logout: function(req,res){
+
+    req.session.destroy()
+    res.cookie('recordarme', null, {masAge:0})
+    return res.redirect('./auth/login')
+ }
 
 }
 
-}
+
+
+
+
+
 

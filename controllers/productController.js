@@ -40,7 +40,7 @@ let productController ={
 			
 			
 		})
-
+		
 		products = JSON.stringify(products)
 
 		fs.writeFileSync(productsFilePath, products)
