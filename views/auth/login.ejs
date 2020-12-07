@@ -18,26 +18,31 @@
     <%-include('../partials/header.ejs')%>
     <section>
         <div>
-            <form action="" method="POST">
-                <h1 class="title-font space center">Ingresa tus datos para iniciar tu Sesión</h2>
-                <p class="center space">
+            <form action="/auth/" method="POST">
+                <h1 class="title-font space center">Ingresa tus datos para iniciar sesión</h2>
+                <div class="center space">
                     <label class="rob-14">
                         
-                        <input  name="email" type="email" class="nombre-prod nombre-size  wdth-bar padding-text" value="Correo Electrónico">
+                        <input  name="email" type="email" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Correo Electrónico">
                     </label>
-                </p>
-                <p class="center space"> 
+                </div>
+                <div class="center space"> 
                     <label class="rob-14">
-                        <input  name="contraseña" type="password" class="nombre-prod nombre-size  wdth-bar padding-text" value="Contraseña">
+                        <input  name="password" type="password" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Contraseña">
                     </label>
-                </p>
-                <p  class="center space">
+                </div>
+                <div class="center space">
+                    <label for="" class="center space">Recordame</label>
+                    <input type="checkbox" name="size" value="XS" class="center space">
+                </div>
+                <div  class="center space">
                     <input type="button" value="Ingresar" class=" button-send">
-                </p>
+                </div>
                 
 
             </form>
         </div>
+        <div class="center space">¿Aún no tenés cuenta?<a href="/auth/register">Registrate</a></div>
     </section>
 
     <%-include('../partials/footer.ejs')%>

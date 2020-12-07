@@ -1,3 +1,14 @@
+:root {
+    --main-bg-color: #F4F4F4;
+    --grey: #dbd9d9;
+    --bg-container: #C4B000;
+    --nav-container:#C4B000;
+    --texto-blanco: rgb(255, 255, 255);
+  }
+
+
+
+
 *{
     margin: 0px;
     padding: 0px;
@@ -60,20 +71,20 @@ justify-content: center;
 }
 .body{
 
-    background-color: white;
+    background-color: var(--main-bg-color);
     height: auto;
 }
 .ruta{
-    background-color: white;
+    background-color: var(--main-bg-color);
    
 }
 .cont-prod{
-    background-color: white;
+    background-color:var(--main-bg-color);
     height: 550px;
    
 }
 .carr-img{
-    background-color: white;
+    background-color: var(--main-bg-color);
     height:auto;
     width: 100px;
 }
@@ -81,14 +92,14 @@ justify-content: center;
 
 
 .img{
-    background-color:white;
+    background-color:var(--main-bg-color);
     height:500px ;
     width: 350px; 
 
 }
 
 .art-data{
-    background-color: white;
+    background-color:var(--main-bg-color);
     height:500px ;
     width: 350px;
 
@@ -100,7 +111,7 @@ justify-content: center;
 .banner{
     height: 170px;
     width: auto;
-    background-color: white;
+    background-color: var(--main-bg-color);
     margin-bottom: 10px;
     margin-top: 5%;
     padding-left: 20%;
