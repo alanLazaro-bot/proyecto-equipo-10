@@ -22,61 +22,92 @@
 <form action="/products" method="POST" >
      <div class="center space"> 
         <label for="name" class="rob-14"></label>
-        <input type="text" name="name" id="name" placeholder="Nombre del Producto" class="nombre-prod nombre-size wdth-bar padding-text">
+        <input type="text" name="name" id="name" placeholder="Nombre del Producto" class="nombre-prod nombre-size wdth-bar padding-text" value="<%= data.name  %>">
      </div>  
+     <% if (errors.name != undefined){ %>
+     <div><%= errors.name.msg  %> </div>
+     <% }%>
+
 <!-- / nombre del producto-->
 
 <!--descripcion-->
     <div class="center space"> 
-        <textarea name="description" id="description" rows="10" cols="80" placeholder="Descripción"></textarea>
+        <textarea name="description" id="description" rows="10" cols="80" placeholder="Descripción" value="<%= data.description  %>"></textarea>
     </div > 
+    <% if (errors.description != undefined){ %>
+    <div><%= errors.description.msg  %> </div>
+    <% }%>
 <!--/descripcion-->
 
 <!--categoria-->
-    <div class="center space rob-18"> 
+<div class="center space rob-18"> 
         <label for="category">Categoría</label>
-    <div class="center space">
-        <select name="category" id="category">
-            <option value="AyB">Alimentos y Bebidas</option>
-            <option value="Ind">Indumentaria</option>
-            <option value="Hog">Hogar</option>
-            <option value="Ser">Servicios</option>
-        </select>
-    </div>
+    
+
+        <%- include('../select.ejs', {
+        name: 'category',
+        options:[
+        {value : "Alimentos/Bebidas", text : "Alimentos/Bebidas"},
+
+        {value: "Indumentaria", text:"Indumentaria"},
+
+        {value: "Hogar", text: "Hogar"},
+
+        {value: "Servicios", text: "Servicios"}]
+        }) %> 
+   
 </div>  
+<% if (errors.category != undefined){ %>
+<div><%= errors.category.msg  %> </div>
+<% }%>
+
     <!--/categoria-->
       <!--talles-->
-      <div class="center space rob-18">Talles</p>
-      
-      <div class="center">
-        <div class= "space">
-        <label for="size" class="">XS</label>
-        <input type="checkbox" name="size" value="XS" class="box-margin">
-        <label for="size" class="">S</label>
-        <input type="checkbox" name="size" value="S" class="box-margin">
-        <label for="size" class="">M</label>
-        <input type="checkbox" name="size" value="M" class="box-margin">
-        <label for="size"class="">L</label>
-        <input type="checkbox" name="size" value="L" class="box-margin">
-        <label for="size" class="">XL</label>
-        <input type="checkbox" name="size" value="XL" class="box-margin">
-        <label for="size" class="">XXL</label>
-        <input type="checkbox" name="size" value="XXL" class="box-margin">
-    </div>   
+<div class = "center space rob-18"> 
+        <label for="size">Talle</label>
+    
+        <%- include('../select.ejs',{
+        name: 'size',
+        options:[ 
+        {value : "xs", text : "XS"},
+        {value : "s", text : "S"},
+        {value : "m", text : "M"},
+        {value : "l", text : "L"},
+        {value : "xl", text : "XL"},
+        {value : "xxl", text : "XXL"}]
+        }) %> 
     </div>
+</div>  
+<% if (errors.category != undefined){ %>
+<div><%= errors.category.msg  %> </div>
+<% }%>
 
     <!--/talles-->
 <!--precio del producto-->
     <div class="center space"> 
         <label for="price"></label>
-        <input type="text" name="price" id="price" placeholder="Precio" class="nombre-size">
-    </div>  
+        <input type="text" name="price" id="price" placeholder="Precio" class="nombre-size" value="<%= data.price  %> ">
+    </div> 
+    <% if (errors.price != undefined){ %>
+        <div><%= errors.price.msg  %> </div>
+        <% }%> 
+
     <!--/ precio del producto-->
+    <!--Stock-->
+    <div class="center space"> 
+        <label for="stock"></label>
+        <input type="text" name="stock" id="stock" placeholder="Stock" class="nombre-size" value="<%= data.stock || 1  %> ">
+    </div> 
+    <% if (errors.stock != undefined){ %>
+        <div><%= errors.stock.msg  %> </div>
+        <% }%> 
+        <!--/Stock-->
+    
    
   
     <!--carga de imagenes-->
 
-        <div class ="center space rob-18"><label for="foto"> Fotos del Producto</label></div>
+        <div class ="center space rob-18"><label for="foto"> Fotos del Producto </label></div>
         <div class="center space"><input type="file" name="foto" class=""></div>
    
     <!--/ carga imagenes-->

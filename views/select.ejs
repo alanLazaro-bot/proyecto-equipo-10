@@ -1,0 +1,10 @@
+
+<select name="<%= name %>">
+    <option value="">Seleccionar...</option>
+    <% options.forEach(function (option) { %> 
+
+    <option value="<%= option.value %>"  <%= data[name] == option.value ? 'selected' : ' '   %>>
+        <%= option.text %> 
+    </option>
+    <% })  %> 
+</select>
