@@ -17,7 +17,10 @@ module.exports = {
 
         if(errors.isEmpty()){
             userData.create({
-    
+                
+                first_name:req.body.first_name,
+                last_name:req.body.last_name,
+                category:req.body.category,
                 email:req.body.email,
                 password:bcryptjs.hashSync(req.body.password),
                 

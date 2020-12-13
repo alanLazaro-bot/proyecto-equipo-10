@@ -14,6 +14,8 @@ check('stock')
     .isInt({gt:0, lt:100})
     .withMessage('El stock debe ser mayor a 0 y menor que 100'),
 
+    
+
 
 
 ]

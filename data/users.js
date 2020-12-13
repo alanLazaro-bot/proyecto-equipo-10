@@ -1,6 +1,6 @@
 const path =require('path')
 const file = path.resolve(__dirname,'usersList.json')
-let users = require('./usersList.json')
+let users = require(file)
 let fs = require('fs')
 
 function latest(){
@@ -18,14 +18,14 @@ function create(user){
 
 function findById(id){
 
-    users.find(function(user){
+   return  users.find(function(user){
         return user.id == id
     })
 }
 
 function findByEmail(email){
 
-    email.find(function(user){
+     return users.find(function(user){
         return user.email == email
     })
 }
