@@ -26,7 +26,7 @@ router.get('auth/avatar',function(req,res){
     res.render('auth/avatar-form')
 })
 
-router.post('/auth/avatar',upload.any(), function(req,res,next){
+router.post('/auth/avatar', function(req,res,next){
     console.log(req.files)
     res.send('recibido')
 })
@@ -34,6 +34,8 @@ router.post('/auth/avatar',upload.any(), function(req,res,next){
 
 router.get('/auth/login', authController.login);
 router.post('/auth/login', authController.processLogin);
+
+router.get('/auth/user-info',authController.finalLogin);
 
 //router.post('/auth/logout', authController.Logout);
 

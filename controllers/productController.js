@@ -103,6 +103,11 @@ let productController ={
 
    
     destroy: function(req,res,next){
+
+		products= products.filter(product =>{
+			return product.id != req.params.id
+		})
+
         res.render('./products/delete')
     }
     

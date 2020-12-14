@@ -12,13 +12,15 @@
    
     <div class="item-grow-2 icono-centro">
       <% if (locals.user){ %>
-        <div>Bienvenido <%= locals.user %> </div>
+        <a href="/auth/login"><i class="fas fa-user-alt icono"></i>
+        <div><a href="auth/user-info"></a> <%= locals.user %></div>
         <form action="/auth/logout" method="POST">
-        <button>logout</button>
+        <button type="submit" class=" button-send">Logout</button>
+       
         </form>  
       <% }else{ %> 
         <a href="/auth/login"><i class="fas fa-user-alt icono"></i>
-        <p>Iniciar sesión o Registrarse</p>
+        <div>Iniciar sesión o Registrarse</div>
       </a>
     <% } %> 
     </div>

@@ -3,19 +3,14 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-//const session = require('express-session');
+const session = require('express-session');
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const productRouter = require('./routes/product');
 const cartRouter = require('./routes/cart');
 const infoRouter = require('./routes/info');
 //let checkIp = require('./middlewares/check-ip')
-/*let remember = require('./middlewares/rememberMiddleware')*/
-
-
-
-
-
+let remember = require('./middlewares/rememberMiddleware')
 var app = express();
 
 // view engine setup
@@ -26,22 +21,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 //app.use(checkIp)
-/*app.use(session ({
- secret:'secreto',
-  resave:false,
-  saveUninitialized: true
-}));
-//app.use(remember)
+app.use(session(
+{ secret:'secreto',
+  resave: false,
+  saveUninitialized: true }
+  ));
+
 app.use(function(req,res,next){
 
   if(req.session.user != undefined){
     res.locals.user = req.session.user
  }
+ return next()
  
 })
-*/
+app.use(remember)
 
 app.use('/', indexRouter);
 app.use('/', authRouter);

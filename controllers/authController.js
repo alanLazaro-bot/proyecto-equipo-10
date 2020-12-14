@@ -55,17 +55,20 @@ if(!user){
 }else if(bcryptjs.compareSync(req.body.password, user.password)){
     req.session.user = user.email
 
-    if(req.boy.recordame){
+    if(req.body.recordame){
         res.cookie('recordame',user.email,{maxAge:120 * 1000})
     }
 
-    return res.redirect('/products')
+    return res.redirect('/')
 } else {
     return res.send('Password incorrecto')
 }
 
 
+},
 
+finalLogin: function(req,res){
+res.render('auth/user-info')
 
 },
 
@@ -74,7 +77,7 @@ logout: function(req,res){
 
     req.session.destroy()
     res.cookie('recordarme', null, {masAge:0})
-    return res.redirect('./auth/login')
+    return res.redirect('/')
  }
 
 }
