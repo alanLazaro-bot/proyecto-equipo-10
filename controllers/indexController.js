@@ -10,9 +10,7 @@ let indexController ={
     index: function(req,res,next){
        
        
-    
-       
-        res.render('index',{products});
+        res.render('index',{products,  title: 'Rmarket | Inicio',ruta: undefined, stylesheet: 'index'});
     },
 
     search: (req, res) => {
@@ -27,7 +25,7 @@ let indexController ={
 				})
 			}
 
-				res.render('results',{resultado});
+				res.render('results',{resultado,  title: 'Rmarket | Inicio',ruta: undefined, stylesheet: 'index'});
 
 			}
 

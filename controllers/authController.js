@@ -7,7 +7,7 @@ module.exports = {
 
     create: function (req,res){
         res.render('./auth/register',{
-            linkToLogin:false,
+            linkToLogin:false, title: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'register'
         })
     },
     
@@ -44,7 +44,7 @@ module.exports = {
 },
 
 login: function(req,res){
-    res.render('./auth/login')
+    res.render('./auth/login', {title: 'Rmarket | Ingresá a tu cuenta',ruta: 'users', stylesheet: 'login'})
 },
 
 processLogin: function(req,res){
@@ -68,7 +68,7 @@ if(!user){
 },
 
 finalLogin: function(req,res){
-res.render('auth/user-info')
+res.render('auth/user-info', {title: 'Rmarket | Bienvenid@'+ ' '+ user.email, ruta: 'users', stylesheet: 'user-info'})
 
 },
 

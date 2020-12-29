@@ -10,7 +10,7 @@ const {validationResult} = require ('express-validator');
 let productController ={
 
     all:(req,res,next)=>{
-        res.render('./products/products',{products});
+        res.render('./products/products',{products, title: 'Rmarket | Productos',ruta: 'products', stylesheet: 'products'});
     },
 
     detail: (req, res) => {
@@ -20,15 +20,14 @@ let productController ={
 			return product.id == req.params.id
 		})
 
-		res.render('./products/productDetail',{resultado});
+		res.render('./products/productDetail',{resultado,  title: 'Rmarket | '+ resultado.name, ruta: 'products', stylesheet: 'productDetail'});
 	},
 
     create: function(req,res,next){
 
 		res.render('./products/productCreate',{
 		data: {},
-		errors : {}
-		});
+		errors : {},  title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'});
 		
         
 	},
@@ -42,8 +41,7 @@ let productController ={
 
 			res.render('./products/productCreate', {
 				errors : errors.mapped(),
-				data: req.body,
-			})
+				data: req.body,  title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'})
 		}
 
 	
@@ -74,7 +72,7 @@ let productController ={
 			return product.id == req.params.id
 		})
 
-		res.render('./products/productEdit',{resultado:resultado})
+		res.render('./products/productEdit',{resultado: resultado,  title: 'Rmarket | '+ resultado.name, ruta: 'products', stylesheet: 'productEdit'})
 
        
     },
