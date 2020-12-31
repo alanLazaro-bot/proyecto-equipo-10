@@ -27,6 +27,7 @@ app.use(session(
   resave: false,
   saveUninitialized: true }
   ));
+  app.use(remember)
 
 app.use(function(req,res,next){
 
@@ -36,7 +37,7 @@ app.use(function(req,res,next){
  return next()
  
 })
-app.use(remember)
+
 
 app.use('/', indexRouter);
 app.use('/', authRouter);

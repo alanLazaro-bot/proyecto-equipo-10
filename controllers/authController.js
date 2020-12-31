@@ -76,7 +76,7 @@ res.render('auth/user-info', {title: 'Rmarket | Bienvenid@'+ ' '+ user.email, ru
 logout: function(req,res){
 
     req.session.destroy()
-    res.cookie('recordarme', null, {masAge:0})
+    res.cookie('recordame', null, {maxAge: 0})
     return res.redirect('/')
  }
 
