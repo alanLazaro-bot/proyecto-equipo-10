@@ -4,7 +4,7 @@ let cartController ={
 
 
 cart: function(req,res,next){
-    res.render('./productCart');
+    res.render('./productCart', {title: 'Rmarket | Carrito', ruta: undefined,stylesheet: 'productCart'});
 
 }
 

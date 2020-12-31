@@ -27,7 +27,7 @@ router.get('/products/:id', productController.detail);
 /*** CREATE ONE PRODUCT ***/ 
 
 router.get('/products/create/nuevo', productController.create);
-router.post('/products', prodValidator,productController.store);
+router.post('/products', prodValidator,upload.any(), productController.store);
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/products/edit/:id', productController.edit);

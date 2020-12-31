@@ -34,7 +34,7 @@ module.exports = {
 
         return res.render('./auth/register',{
             errors:errors.mapped(),
-            linkToLogin: true,
+            linkToLogin: true,title: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'register'
         
         })
     
