@@ -68,6 +68,7 @@ if(!user){
 },
 
 finalLogin: function(req,res){
+    
 res.render('auth/user-info', {title: 'Rmarket | Bienvenid@'+ ' '+ user.email, ruta: 'users', stylesheet: 'user-info'})
 
 },

@@ -2,10 +2,49 @@
 <html lang="en">
     <%-include('../partials/head.ejs')%>
 <body>
-<div>Foto de perfil</div>
-<div>Perfil y password</div>
-<div>Direcciones de Envío</div>
-<div>Métodos de Pago</div>
-<div>Historial de Pedidos</div>
+
+    <div class="cont-prod d-flex cont"><!--Contenedor general de todo -->
+
+   
+      
+        <div class="img margin-top img-central">
+    
+            <img src="/images/products/img-blusa.jpeg" alt="foto-perfil" class="wd-100">
+            
+             
+        </div>
+       
+        <div class="art-data margin-top flex-data prod-border">
+            <h1 class="prod-title">Nombre de usuario</h1>
+            <div>Cambiar Contraseña</div>
+            <div class="prod-price">Direcciones de envío</div>
+            <div class="prod-color margin-top" >Metodos de pago</div>
+            <div class="prod-color margin-top">Historial de Pedidos</div>
+            
+        
+            <div class="d-flex margin-top">
+             
+             <form action="">
+                <button type="submit" class="prod-shop-cart send">Agregar al carrito</button>
+            </form>
+            </div>
+            <div class="d-flex margin-top">
+                <a href="/products/edit/<%= resultado.id %>">
+                    <button type="submit" value="Enviar" class="prod-shop-cart edit">Editar</button>
+                </a>
+                <form action="/products/delete/<%=resultado.id%>" method="POST">
+                    <button type="submit" value="Enviar" class="prod-shop-cart delete">Eliminar</button>
+                </form>
+                
+            </div>
+            
+    
+        </div>
+        
+    </div>
+
+
+
+<%-include('../partials/footer.ejs')%>
 </body>
 </html>

@@ -19,7 +19,7 @@ let upload = multer({storage})
 
 
 router.get('/auth/register', authController.create);
-//router.post('/auth/register', authController.store);
+
 router.post('/auth/register', userValidator , upload.any(),authController.store);
 
 router.get('auth/avatar',function(req,res){
