@@ -3,8 +3,7 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productsList.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const {validationResult} = require ('express-validator');
-
-
+const db = require('../database/models');
 
 
 let productController ={
@@ -28,7 +27,12 @@ let productController ={
 		res.render('./products/productCreate',{
 		data: {},
 		errors : {},  title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'});
-		
+		db.productos.create({
+			title: req.body.name,
+			description: req.body.description,
+			stock: req.body.stock,
+			precio: req.body.precio
+		})
         
 	},
 	
