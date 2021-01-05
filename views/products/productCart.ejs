@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pag de Inicio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="/stylesheets/productCart.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+            <%-include('../partials/header.ejs')%>
+        <main>
+            <div class="producto">
+                <div class="imagen">
+                    <div class="img">
+                        <img src="https://cdn-images.farfetch-contents.com/14/15/12/56/14151256_20238746_1000.jpg">
+                    </div>
+                </div>
+                <div class="descripcion">
+                    <p>Descripcion del producto, con detalle de la tela </p>
+                </div>
+                <div class="cantidad">
+                    <div class="ite">
+                        <p>Item1</p>
+                    </div>
+                    <div class="cant">
+                        <select class="opt" name="Cant.">
+                            <option>1</option>
+                            <option>2</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="remove">
+                    <div class="pre">
+                        <p>Precio</p>
+                    </div>
+                    <div class="botom">
+                        <input type="submit" name="remove" value="Remove">
+                    </div>
+                </div>
+            </div>
+            <div class="pagar">
+                <div class="contenedor1">
+                    <div class="descripcion1">
+                        <p>Subtotal</p>
+                        <p>Envio</p>
+                        <p>Impuestos</p>
+                    </div>
+                    <div class="precios">
+                        <p>$40.00</p>
+                        <p>$00.00</p>
+                        <p>$00.00</p> 
+                    </div>
+                </div>
+                <div class="contenedor2">
+                    <div class="contenedor3">
+                        <div class="total">
+                            <p>Total</p>
+                        </div>
+                        <div class="preciot">
+                            <p> $40.00</p>
+                        </div>
+                    </div>
+                    <div class="boton">
+                        <input type="submit" name="pagar" value="Pagar">
+                    </div>
+                </div>
+    
+            </div>
+        </main>
+        <%-include('../partials/footer.ejs')%>
+    </body>
+</html>
