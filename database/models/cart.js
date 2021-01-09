@@ -2,7 +2,7 @@ module.exports = function(sequelize, dataTypes) {
     let alias = "carrito";
 
     let cols = {
-        idCarrito:{
+        id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -46,5 +46,5 @@ module.exports = function(sequelize, dataTypes) {
         })
     }
 
-    return productos
+    return carrito
 }

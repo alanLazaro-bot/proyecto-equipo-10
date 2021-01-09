@@ -2,7 +2,7 @@ module.exports = function(sequelize, dataTypes) {
     let alias = "direccion";
 
     let cols = {
-        idaddress:{
+        id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -12,7 +12,7 @@ module.exports = function(sequelize, dataTypes) {
         },
 
         numero:{
-            trype:dataTypes.STRING
+            trype: dataTypes.INTEGER
         },
         localidad:{
             type: dataTypes.STRING
@@ -42,5 +42,5 @@ module.exports = function(sequelize, dataTypes) {
         });
     }
 
-    return usuario
+    return direccion
 }

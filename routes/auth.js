@@ -41,6 +41,6 @@ router.post('/auth/logout', authController.logout);
 
 
 
-//router.get('/users/edit', usersController.edit);
+//router.get('/auth/edit', usersController.edit);
 
 module.exports=router;

@@ -2,6 +2,7 @@ var fs = require ('fs')
 let {validationResult} = require('express-validator')
 var userData = require('../data/users')
 var bcryptjs = require('bcryptjs')
+let db = require('../database/models')
 
 module.exports = {
 
@@ -16,17 +17,17 @@ module.exports = {
         let errors = validationResult(req)
 
         if(errors.isEmpty()){
-            userData.create({
+
+        db.usuarios.create({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            category:req.body.category,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password)            
                 
-                first_name:req.body.first_name,
-                last_name:req.body.last_name,
-                category:req.body.category,
-                email:req.body.email,
-                password:bcryptjs.hashSync(req.body.password),
+            })
                 
-                })
-                
-                res.send('Te has registrado correctamente')
+            res.redirect('/')
             
         }
 

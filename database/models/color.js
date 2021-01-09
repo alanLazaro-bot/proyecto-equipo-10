@@ -2,7 +2,7 @@ module.exports = function(sequelize, dataTypes) {
     let alias = "colores";
 
     let cols = {
-        idColores:{
+        idC:{
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -29,5 +29,5 @@ module.exports = function(sequelize, dataTypes) {
         });
     }
 
-    return productos
+    return colores
 }
