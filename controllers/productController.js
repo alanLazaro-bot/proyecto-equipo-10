@@ -56,6 +56,8 @@ let productController ={
 			price: req.body.price,
 			size: req.body.size,
 			description:req.body.description,
+			stock: req.body.stock,
+			
 
 		})
 		
@@ -83,6 +85,7 @@ let productController ={
 			price: req.body.price,
 			size: req.body.size,
 			description:req.body.description,
+			stock: req.body.stock,
 
 		},
 		
@@ -104,7 +107,7 @@ let productController ={
 		
 	},
 
-   //Falta ver el destroy utilizando la base de datos
+
     destroy: function(req,res,next){
 
 		db.productos.destroy({
