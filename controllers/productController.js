@@ -90,22 +90,42 @@ let productController ={
 			where:{
 			  id:req.params.id
 			}
-		  });
-//Revisar el redirect que iria en este caso
-		  /*res.render('./products/productEdit',{resultado: resultado,  title: 'Rmarket | '+ resultado.name, ruta: 'products', stylesheet: 'productEdit'})*/
-	
-		
+		  }
+		  
+		 .then(resultado =>{
+			res.render('./products/productEdit',{resultado: resultado,  title: 'Rmarket | '+ resultado.name, ruta: 'products', stylesheet: 'productEdit'})
+			
+		 })
+
+		 .catch(err =>{
+			 res.send(err)
+		 })
+		  );
 		
 	},
 
    //Falta ver el destroy utilizando la base de datos
     destroy: function(req,res,next){
 
-		products= products.filter(product =>{
-			return product.id != req.params.id
+		db.productos.destroy({
+
+			where:{
+
+				id: req.params.id
+			}
+		})
+		.then(resultado=>{
+			res.render('./products/delete')
+
 		})
 
-        res.render('./products/delete')
+		.catch(err => {
+			console.log(err)
+			res.send(err)
+			/*Aca deberia enviar una vista que aclare el error al usuario*/
+			
+		})
+        
     }
     
     
