@@ -11,10 +11,10 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.STRING
         },
 
-        numero:{
-            trype: dataTypes.INTEGER
+        numero: {
+            type: dataTypes.INTEGER
         },
-        localidad:{
+        localidad: {
             type: dataTypes.STRING
         },
         provincia: {
@@ -23,9 +23,7 @@ module.exports = function(sequelize, dataTypes) {
         codigo_postal: {
             type: dataTypes.INTEGER
         },
-        id_Carrito: {
-            type: dataTypes.INTEGER
-        }
+        
     }
 
     let config = {
@@ -33,12 +31,12 @@ module.exports = function(sequelize, dataTypes) {
         timestamps: false
     }
 
-    let direccion = sequelize.define(alias, cols, config);
+    const direccion = sequelize.define(alias, cols, config);
 
     direccion.associate = function(models){
-        direccion.belongsTo(models.usuario, {
+        direccion.belongsTo(models.usuarios, {
             as: "usuarios",
-            foreignKey: "id_addres"
+            foreignKey: "address_id"
         });
     }
 

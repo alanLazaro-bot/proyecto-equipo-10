@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = "productos";
+    let alias = "Productos";
 
     let cols = {
         id:{
@@ -11,23 +11,15 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.STRING
         },
         description:{
-            trype:dataTypes.STRING
+            type:dataTypes.STRING
         },
         stock:{
             type: dataTypes.INTEGER
         },
         precio:{
             type: dataTypes.INTEGER
-        },
-        id_categorias: {
-            type: dataTypes.INTEGER
-        },
-        id_cart: {
-            type: dataTypes.INTEGER
-        },
-        id_colores: {
-            type: dataTypes.INTEGER
         }
+          
     }
 
     let config = {
@@ -35,25 +27,28 @@ module.exports = function(sequelize, dataTypes) {
         timestamps: false
     }
 
-    let productos = sequelize.define(alias, cols, config);
+    const Producto = sequelize.define(alias, cols, config);
 
-    productos.associate = function(models){
-        productos.belongsTo(models.colores, {
+    Producto.associate = function(models){
+        Producto.belongsTo(models.Colores, {
             as: "colores",
             foreignKey: "colors_id"
         });
     }
     
-
-    productos.associate = function(models){
-        productos.hasMany(models.carrito, {
+    Producto.associate = function(models){
+        Producto.hasMany(models.carrito, {
             as: "carrito",
-            foreignKey: "producto_id"
+            foreignKey: "id_carrito"
         });
     }
 
+    Producto.associate = function(models){
+        Producto.belongsTo(models.talles, { 
+            as: "talles",
+            foreignKey: "sizes_id"
+        });
+    }
 
-    
-
-    return productos
+    return Producto
 }
