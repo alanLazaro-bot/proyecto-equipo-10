@@ -17,21 +17,21 @@ var storage = multer.diskStorage({
 let upload = multer({storage})
 
 /*** GET ALL PRODUCTS ***/
-router.get('/products', productController.all);
+router.get('/', productController.all);
 
 
 /*** GET ONE PRODUCT ***/ 
 
-router.get('/products/:id', productController.detail);
+router.get('/:id', productController.detail);
 
 /*** CREATE ONE PRODUCT ***/ 
 
-router.get('/products/create/nuevo', productController.create);
+router.get('/create/nuevo', productController.create);
 router.post('/products', prodValidator,upload.any(), productController.store);
 
 /*** EDIT ONE PRODUCT ***/
-router.get('/products/edit/:id', productController.edit);
-router.put('/products/edit/:id', productController.update);
+router.get('/edit/:id', productController.edit);
+router.put('/edit/:id', productController.update);
 
 
 

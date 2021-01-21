@@ -18,26 +18,26 @@ var storage = multer.diskStorage({
 let upload = multer({storage})
 
 
-router.get('/auth/register', authController.create);
+router.get('/register', authController.create);
 
-router.post('/auth/register', userValidator , upload.any(),authController.store);
+router.post('/register', userValidator , upload.any(),authController.store);
 
-router.get('auth/avatar',function(req,res){
+router.get('/avatar',function(req,res){
     res.render('auth/avatar-form')
 })
 
-router.post('/auth/avatar', function(req,res,next){
+router.post('/avatar', function(req,res,next){
     console.log(req.files)
     res.send('recibido')
 })
 
 
-router.get('/auth/login', authController.login);
-router.post('/auth/login', authController.processLogin);
+router.get('/login', authController.login);
+router.post('/login', authController.processLogin);
 
-router.get('/auth/user-info',authController.finalLogin);
+router.get('/user-info',authController.finalLogin);
 
-router.post('/auth/logout', authController.logout);
+router.post('/logout', authController.logout);
 
 
 
