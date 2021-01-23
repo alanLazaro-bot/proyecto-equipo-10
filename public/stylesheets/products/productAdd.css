@@ -114,3 +114,26 @@ cursor: pointer;
       }
   
 
+      input{
+
+        outline: none;
+        
+        }
+        
+        input.success {
+        
+        border: 1px solid green;
+        
+        color: green;
+        
+        }
+        
+        input.error {
+        
+        border: 1 px solid red;
+        
+        color: red;
+        
+        }
+        
+        

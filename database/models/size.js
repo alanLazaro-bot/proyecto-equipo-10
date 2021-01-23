@@ -1,18 +1,16 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = "talle";
+    let alias = "talles";
 
     let cols = {
-        idsizes:{
+        id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        tamaños: {
+        talle: {
             type: dataTypes.STRING
         },
-        producto_id: {
-            type: dataTypes.INTEGER
-        }
+       
     }
 
     let config = {
@@ -20,15 +18,19 @@ module.exports = function(sequelize, dataTypes) {
         timestamps: false
     }
 
-    let talles = sequelize.define(alias, cols, config);
+    const Talle = sequelize.define(alias, cols, config);
 
-    talles.associate = function(models){
-        talles.hasMany(models.productos, {
-            as: "talles",
-            foreignKey: "producto_id"
+    Talle.associate = function(models){
+        Talle.hasMany(models.Productos, {
+            as: "producto",
+            foreignKey: "sizes_id"
         });
     }
 
 
+<<<<<<< HEAD
     return talles
+=======
+    return Talle
+>>>>>>> fe96afdef879e7dcd6594a76f000fe5282b0a1ae
 }

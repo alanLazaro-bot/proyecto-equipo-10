@@ -1,18 +1,16 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = "colores";
+    let alias = "Colores";
 
     let cols = {
-        idColores:{
+        id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        colores: {
+        color: {
             type: dataTypes.STRING
         },
-        producto_id: {
-            type: dataTypes.INTEGER
-        }
+        
     }
 
     let config = {
@@ -20,14 +18,18 @@ module.exports = function(sequelize, dataTypes) {
         timestamps: false
     }
 
-    let colores = sequelize.define(alias, cols, config);
+    const Color = sequelize.define(alias, cols, config);
 
-    colores.associate = function(models){
-        colores.hasMany(models.productos, {
-            as: "colores",
-            foreignKey: "producto_id"
+    Color.associate = function(models){
+        Color.hasMany(models.Productos, {
+            as: "Productos",
+            foreignKey: "colors_id"
         });
     }
 
+<<<<<<< HEAD
     return colores
+=======
+    return Color
+>>>>>>> fe96afdef879e7dcd6594a76f000fe5282b0a1ae
 }

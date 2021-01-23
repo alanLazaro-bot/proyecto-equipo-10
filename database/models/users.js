@@ -2,7 +2,7 @@ module.exports = function(sequelize, dataTypes) {
     let alias = "usuarios";
 
     let cols = {
-        idUsers:{
+        id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -12,7 +12,7 @@ module.exports = function(sequelize, dataTypes) {
         },
 
         last_name:{
-            trype:dataTypes.STRING
+            type:dataTypes.STRING
         },
         email:{
             type: dataTypes.STRING
@@ -20,12 +20,8 @@ module.exports = function(sequelize, dataTypes) {
         password: {
             type: dataTypes.STRING
         },
-        id_carrito: {
-            type: dataTypes.INTEGER
-        },
-        id_address: {
-            type: dataTypes.INTEGER
-        }
+       
+       
     }
 
     let config = {
@@ -33,12 +29,18 @@ module.exports = function(sequelize, dataTypes) {
         timestamps: false
     }
 
-    let usuario = sequelize.define(alias, cols, config);
+    const usuario = sequelize.define(alias, cols, config);
 
     usuario.associate = function(models){
-        usuario.belongsTo(models.address, {
+        usuario.belongsTo(models.direccion, {
             as: "direccion",
-            foreignKey: "id_addres"
+            foreignKey: "address_id"
+        });
+    }
+    usuario.associate = function(models){
+        usuario.belongsTo(models.tipo_usuario, {
+            as: "direccion",
+            foreignKey: "User_type_id"
         });
     }
 

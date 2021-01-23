@@ -12,8 +12,8 @@
    
     <div class="item-grow-2 icono-centro">
       <% if (locals.user){ %>
-        <a href="/auth/login"><i class="fas fa-user-alt icono"></i>
-        <div><a href="auth/user-info"></a> <%= locals.user %></div>
+        <a href="auth/user-info"><i class="fas fa-user-alt icono"></i>
+        <div> <%= locals.user %></div></a>
         <form action="/auth/logout" method="POST">
         <button type="submit" class=" button-send">Logout</button>
        
@@ -27,7 +27,7 @@
     
     <div class="item-grow icono-centro">
       <a href="/cart"><i class="fas fa-shopping-cart icono"></i></a>
-      <p>Carrito</p>
+      <div>Carrito</div>
     </a>
     </div>
     

@@ -9,6 +9,7 @@ const authRouter = require('./routes/auth');
 const productRouter = require('./routes/product');
 const cartRouter = require('./routes/cart');
 const infoRouter = require('./routes/info');
+const apiRouter = require('./routes/api');
 //let checkIp = require('./middlewares/check-ip')
 let remember = require('./middlewares/rememberMiddleware')
 var app = express();
@@ -27,22 +28,25 @@ app.use(session(
   resave: false,
   saveUninitialized: true }
   ));
+  app.use(remember)
 
 app.use(function(req,res,next){
 
   if(req.session.user != undefined){
     res.locals.user = req.session.user
+   
  }
  return next()
  
 })
-app.use(remember)
+
 
 app.use('/', indexRouter);
-app.use('/', authRouter);
-app.use('/', productRouter);
+app.use('/auth', authRouter);
+app.use('/products', productRouter);
 app.use('/', cartRouter);
 app.use('/info', infoRouter);
+app.use('/api',apiRouter);
 
 
 

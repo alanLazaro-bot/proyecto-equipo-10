@@ -8,10 +8,10 @@
 
 <h1 class="title-font space center">Cargá tu Producto</h1>
 <!--nombre del producto-->        
-<form action="/products" method="POST" >
+<form action="/products" method="POST" enctype="multipart/form-data">
      <div class="center space"> 
-        <label for="name" class="rob-14"></label>
-        <input type="text" name="name" id="name" placeholder="Nombre del Producto" class="nombre-prod nombre-size wdth-bar padding-text" value="<%= data.name  %>">
+        <label for="name" class="rob-14">Nombre del Pooducto</label>
+        <input type="text" name="name" id="name"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%= data.name  %>">
      </div>  
      <% if (errors.name != undefined){ %>
      <div><%= errors.name.msg  %> </div>
@@ -20,8 +20,11 @@
 <!-- / nombre del producto-->
 
 <!--descripcion-->
+
     <div class="center space"> 
-        <textarea name="description" id="description" rows="10" cols="80" placeholder="Descripción" value="<%= data.description  %>"></textarea>
+        <label for="description">Descripción:</label>
+        
+        <textarea name="description" id="description" rows="10" cols="80"  value="<%= data.description  %>"></textarea>
     </div > 
     <% if (errors.description != undefined){ %>
     <div><%= errors.description.msg  %> </div>
@@ -74,7 +77,7 @@
     <!--/talles-->
 <!--precio del producto-->
     <div class="center space"> 
-        <label for="price"></label>
+        <label for="price">Precio:</label>
         <input type="text" name="price" id="price" placeholder="Precio" class="nombre-size" value="<%= data.price  %> ">
     </div> 
     <% if (errors.price != undefined){ %>
@@ -84,8 +87,8 @@
     <!--/ precio del producto-->
     <!--Stock-->
     <div class="center space"> 
-        <label for="stock"></label>
-        <input type="text" name="stock" id="stock" placeholder="Stock" class="nombre-size" value="<%= data.stock || 1  %> ">
+        <label for="stock">Stock</label>
+        <input type="text" name="stock" id="stock" class="nombre-size" value="<%= data.stock || 1  %> ">
     </div> 
     <% if (errors.stock != undefined){ %>
         <div><%= errors.stock.msg  %> </div>
