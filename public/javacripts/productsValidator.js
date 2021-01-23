@@ -1,7 +1,8 @@
 const { validator } = require("sequelize/types/lib/utils/validator-extras")
+
 let productAddForm=document.querySelector('#rproductAdd-form')
 
-let nameInput = document.querySelector('input[name=name]')
+let titleInput = document.querySelector('input[name=title]')
 let descriptionInput = document.querySelector('input[name=description]')
 let sizeInput = document.querySelector('input[name=size]')
 let colorInput = document.querySelector('input[name=color]')
@@ -9,9 +10,9 @@ let priceInput = document.querySelector('input[name=price]')
 
 
 
-let user={
+let product={
 
-    name: '',
+    title: '',
     email: '',
     password: '',
     password_comfirmation:'',
@@ -20,7 +21,7 @@ let user={
 
 let errors ={
 
-  name: '',
+  title: '',
    description: '',
     size: '',
     color:'',
@@ -28,11 +29,6 @@ let errors ={
 }
 
 productAddForm.addEventListener('submit',function(e){
-
-    
-
-
-
 
 emailInput.addEventListener('keyup',function(){
 

@@ -3,7 +3,7 @@ let productController = require ('../controllers/productController.js');
 let router = express.Router();
 let multer = require ('multer')
 
-let prodValidator = require('../middlewares/product-validator')
+let prodValidator = require('../middlewares/product-validator.js')
 
 var storage = multer.diskStorage({
 
@@ -31,7 +31,7 @@ router.post('/products', prodValidator,upload.any(), productController.store);
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/edit/:id', productController.edit);
-router.put('/edit/:id', productController.update);
+router.put('/edit/:id', prodValidator ,productController.update);
 
 
 

@@ -7,13 +7,13 @@ module.exports = function(sequelize, dataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        usuario_id: {
+        user_id: {
             type: dataTypes.INTEGER
         },
-        producto_id: {
+        product_id: {
             type: dataTypes.INTEGER
         },
-        direccion_id: {
+        address_id: {
             type: dataTypes.INTEGER
         }
     }
@@ -26,7 +26,7 @@ module.exports = function(sequelize, dataTypes) {
     let carrito = sequelize.define(alias, cols, config);
 
     carrito.associate = function(models){
-        carrito.belongsTo(models.usuario, {
+        carrito.belongsTo(models.Usuario, {
             as: "carrito",
             foreignKey: "id_carrito"
         });

@@ -21,8 +21,8 @@ module.exports = function(sequelize, dataTypes) {
     const tipoUsuario = sequelize.define(alias, cols, config);
 
     tipoUsuario.associate = function(models){
-        tipoUsuario.belongsTo(models.direccion, {
-            as: "direccion",
+        tipoUsuario.belongsTo(models.Usuario, {
+            as: "type",
             foreignKey: "User_type_id"
         });
     }

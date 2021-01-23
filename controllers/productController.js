@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const productsFilePath = path.join(__dirname, '../data/productsList.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 const {validationResult} = require ('express-validator');
 const db = require('../database/models');
 
@@ -10,7 +9,7 @@ let productController ={
 
     all:(req,res,next)=>{
 
-		db.productos.findAll()
+		db.Productos.findAll()
 		.then(products=>{
 			res.render('./products/products',{products, title: 'Rmarket | Productos',ruta: 'products', stylesheet: 'products'});
 
@@ -21,7 +20,7 @@ let productController ={
 
     detail: (req, res) => {
 
-		db.productos.findByPk(req.params.id)
+		db.Productos.findByPk(req.params.id)
 		.then(resultado=>{ 
 			res.render('./products/productDetail',{resultado,  title: 'Rmarket | '+ resultado.name, ruta: 'products', stylesheet: 'productDetail'})
 		})
@@ -51,11 +50,12 @@ let productController ={
 				data: req.body,  title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'})
 		}
 
-		db.productos.create({
-			name: req.body.name,
+		db.Productos.create({
+			title: req.body.name,
 			price: req.body.price,
 			size: req.body.size,
 			description:req.body.description,
+			color:req.body.color,
 			stock: req.body.stock,
 			
 
@@ -67,7 +67,7 @@ let productController ={
 
     edit: function(req,res,next){
 
-		db.productos.findByPk(req.params.id)
+		db.Productos.findByPk(req.params.id)
 		.then(resultado=>{ 
 			res.render('./products/productDetail',{resultado,  title: 'Rmarket | '+ resultado.name, ruta: 'products', stylesheet: 'productDetail'})
 		})
@@ -80,11 +80,12 @@ let productController ={
 
 	update: (req, res) => {
 		
-		db.productos.update({
-			name: req.body.name,
+		db.Productos.update({
+			title: req.body.name,
 			price: req.body.price,
 			size: req.body.size,
 			description:req.body.description,
+			color:req.body.color,
 			stock: req.body.stock,
 
 		},
@@ -110,7 +111,7 @@ let productController ={
 
     destroy: function(req,res,next){
 
-		db.productos.destroy({
+		db.Productos.destroy({
 
 			where:{
 

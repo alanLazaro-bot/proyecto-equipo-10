@@ -3,7 +3,7 @@ var router = express.Router();
 var path = require('path');
 let authController = require ('../controllers/authController.js');
 let multer = require ('multer')
-let userValidator = require('../middlewares/user-validator')
+let userValidator = require('../middlewares/user-validator.js')
 
 
 var storage = multer.diskStorage({
@@ -35,7 +35,7 @@ router.post('/avatar', function(req,res,next){
 router.get('/login', authController.login);
 router.post('/login', authController.processLogin);
 
-router.get('/user-info',authController.finalLogin);
+router.get('/:id',authController.finalLogin);
 
 router.post('/logout', authController.logout);
 

@@ -18,6 +18,15 @@ module.exports = function(sequelize, dataTypes) {
         },
         precio:{
             type: dataTypes.INTEGER
+        },
+        carrito_id:{
+            type: dataTypes.INTEGER
+        },
+        size_id:{
+            type: dataTypes.INTEGER
+        },
+        color_id:{
+            type: dataTypes.INTEGER
         }
           
     }

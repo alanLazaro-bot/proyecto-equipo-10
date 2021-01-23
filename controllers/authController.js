@@ -18,7 +18,7 @@ module.exports = {
 
         if(errors.isEmpty()){
 
-        db.usuarios.create({
+        db.Usuario.create({
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             category:req.body.category,

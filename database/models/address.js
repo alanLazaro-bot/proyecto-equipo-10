@@ -34,7 +34,7 @@ module.exports = function(sequelize, dataTypes) {
     const direccion = sequelize.define(alias, cols, config);
 
     direccion.associate = function(models){
-        direccion.belongsTo(models.usuarios, {
+        direccion.belongsTo(models.Usuario, {
             as: "usuarios",
             foreignKey: "address_id"
         });

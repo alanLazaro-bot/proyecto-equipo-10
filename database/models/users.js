@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = "usuarios";
+    let alias = "Usuario";
 
     let cols = {
         id:{
@@ -20,29 +20,38 @@ module.exports = function(sequelize, dataTypes) {
         password: {
             type: dataTypes.STRING
         },
+        address_id:{
+            type: dataTypes.INTEGER
+        },
+        carrito_id:{
+            type: dataTypes.INTEGER
+        },
+        user_type_id:{
+            type:dataTypes.INTEGER
+        }
        
        
     }
 
     let config = {
-        tablename: "usuarios",
+        tablename: "users",
         timestamps: false
     }
 
-    const usuario = sequelize.define(alias, cols, config);
+    const Usuario = sequelize.define(alias, cols, config);
 
-    usuario.associate = function(models){
-        usuario.belongsTo(models.direccion, {
+    Usuario.associate = function(models){
+        Usuario.belongsTo(models.direccion, {
             as: "direccion",
             foreignKey: "address_id"
         });
     }
-    usuario.associate = function(models){
-        usuario.belongsTo(models.tipo_usuario, {
-            as: "direccion",
+    Usuario.associate = function(models){
+        Usuario.belongsTo(models.tipo_usuario, {
+            as: "type",
             foreignKey: "User_type_id"
         });
     }
 
-    return usuario
+    return Usuario
 }

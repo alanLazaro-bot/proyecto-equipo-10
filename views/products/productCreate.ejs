@@ -10,8 +10,8 @@
 <!--nombre del producto-->        
 <form action="/products" method="POST" enctype="multipart/form-data">
      <div class="center space"> 
-        <label for="name" class="rob-14">Nombre del Pooducto</label>
-        <input type="text" name="name" id="name"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%= data.name  %>">
+        <label for="title" class="rob-14">Nombre del Producto</label>
+        <input type="text" name="title" id="title"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%= data.name  %>">
      </div>  
      <% if (errors.name != undefined){ %>
      <div><%= errors.name.msg  %> </div>
@@ -31,29 +31,6 @@
     <% }%>
 <!--/descripcion-->
 
-<!--categoria-->
-<div class="center space rob-18"> 
-        <label for="category">Categoría</label>
-    
-
-        <%- include('../select.ejs', {
-        name: 'category',
-        options:[
-        {value : "Alimentos/Bebidas", text : "Alimentos/Bebidas"},
-
-        {value: "Indumentaria", text:"Indumentaria"},
-
-        {value: "Hogar", text: "Hogar"},
-
-        {value: "Servicios", text: "Servicios"}]
-        }) %> 
-   
-</div>  
-<% if (errors.category != undefined){ %>
-<div><%= errors.category.msg  %> </div>
-<% }%>
-
-    <!--/categoria-->
       <!--talles-->
 <div class = "center space rob-18"> 
         <label for="size">Talle</label>
@@ -75,6 +52,16 @@
 <% }%>
 
     <!--/talles-->
+    <!--Color-->
+    <form action="/products" method="POST" enctype="multipart/form-data">
+        <div class="center space"> 
+           <label for="color" class="rob-14">Color</label>
+           <input type="text" name="color" id="color"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%= data.color  %>">
+        </div>  
+        <% if (errors.color != undefined){ %>
+        <div><%= errors.color.msg  %> </div>
+        <% }%>
+        <!--/Color-->
 <!--precio del producto-->
     <div class="center space"> 
         <label for="price">Precio:</label>
@@ -85,6 +72,7 @@
         <% }%> 
 
     <!--/ precio del producto-->
+
     <!--Stock-->
     <div class="center space"> 
         <label for="stock">Stock</label>
