@@ -42,5 +42,5 @@ module.exports = function(sequelize, dataTypes) {
         });
     }
 
-    return usuario
+    return direccion
 }

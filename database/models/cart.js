@@ -46,5 +46,5 @@ module.exports = function(sequelize, dataTypes) {
         })
     }
 
-    return productos
+    return carrito
 }

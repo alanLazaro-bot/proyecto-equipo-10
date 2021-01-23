@@ -5,7 +5,8 @@ module.exports = [
 
 check('email')
     .isEmail()
-    .withMessage('El email debe tener un formato valido'),
+    .withMessage('El email debe tener un formato valido')
+    .isEmpty(),
 
 body('email').custom(function (value){
 
@@ -17,7 +18,19 @@ body('email').custom(function (value){
 return true
 
 
-})
+}),
+
+check ('first_name')
+    .isLength({min: 2}),
+    
+check ('last_name')
+    .isEmpty(),
+
+check('password')
+    .isLength({min: 8})
+    .isEmpty()
+    
+
 
 
 ]
