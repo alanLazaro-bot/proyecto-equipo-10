@@ -28,9 +28,5 @@ module.exports = function(sequelize, dataTypes) {
     }
 
 
-<<<<<<< HEAD
-    return talles
-=======
     return Talle
->>>>>>> fe96afdef879e7dcd6594a76f000fe5282b0a1ae
 }
