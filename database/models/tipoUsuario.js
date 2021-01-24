@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = "tipo_usuario";
+    let alias = "Tipo_usuarios";
 
     let cols = {
         id:{
@@ -18,15 +18,15 @@ module.exports = function(sequelize, dataTypes) {
         timestamps: false
     }
 
-    const tipoUsuario = sequelize.define(alias, cols, config);
+    const TipoUsuario = sequelize.define(alias, cols, config);
 
-    tipoUsuario.associate = function(models){
-        tipoUsuario.belongsTo(models.Usuario, {
+    TipoUsuario.associate = function(models){
+        TipoUsuario.belongsTo(models.Usuarios, {
             as: "type",
             foreignKey: "User_type_id"
         });
     }
     
 
-    return tipoUsuario
+    return TipoUsuario
 }

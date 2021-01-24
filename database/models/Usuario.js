@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = "Usuario";
+    let alias = "Usuarios";
 
     let cols = {
         id:{
@@ -41,13 +41,13 @@ module.exports = function(sequelize, dataTypes) {
     const Usuario = sequelize.define(alias, cols, config);
 
     Usuario.associate = function(models){
-        Usuario.belongsTo(models.direccion, {
+        Usuario.belongsTo(models.Direcciones, {
             as: "direccion",
             foreignKey: "address_id"
         });
     }
     Usuario.associate = function(models){
-        Usuario.belongsTo(models.tipo_usuario, {
+        Usuario.belongsTo(models.Tipo_usuarios, {
             as: "type",
             foreignKey: "User_type_id"
         });

@@ -26,21 +26,21 @@ module.exports = function(sequelize, dataTypes) {
     let carrito = sequelize.define(alias, cols, config);
 
     carrito.associate = function(models){
-        carrito.belongsTo(models.Usuario, {
+        carrito.belongsTo(models.Usuarios, {
             as: "carrito",
             foreignKey: "id_carrito"
         });
     }
 
     carrito.associate = function(models){
-        carrito.belongsTo(models.productos, {
+        carrito.belongsTo(models.Productos, {
             as: "items",
             foreignKey: "id_cart"
         })
     }
 
     carrito.associate = function(models){
-        carrito.belongsTo(models.direccion, {
+        carrito.belongsTo(models.Direcciones, {
             as: "direccion",
             foreignKey: "id_Carrito"
         })
