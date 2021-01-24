@@ -1,5 +1,7 @@
 const {body,check} = require ('express-validator');
-const userData = require('../data/users')
+let db = require('../database/models')
+
+
 
 module.exports = [
 
@@ -10,7 +12,7 @@ check('email')
 
 body('email').custom(function (value){
 
-    let user = userData.findByEmail(value)
+    let user = db.Usuario.findByEmail(value)
 
     if (user){
         throw new Error('Este email ya se encuentra registrado')
@@ -24,11 +26,20 @@ check ('first_name')
     .isLength({min: 2}),
     
 check ('last_name')
+    .isLength({min: 2})
     .isEmpty(),
+    
+   
 
 check('password')
     .isLength({min: 8})
     .isEmpty()
+    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/),
+    
+    
+
+
+
     
 
 
