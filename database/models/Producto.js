@@ -40,7 +40,7 @@ module.exports = function(sequelize, dataTypes) {
 
     Producto.associate = function(models){
         Producto.belongsTo(models.Colores, {
-            as: "colores",
+            as: "color",
             foreignKey: "color_id"
         });
     }
