@@ -26,16 +26,16 @@
     <div class=" d-flex cont"> 
     
       <% products.forEach(function(product){ %>
-        <% if(product.category == 'oferta'){ %>
+        <% if(product.id >= 1 && product.id <= 3 ){ %>
         <div class="banner-fonts">
           <a href="/products/<%= product.id %>">
-              <img src="./images/products/<%= product.image %>" alt="<%= product.title %>"class="resize_fit">
+              <img src="./images/products/blusa-1.jpeg" alt="<%= product.title %>"class="resize_fit">
               <p class="price"><%= product.title %></p>
               <p class="price">$<%= product.price %></p>
           </a>
         </div>
       <% }%>
-      <% })%>    
+      <% })   %>    
       </div>
   
 
@@ -51,7 +51,7 @@
        
         <div class="container-news item-mail input">
           
-          <input type="text" placeholder="Newsletter" name="mail" required class="news-bar input">
+          <input type="text" placeholder="Newsletter" name="email" required class="news-bar input">
           
         </div>
       
