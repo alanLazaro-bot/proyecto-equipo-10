@@ -29,8 +29,8 @@
         <% if(product.category == 'oferta'){ %>
         <div class="banner-fonts">
           <a href="/products/<%= product.id %>">
-              <img src="./images/products/<%= product.image %>" alt="<%= product.name %>"class="resize_fit">
-              <p class="price"><%= product.name %></p>
+              <img src="./images/products/<%= product.image %>" alt="<%= product.title %>"class="resize_fit">
+              <p class="price"><%= product.title %></p>
               <p class="price">$<%= product.price %></p>
           </a>
         </div>

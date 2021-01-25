@@ -20,7 +20,7 @@ let productController ={
 
 		db.Productos.findByPk(req.params.id)
 		.then(resultado=>{ 
-			res.render('./products/productDetail',{resultado,  title: 'Rmarket | '+ resultado.name, ruta: 'products', stylesheet: 'productDetail'})
+			res.render('./products/productDetail',{resultado,  title: 'Rmarket | '+ resultado.title, ruta: 'products', stylesheet: 'productDetail'})
 		})
 		.catch (error =>{
 		  res.render('error',{error:error});
@@ -30,16 +30,15 @@ let productController ={
 	},
 
     create: function(req,res,next){
-
-		res.render('./products/productCreate',{
-		title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'});
+	
+		res.render('./products/productCreate',{title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd', data: req.body});
 		
 	},
 	
     store: (req, res,next) => {
 
 		db.Productos.create({
-			title: req.body.name,
+			title: req.body.title,
 			price: req.body.price,
 			size: req.body.size,
 			description:req.body.description,
@@ -62,7 +61,7 @@ let productController ={
 
 		db.Productos.findByPk(req.params.id)
 		.then(resultado=>{ 
-			res.render('./products/productDetail',{resultado,  title: 'Rmarket | '+ resultado.name, ruta: 'products', stylesheet: 'productDetail'})
+			res.render('./products/productDetail',{resultado,  title: 'Rmarket | '+ resultado.title, ruta: 'products', stylesheet: 'productDetail'})
 		})
 		.catch (error =>{
 		  res.render('error',{error:error});
@@ -74,7 +73,7 @@ let productController ={
 	update: (req, res) => {
 		
 		db.Productos.update({
-			title: req.body.name,
+			title: req.body.title,
 			price: req.body.price,
 			size: req.body.size,
 			description:req.body.description,

@@ -19,15 +19,17 @@ let upload = multer({storage})
 /*** GET ALL PRODUCTS ***/
 router.get('/', productController.all);
 
+/*** CREATE ONE PRODUCT ***/ 
+
+router.get('/new', productController.create);
+router.post('/create', prodValidator,upload.any(), productController.store);
+
 
 /*** GET ONE PRODUCT ***/ 
 
 router.get('/:id', productController.detail);
 
-/*** CREATE ONE PRODUCT ***/ 
 
-router.get('/create', productController.create);
-router.post('/create', prodValidator,upload.any(), productController.store);
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/edit/:id', productController.edit);
