@@ -9,7 +9,7 @@ const authRouter = require('./routes/auth');
 const productRouter = require('./routes/product');
 const cartRouter = require('./routes/cart');
 const infoRouter = require('./routes/info');
-const apiRouter = require('./routes/api');
+//const apiRouter = require('./routes/api');
 //let checkIp = require('./middlewares/check-ip')
 let remember = require('./middlewares/rememberMiddleware')
 var app = express();
@@ -46,7 +46,7 @@ app.use('/auth', authRouter);
 app.use('/products', productRouter);
 app.use('/', cartRouter);
 app.use('/info', infoRouter);
-app.use('/api',apiRouter);
+//app.use('/api',apiRouter);
 
 
 

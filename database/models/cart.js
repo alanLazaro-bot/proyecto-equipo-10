@@ -5,7 +5,8 @@ module.exports = function(sequelize, dataTypes) {
         id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            notNull:true
         },
         user_id: {
             type: dataTypes.INTEGER
@@ -19,8 +20,8 @@ module.exports = function(sequelize, dataTypes) {
     }
 
     let config = {
-        tablename: "cart",
-        timestamps: false
+        tableName: "cart",
+        timestamps: false,
     }
 
     let carrito = sequelize.define(alias, cols, config);

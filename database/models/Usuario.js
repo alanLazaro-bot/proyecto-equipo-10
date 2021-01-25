@@ -5,7 +5,8 @@ module.exports = function(sequelize, dataTypes) {
         id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            notNull:true
         },
         first_name: {
             type: dataTypes.STRING
@@ -34,8 +35,8 @@ module.exports = function(sequelize, dataTypes) {
     }
 
     let config = {
-        tablename: "users",
-        timestamps: false
+        tableName: "users",
+        timestamps: false,
     }
 
     const Usuario = sequelize.define(alias, cols, config);

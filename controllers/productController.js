@@ -1,5 +1,3 @@
-const fs = require('fs');
-const path = require('path');
 
 const {validationResult} = require ('express-validator');
 const db = require('../database/models');
@@ -25,7 +23,7 @@ let productController ={
 			res.render('./products/productDetail',{resultado,  title: 'Rmarket | '+ resultado.name, ruta: 'products', stylesheet: 'productDetail'})
 		})
 		.catch (error =>{
-		  res.render('error.ejs',{error:error});
+		  res.render('error',{error:error});
 	  
 	  })
 			
@@ -34,21 +32,11 @@ let productController ={
     create: function(req,res,next){
 
 		res.render('./products/productCreate',{
-		data: {},
-		errors : {},  title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'});
+		title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'});
 		
 	},
 	
     store: (req, res,next) => {
-
-		let errors = validationResult(req)
-
-		if (!errors.isEmpty()){
-
-			res.render('./products/productCreate', {
-				errors : errors.mapped(),
-				data: req.body,  title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'})
-		}
 
 		db.Productos.create({
 			title: req.body.name,
@@ -60,6 +48,11 @@ let productController ={
 			
 
 		})
+		.catch (error =>{
+			res.render('error',{error:error});
+		
+		})
+		res.redirec('/')
 		
 
     },
@@ -72,7 +65,7 @@ let productController ={
 			res.render('./products/productDetail',{resultado,  title: 'Rmarket | '+ resultado.name, ruta: 'products', stylesheet: 'productDetail'})
 		})
 		.catch (error =>{
-		  res.render('error.ejs',{error:error});
+		  res.render('error',{error:error});
 	  
 	  })
 		 

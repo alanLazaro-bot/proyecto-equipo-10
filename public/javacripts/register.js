@@ -1,4 +1,4 @@
-let form = document.getElementById('register-form')
+/*let form = document.getElementById('register-form')
 
 let emailMessage = form.querySelector ('#email-message')
 
@@ -57,3 +57,4 @@ form.addEventListener('submit', function(e){
         form.password.value = ''
     })
 })
+*/

@@ -5,7 +5,8 @@ module.exports = function(sequelize, dataTypes) {
         id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            notNull:true
         },
         talle: {
             type: dataTypes.STRING
@@ -14,8 +15,8 @@ module.exports = function(sequelize, dataTypes) {
     }
 
     let config = {
-        tablename: "sizes",
-        timestamps: false
+        tableName: "sizes",
+        timestamps: false,
     }
 
     const Talle = sequelize.define(alias, cols, config);
@@ -23,7 +24,7 @@ module.exports = function(sequelize, dataTypes) {
     Talle.associate = function(models){
         Talle.hasMany(models.Productos, {
             as: "producto",
-            foreignKey: "sizes_id"
+            foreignKey: "size_id"
         });
     }
 

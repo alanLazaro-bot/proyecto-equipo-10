@@ -26,8 +26,8 @@ router.get('/:id', productController.detail);
 
 /*** CREATE ONE PRODUCT ***/ 
 
-router.get('/create/nuevo', productController.create);
-router.post('/products', prodValidator,upload.any(), productController.store);
+router.get('/create', productController.create);
+router.post('/create', prodValidator,upload.any(), productController.store);
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/edit/:id', productController.edit);
@@ -36,7 +36,7 @@ router.put('/edit/:id', prodValidator ,productController.update);
 
 
 /*** DELETE ONE PRODUCT***/
-router.delete('/products/:id', productController.destroy);
+router.delete('/:id', productController.destroy);
 
 
 module.exports=router;

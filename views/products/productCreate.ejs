@@ -4,18 +4,18 @@
 <body class="body">
     <%-include('../partials/header.ejs')%>
 
-    <main>
+<main>
 
 <h1 class="title-font space center">Cargá tu Producto</h1>
+
 <!--nombre del producto-->        
+
 <form action="/products" method="POST" enctype="multipart/form-data">
      <div class="center space"> 
         <label for="title" class="rob-14">Nombre del Producto</label>
-        <input type="text" name="title" id="title"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%= data.name  %>">
+        <input type="text" name="title" id="title"  class="nombre-prod nombre-size wdth-bar padding-text" >
      </div>  
-     <% if (errors.name != undefined){ %>
-     <div><%= errors.name.msg  %> </div>
-     <% }%>
+     
 
 <!-- / nombre del producto-->
 
@@ -24,12 +24,9 @@
     <div class="center space"> 
         <label for="description">Descripción:</label>
         
-        <textarea name="description" id="description" rows="10" cols="80"  value="<%= data.description  %>"></textarea>
+        <textarea name="description" id="description" rows="10" cols="80"  ></textarea>
     </div > 
-    <% if (errors.description != undefined){ %>
-    <div><%= errors.description.msg  %> </div>
-    <% }%>
-<!--/descripcion-->
+
 
       <!--talles-->
 <div class = "center space rob-18"> 
@@ -47,40 +44,32 @@
         }) %> 
     </div>
 </div>  
-<% if (errors.category != undefined){ %>
-<div><%= errors.category.msg  %> </div>
-<% }%>
+
 
     <!--/talles-->
     <!--Color-->
     <form action="/products" method="POST" enctype="multipart/form-data">
         <div class="center space"> 
            <label for="color" class="rob-14">Color</label>
-           <input type="text" name="color" id="color"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%= data.color  %>">
+           <input type="text" name="color" id="color"  class="nombre-prod nombre-size wdth-bar padding-text">
         </div>  
-        <% if (errors.color != undefined){ %>
-        <div><%= errors.color.msg  %> </div>
-        <% }%>
+       
         <!--/Color-->
 <!--precio del producto-->
     <div class="center space"> 
         <label for="price">Precio:</label>
-        <input type="text" name="price" id="price" placeholder="Precio" class="nombre-size" value="<%= data.price  %> ">
+        <input type="text" name="price" id="price" placeholder="Precio" class="nombre-size" value=">
     </div> 
-    <% if (errors.price != undefined){ %>
-        <div><%= errors.price.msg  %> </div>
-        <% }%> 
+    
 
     <!--/ precio del producto-->
 
     <!--Stock-->
     <div class="center space"> 
         <label for="stock">Stock</label>
-        <input type="text" name="stock" id="stock" class="nombre-size" value="<%= data.stock || 1  %> ">
+        <input type="text" name="stock" id="stock" class="nombre-size" value=">
     </div> 
-    <% if (errors.stock != undefined){ %>
-        <div><%= errors.stock.msg  %> </div>
-        <% }%> 
+    
         <!--/Stock-->
     
    

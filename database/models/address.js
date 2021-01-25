@@ -5,7 +5,8 @@ module.exports = function(sequelize, dataTypes) {
         id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            notNull:true
         },
         calle: {
             type: dataTypes.STRING
@@ -27,8 +28,8 @@ module.exports = function(sequelize, dataTypes) {
     }
 
     let config = {
-        tablename: "address",
-        timestamps: false
+        tableName: "address",
+        ttimestamps: false,
     }
 
     const Direccion = sequelize.define(alias, cols, config);

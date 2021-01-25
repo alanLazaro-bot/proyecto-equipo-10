@@ -16,7 +16,7 @@ module.exports = function(sequelize, dataTypes) {
         stock:{
             type: dataTypes.INTEGER
         },
-        precio:{
+        price:{
             type: dataTypes.INTEGER
         },
         carrito_id:{
@@ -32,8 +32,8 @@ module.exports = function(sequelize, dataTypes) {
     }
 
     let config = {
-        tablename: "products",
-        timestamps: false
+        tableName: "products",
+        timestamps: false,
     }
 
     const Producto = sequelize.define(alias, cols, config);
@@ -41,21 +41,21 @@ module.exports = function(sequelize, dataTypes) {
     Producto.associate = function(models){
         Producto.belongsTo(models.Colores, {
             as: "colores",
-            foreignKey: "colors_id"
+            foreignKey: "color_id"
         });
     }
     
     Producto.associate = function(models){
         Producto.hasMany(models.Carrito, {
             as: "carrito",
-            foreignKey: "id_carrito"
+            foreignKey: "carrito_id"
         });
     }
 
     Producto.associate = function(models){
         Producto.belongsTo(models.Talles, { 
             as: "talles",
-            foreignKey: "sizes_id"
+            foreignKey: "size_id"
         });
     }
 

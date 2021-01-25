@@ -1,9 +1,9 @@
-var express = require ('express');
+/*var express = require ('express');
 var router = express.Router();
 var db = require ('../database/models')
 var bcrypt = require('bcryptjs')
 
-/*http://localhost:3000/api/check */
+/*http://localhost:3000/api/check 
 
 router.get('check', function(req,res,next){
 
@@ -48,4 +48,4 @@ router.post('/users', function (req,res){
 
 })
 
-module.exports = router;
+module.exports = router;*/

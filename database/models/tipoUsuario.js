@@ -5,7 +5,8 @@ module.exports = function(sequelize, dataTypes) {
         id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            notNull:true
         },
         tipo: {
             type: dataTypes.STRING
@@ -14,8 +15,8 @@ module.exports = function(sequelize, dataTypes) {
     }
 
     let config = {
-        tablename: "User_Type",
-        timestamps: false
+        tableName: "User_Type",
+        timestamps: false,
     }
 
     const TipoUsuario = sequelize.define(alias, cols, config);
