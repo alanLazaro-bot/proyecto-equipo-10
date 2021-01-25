@@ -11,17 +11,15 @@
             <div class="">
                 <h2 class="products-title">Resultados de la búsqueda: </h2>
             </div>
-            <% if(resultado!= 0){ %> 
+            <% if(resultado){ %> 
             <% resultado.forEach(function(product){ %> 
                 <div class="">
                     <section class="">
                         <a href="/products/detail/<%=product.id%>">
-                            <figure class="">
-                                <img src="/images/products/<%=product.image%>" alt="imagen de producto">
-                            </figure>
+                            
                             <article class="">
-                                <h2>$<%= product.price - (product.price*(product.discount/100))%></h2>
-                                <span><%=product.discount%>% OFF</span>
+                                <h2>$<%= product.price%></h2>
+                                
                                 <p><%= product.title %></p>
                                 
                             </article>

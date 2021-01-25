@@ -18,28 +18,27 @@ let indexController ={
 
     search: (req, res) => {
 
-		let resultado=[];
-
-		if(req.query.search){
-			resultado = db.Productos.findAll({
+			 db.Productos.findAll({
 				where: {
 					title:{[db.Sequelize.Op.like]:'%'+ req.body.search + '%'}
 					
-
-
 				}
 				
-			
 
 				})
-			}
+				.then(resultado=>{
+					res.render('results',{resultado:resultado,  title: 'Rmarket | Inicio',ruta: undefined, stylesheet: 'index'})
 
-				res.render('results',{resultado,  title: 'Rmarket | Inicio',ruta: undefined, stylesheet: 'index'});
+				})
+				.catch (error =>{
+					res.render('error.ejs',{error:error});
+				
+				  })
+
 
 			}
 
     
-    
-    };
+    }
     
     module.exports=indexController;

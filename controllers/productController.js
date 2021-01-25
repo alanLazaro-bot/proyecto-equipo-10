@@ -31,11 +31,22 @@ let productController ={
 
     create: function(req,res,next){
 	
-		res.render('./products/productCreate',{title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd', data: req.body});
+	
+		res.render('./products/productCreate',{title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd',data: {},
+		errors : {}});
 		
 	},
 	
     store: (req, res,next) => {
+
+		const errors = validationResult(req);
+
+		if (!errors.isEmpty()){
+			res.render('./products/productCreate', {
+				errors : errors.mapped(),
+				data: req.body,  title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'})
+		}
+
 
 		db.Productos.create({
 			title: req.body.title,
@@ -47,11 +58,15 @@ let productController ={
 			
 
 		})
+		.then(resultado=> {
+			return res.redirect('./products/productDetail',{resultado})
+		})
 		.catch (error =>{
 			res.render('error',{error:error});
 		
 		})
-		res.redirec('/')
+	
+		
 		
 
     },
