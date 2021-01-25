@@ -59,7 +59,7 @@ let productController ={
 
 		})
 		.then(resultado=> {
-			return res.redirect('./products/productDetail',{resultado})
+			return res.redirect('./products/products',{resultado})
 		})
 		.catch (error =>{
 			res.render('error',{error:error});

@@ -4,7 +4,7 @@ let router = express.Router();
 let multer = require ('multer')
 
 let prodValidator = require('../middlewares/product-validator.js')
-
+/*
 var storage = multer.diskStorage({
 
     destination : function(req,file,cb){
@@ -15,14 +15,14 @@ var storage = multer.diskStorage({
     }
 })
 let upload = multer({storage})
-
+*/
 /*** GET ALL PRODUCTS ***/
 router.get('/', productController.all);
 
 /*** CREATE ONE PRODUCT ***/ 
 
 router.get('/new', productController.create);
-router.post('/create', prodValidator,upload.any(), productController.store);
+router.post('/create', prodValidator, productController.store);
 
 
 /*** GET ONE PRODUCT ***/ 
