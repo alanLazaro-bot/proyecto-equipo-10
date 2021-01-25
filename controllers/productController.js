@@ -53,7 +53,6 @@ let productController ={
 			price: req.body.price,
 			size: req.body.size,
 			description:req.body.description,
-			color:req.body.color,
 			stock: req.body.stock,
 			
 
@@ -92,7 +91,7 @@ let productController ={
 			price: req.body.price,
 			size: req.body.size,
 			description:req.body.description,
-			color:req.body.color,
+
 			stock: req.body.stock,
 
 		},

@@ -25,9 +25,7 @@ module.exports = function(sequelize, dataTypes) {
         size_id:{
             type: dataTypes.INTEGER
         },
-        color_id:{
-            type: dataTypes.INTEGER
-        }
+        
           
     }
 
@@ -38,12 +36,6 @@ module.exports = function(sequelize, dataTypes) {
 
     const Producto = sequelize.define(alias, cols, config);
 
-    Producto.associate = function(models){
-        Producto.hasMany(models.Colores, {
-            as: "color",
-            foreignKey: "color_id"
-        });
-    }
     
     Producto.associate = function(models){
         Producto.belongsTo(models.Carrito, {

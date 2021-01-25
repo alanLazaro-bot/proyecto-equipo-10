@@ -24,20 +24,17 @@ check('description')
     .isEmpty()
     .withMessage('La descripcion debe tener un mínimo de 20 caracteres y un máximo de 200'),
     
-    
 
-check('color')
-
-    .isLength('')
-    .isEmpty()
-    .withMessage(''),
-    
 
 check('size')
-.isEmpty(),
+
+.isEmpty()
+.withMessage('Debes elegir un talle'),
 
 check('price')
-.isEmpty(),
+
+.isEmpty()
+.withMessage('El precio debe ser mayor a 0'),
 
 
     
