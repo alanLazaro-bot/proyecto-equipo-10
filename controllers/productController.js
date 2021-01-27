@@ -87,13 +87,20 @@ let productController ={
     },
 
 	update: (req, res) => {
+
+		const errors = validationResult(req);
+		
+		if (!errors.isEmpty()){
+			res.render('./products/productEdit', {
+				errors : errors.mapped(),
+				data: req.body,  title: 'Rmarket | Producto ', ruta: 'products', stylesheet: 'productDetail'})
+		}
 		
 		db.Productos.update({
 			title: req.body.title,
 			price: req.body.price,
 			size: req.body.size,
 			description:req.body.description,
-
 			stock: req.body.stock,
 
 		},
@@ -102,7 +109,7 @@ let productController ={
 			where:{
 			  id:req.params.id
 			}
-		  }
+		  })
 		  
 		 .then(resultado =>{
 			res.redirect('/')
@@ -112,7 +119,7 @@ let productController ={
 		 .catch(err =>{
 			 res.send(err)
 		 })
-		  );
+		  
 		
 	},
 
@@ -120,17 +127,14 @@ let productController ={
     destroy: function(req,res,next){
 
 		db.Productos.destroy({
-
 			where:{
-
 				id: req.params.id
 			}
 		})
 		.then(resultado=>{
-			res.redirect('/products')
+			res.redirect('/')
 
 		})
-
 		.catch(err => {
 			console.log(err)
 			res.send(err)

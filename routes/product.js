@@ -3,6 +3,7 @@ let productController = require ('../controllers/productController.js');
 let router = express.Router();
 let multer = require ('multer')
 
+
 let prodValidator = require('../middlewares/product-validator.js')
 /*
 var storage = multer.diskStorage({
@@ -32,13 +33,13 @@ router.get('/:id', productController.detail);
 
 
 /*** EDIT ONE PRODUCT ***/
-router.get('/edit/:id', productController.edit);
-router.put('/edit/:id', prodValidator ,productController.update);
+router.get('/:id/edit', productController.edit);
+router.patch('/:id', prodValidator ,productController.update);
 
 
 
 /*** DELETE ONE PRODUCT***/
-router.delete('/delete/:id', productController.destroy);
+router.delete('/:id', productController.destroy);
 
 
 module.exports=router;

@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
+const methodOverride = require ('method-override');
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const productRouter = require('./routes/product');
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 //app.use(checkIp)
 app.use(session(
 { secret:'secreto',
