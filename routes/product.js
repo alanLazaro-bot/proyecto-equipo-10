@@ -38,7 +38,7 @@ router.put('/edit/:id', prodValidator ,productController.update);
 
 
 /*** DELETE ONE PRODUCT***/
-router.delete('/:id', productController.destroy);
+router.delete('/delete/:id', productController.destroy);
 
 
 module.exports=router;

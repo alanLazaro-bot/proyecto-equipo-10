@@ -18,6 +18,8 @@ let productController ={
 
     detail: (req, res) => {
 
+		console.log(req.body)
+
 		db.Productos.findByPk(req.params.id)
 		.then(resultado=>{ 
 			res.render('./products/productDetail',{resultado,  title: 'Rmarket | '+ resultado.title, ruta: 'products', stylesheet: 'productDetail'})
@@ -58,7 +60,7 @@ let productController ={
 
 		})
 		.then(resultado=> {
-			return res.redirect('./products/products',{resultado})
+			return res.redirect('/products')
 		})
 		.catch (error =>{
 			res.render('error',{error:error});
@@ -103,7 +105,7 @@ let productController ={
 		  }
 		  
 		 .then(resultado =>{
-			res.render('./products/productEdit',{resultado: resultado,  title: 'Rmarket | '+ resultado.name, ruta: 'products', stylesheet: 'productEdit'})
+			res.redirect('/')
 			
 		 })
 
@@ -125,7 +127,7 @@ let productController ={
 			}
 		})
 		.then(resultado=>{
-			res.render('./products/delete')
+			res.redirect('/products')
 
 		})
 
