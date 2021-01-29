@@ -7,10 +7,9 @@ let db = require('../database/models')
 module.exports = {
 
     create: function (req,res){
-        res.render('./auth/register',{
+        res.render('./auth/register'/*,{
             linkToLogin:false, title: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'register'
-        })
-    },
+        }*/)},
     
     
     store: function (req,res){
