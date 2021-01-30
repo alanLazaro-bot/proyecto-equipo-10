@@ -70,7 +70,7 @@ window.addEventListener("load", function(){
     
     nameInput.addEventListener('keyup',function(){
     
-        if(validator.isAlpha(nameInput.value)&& validator.insLength(nameInput.value, {min:3, max:20} )){
+        if(validator.isAlpha(nameInput.value) && validator.insLength(nameInput.value, {min:3, max:20} )){
     
             delete errors.name
     
@@ -82,7 +82,7 @@ window.addEventListener("load", function(){
             markAsInvalid(nameInput)
         }
     
-    
+        console.log(nameInput)
     
     })
     
