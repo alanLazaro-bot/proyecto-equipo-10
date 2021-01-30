@@ -13,14 +13,20 @@
                         <input  name="email" type="email" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Correo Electrónico">
                     </label>
                 </div>
+                <% if (errors.email != undefined){ %>
+                    <div class="center space"><%= errors.email.msg  %> </div>
+                    <% }%>
                 <div class="center space"> 
                     <label class="rob-14">
                         <input  name="password" type="password" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Contraseña">
                     </label>
                 </div>
+                <% if (errors.password != undefined){ %>
+                    <div class="center space"><%= errors.password.msg  %> </div>
+                    <% }%>
                 <div class="center space">
-                    <label for="" class="center space">Recordame</label>
-                    <input type="checkbox" name="size" value="XS" class="center space">
+                    <label for="recordame" class="center space">Recordame</label>
+                    <input type="checkbox" name="recordame" id="recordame" class="center space">
                 </div>
                 <div  class="center space">
                     <button type="submit" class=" button-send">Ingresar</button>

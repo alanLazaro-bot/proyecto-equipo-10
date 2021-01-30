@@ -1,6 +1,6 @@
 var fs = require ('fs')
 let {validationResult} = require('express-validator')
-var userData = require('../data/users')
+
 const bcryptjs = require('bcryptjs')
 let db = require('../database/models')
 
@@ -64,15 +64,46 @@ module.exports = {
 
 
 login: function(req,res){
-    res.render('./auth/login', {title: 'Rmarket | Ingresá a tu cuenta',ruta: 'users', stylesheet: 'login'})
+    res.render('./auth/login', {title: 'Rmarket | Ingresá a tu cuenta',ruta: 'users', stylesheet: 'login', errors:{}})
 },
 
 processLogin: function(req,res){
 
+    const errors = validationResult(req);
+
+    if (errors.isEmpty()) {
+      db.Usuarios.findOne({
+        where: {
+          email: req.body.email,
+         },
+         }).then((user)=>{
+                if(!user){
+                return res.send('Email incorrecto')
+                } else if(bcryptjs.compareSync(req.body.password, user.password)){
+                req.session.user = user.email
+    
+                if(req.body.recordame){
+                 res.cookie('recordame',user.email,{maxAge:120 * 1000})
+        }
+    
+        return res.redirect('/')
+
+    } else {
+                return res.render("users/user-login-form", {errors: errors.mapped(),data:req.body})
+            }
+
+
+})
+    }
+},    
+      
+      
+      
+
 
     
-let user = userData.findByEmail(req.body.email)
 
+/*
 if(!user){
     return res.send('Email incorrecto')
 }else if(bcryptjs.compareSync(req.body.password, user.password)){
@@ -88,7 +119,7 @@ if(!user){
 }
 
 
-},
+},*/
 
 finalLogin: function(req,res){
     

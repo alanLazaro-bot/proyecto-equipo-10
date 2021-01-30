@@ -3,7 +3,7 @@ var router = express.Router();
 //var path = require('path');
 let authController = require ('../controllers/authController.js');
 //let multer = require ('multer')
-let userValidator = require('../middlewares/user-validator.js')
+const userValidator = require('../middlewares/user-validator.js')
 
 /*
 var storage = multer.diskStorage({
@@ -20,8 +20,8 @@ let upload = multer({storage})
 
 router.get('/register', authController.create);
 
-router.post('/register', authController.store);// upload.any() userValidator
-
+router.post('/register', userValidator.register,authController.store);// upload.any()
+/*
 router.get('/avatar',function(req,res){
     res.render('auth/avatar-form')
 })
@@ -31,9 +31,9 @@ router.post('/avatar', function(req,res,next){
     res.send('recibido')
 })
 
-
+*/
 router.get('/login', authController.login);
-router.post('/login', authController.processLogin);
+router.post('/login', userValidator.login ,authController.processLogin);
 
 router.get('/:id',authController.finalLogin);
 

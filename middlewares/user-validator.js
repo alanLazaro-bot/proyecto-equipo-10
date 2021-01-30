@@ -3,15 +3,16 @@ let db = require('../database/models')
 
 
 
-module.exports = [
+module.exports = {
+
+  register :[
+    //Email
 
     body("email")
     .notEmpty()
     .withMessage("Campo obligatorio")
-    
     .isEmail()
     .withMessage("Debes ingresar un email válido")
-    
     .custom((value) => {
       return db.Usuarios.findOne({
         where: {
@@ -23,12 +24,16 @@ module.exports = [
         }
       });
     }),
+    
+    //First Name
 
 check ('first_name')
     .notEmpty()
     .withMessage("Campo obligatorio")
     .isLength({min: 2})
     .withMessage('El nombre debe tener un mínimo de dos caracteres'),
+
+    //Last Name
     
 check ('last_name')
     .notEmpty()
@@ -42,8 +47,20 @@ check('password')
     .notEmpty()
     .withMessage("Campo obligatorio")
     .isLength({min: 8}),
-   /* .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/)
-    .withMessage('La contraseña debe tener un mínimo de 8 caracteres, ser alfanumérica, tener mayúsculas y minúsculas'),*/
-    
 
-]
+    
+  ],
+
+  login:[
+    
+    body("email")
+    .notEmpty()
+    .withMessage("Campo obligatorio")
+    .isEmail()
+    .withMessage("Debes ingresar un email válido"),
+    
+    body("password")
+    .notEmpty()
+    .withMessage("Campo obligatorio"),
+  ]
+  }
