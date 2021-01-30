@@ -1,7 +1,7 @@
 let express = require('express');
 let productController = require ('../controllers/productController.js');
 let router = express.Router();
-let multer = require ('multer')
+//let multer = require ('multer')
 
 
 let prodValidator = require('../middlewares/product-validator.js')

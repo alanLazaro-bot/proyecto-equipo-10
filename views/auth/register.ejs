@@ -10,36 +10,54 @@
                 
                 <div class="center space">
                    
-                        <input  name="first_name" id="first_name" type="text" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Nombre">
+                        <input  name="first_name" id="first_name" type="text" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Nombre" value="<%= data.first_name %>">
                    
                 </div>
+                <% if (errors.first_name != undefined){ %>
+                    <div class="center space"><%= errors.first_name.msg  %> </div>
+                    <% }%>
+
+
                 <div class="center space">
                     
                         
-                        <input  name="last_name" type="text"  id="last_name" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Apellido">
+                        <input  name="last_name" type="text"  id="last_name" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Apellido" value="<%= data.last_name %>">
                    
                 </div>
+                <% if (errors.last_name != undefined){ %>
+                    <div class="center space"><%= errors.last_name.msg  %> </div>
+                    <% }%>
+
+
                 <div class="center space">
                    
                         
-                        <input name="email" type="email" id="email" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Correo Electrónico">
+                        <input name="email" type="email" id="email" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Correo Electrónico" value="<%= data.email %>">
                     
                 </div>
+
+                <% if (errors.email != undefined){ %>
+                    <div class="center space"><%= errors.email.msg  %> </div>
+                    <% }%>
+
                 <div class="center space">
                   
                         
                         <input name="password" type="password" id="password" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Contraseña">
                    
                 </div>
+                <% if (errors.password != undefined){ %>
+                    <div class="center space"><%= errors.password.msg  %> </div>
+                    <% }%>
                 
-                <div class ="center space rob-18"><label for="foto">Foto de perfil</label></div>
+               <!-- <div class ="center space rob-18"><label for="foto">Foto de perfil</label></div>
                 <div class="center space"><input type="file" name="foto" class=""></div>
-                
+                -->
                 <div  class="center space">
                     
                     <button type="submit" class=" button-send">Enviar</button>
                 </div>
-
+            
                 
 
             </form>

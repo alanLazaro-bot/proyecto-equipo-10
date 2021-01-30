@@ -5,6 +5,8 @@ module.exports = [
 
 
 check('title')
+    .notEmpty()
+    .withMessage("Campo obligatorio")
 
     .isLength({min:5, max:50})
     
@@ -12,6 +14,8 @@ check('title')
     
 
 check('stock')
+.notEmpty()
+.withMessage("Campo obligatorio")
 
     .isInt({gt:0, lt:100})
     
@@ -19,22 +23,28 @@ check('stock')
     
 
 check('description')
-
+.notEmpty()
+.withMessage("Campo obligatorio")
     .isLength({min:20, max:200})
     
     .withMessage('La descripcion debe tener un mínimo de 20 caracteres y un máximo de 200'),
     
 
 
-/*check('size')
+
+check('size')
+.notEmpty()
+.withMessage("Campo obligatorio")
 
 
-.withMessage('Debes elegir un talle'),*/
+.withMessage('Debes elegir un talle'),
 
-/*check('price')
+check('price')
+.notEmpty()
+.withMessage("Campo obligatorio")
 
 
-.withMessage('El precio debe ser mayor a 0'),*/
+.withMessage('El precio debe ser mayor a 0'),
 
 
     
