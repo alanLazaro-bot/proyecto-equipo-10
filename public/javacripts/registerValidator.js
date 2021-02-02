@@ -8,7 +8,7 @@
             let confirmationInput = document.querySelector("input[name=confirmation]");
     
             let errores = {
-              fist_name: "",
+              first_name: "",
               last_name: "",
               email: "",
               password: "",
@@ -36,6 +36,7 @@
     
               if(Object.keys(errores).length > 0){
                 console.log("no se envia")
+                console.log(errores)
     
               }else{
                   console.log("se envía")
@@ -63,8 +64,9 @@
                 validator.isAlpha(firstNameInput.value) &&
                 validator.isLength(firstNameInput.value, { min: 2, max: 30 })
               ) {
-                markAsValid(firstNameInput)
                 delete errores.first_name
+                markAsValid(firstNameInput)
+                
                
               } else {
                 markAsInvalid(firstNameInput)
@@ -77,8 +79,9 @@
                 validator.isAlpha(lastNameInput.value) &&
                 validator.isLength(lastNameInput.value, { min: 2, max: 30 })
               ) {
-                markAsValid(lastNameInput)
                 delete errores.last_name
+                markAsValid(lastNameInput)
+               
                 
               } else {
     
@@ -94,8 +97,9 @@
                   passwordInput.value
                 )
               ) {
-                markAsValid(passwordInput)
                 delete errores.password
+                markAsValid(passwordInput)
+               
               } else {
                 markAsInvalid(passwordInput)
                 errores.password ='La contraseña debe tener entre 8 y 20 caracteres, una mayuscula, una minuscula, un número y un caracter especial'
@@ -104,10 +108,11 @@
     
             confirmationInput.addEventListener("keyup", function () {
               if (
-                validator.equals(confirmationInput.value,passwordInput))
+                validator.equals(confirmationInput.value,passwordInput.value))
                {
-                markAsValid(confirmationInput)
                 delete errores.confirmation
+                markAsValid(confirmationInput)
+                
               } else {
               markAsInvalid(confirmationInput)
                 errores.confirmation = "Las contraseñas no coinciden"
@@ -129,4 +134,31 @@
               e.preventDefault();
               console.log("pegando");
             });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           });
