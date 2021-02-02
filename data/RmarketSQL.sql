@@ -1,2 +1,1 @@
-SELECT * FROM rmarket.products
-
+SELECT * FROM users

@@ -11,7 +11,7 @@
         <!--nombre del producto-->        
         
         
-        <form action="/products/<%= resultado.id %>?_method=PATCH" method="POST">
+        <form action="/products/<%= resultado.id %>?_method=PATCH" method="POST" id= "product-form">
              <div class="center space"> 
                 <label for="title" class="rob-14">Nombre del Producto</label>
                 <input type="text" name="title" id="title"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%=resultado.title %>" >
@@ -25,7 +25,7 @@
             <div class="center space"> 
                 <label for="description">Descripción:</label>
                 
-                <textarea name="description" id="description" rows="10" cols="80"  ><%= resultado.description %></textarea>
+                <textarea name="description" id="description" type ="text"><%= resultado.description %></textarea>
             </div > 
         
         
@@ -92,5 +92,9 @@
               
     </main>
     
+    <script src="/javacripts/productsValidator.js">
+
+    </script>
+   
 </body>
 </html>

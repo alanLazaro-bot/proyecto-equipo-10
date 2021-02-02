@@ -1,127 +1,117 @@
-const { validator } = require("sequelize/types/lib/utils/validator-extras")
-
-let productAddForm=document.querySelector('#rproductAdd-form')
-
-let titleInput = document.querySelector('input[name=title]')
-let descriptionInput = document.querySelector('input[name=description]')
-let sizeInput = document.querySelector('input[name=size]')
-let colorInput = document.querySelector('input[name=color]')
-let priceInput = document.querySelector('input[name=price]')
 
 
+window.addEventListener("load", function () {
+    let prodCreateForm = document.querySelector("#product-form");
+    let titleInput = document.querySelector("input[name=title]");
+    let descriptionInput = document.querySelector("textarea[name=description]");
+    let sizeInput = document.querySelector("select[name=size]");
+    let priceInput = document.querySelector("input[name=price]");
+    let stockInput = document.querySelector("input[name=stock]");
 
-let product={
+    let errores = {
+      title: "",
+      description: "",
+      size: "",
+      price: "",
+      stock: "",
+    };
 
-    title: '',
-    email: '',
-    password: '',
-    password_comfirmation:'',
+    
+    function markAsInvalid(el){
+        el.classList.remove("success");
+        el.classList.add("error");
 
-}
 
-let errors ={
+    }
 
-  title: '',
-   description: '',
-    size: '',
-    color:'',
-    price:'',
-}
+    function markAsValid(el){
+        el.classList.remove("error");
+        el.classList.add("success");
 
-productAddForm.addEventListener('submit',function(e){
-
-emailInput.addEventListener('keyup',function(){
-
-    if(validator.isEmail(emailInput.value)){
-
-        delete errors.email
-
-        emailInput.classList.remove('error')
-        emailInput.classList.add('success')
-
-    } else {
-
-        errors.email ='el email debe ser un formato válido'
-
-        emailInput.classList.remove('success')
-        emailInput.classList.add('error')
     }
 
 
 
-})
+    prodCreateForm = addEventListener("submit", function (e) {
+      e.preventDefault();
 
+      if(Object.keys(errores).length > 0){
+        console.log("no se envia")
 
-nameInput.addEventListener('keyup',function(){
+      }else{
+          console.log("se envía")
+      }
 
-    if(validator.isAlpha(nameInput.value)&& validator.insLength(nameInput.value, {min:3, max:20} )){
+      ;
 
-        delete errors.name
+    });
 
-        nameInput.classList.remove('error')
-        nameInput.classList.add('success')
+    titleInput.addEventListener("keyup", function () {
+      if (!validator.isEmpty(titleInput.value)&& validator.isLength(titleInput.value,{min:5})) {
+          
+        markAsValid(titleInput)
+        delete errores.title
 
-    } else {
-        errors.name ='el nombre solo puede contener entre 3 y 20 caracteres alfabeticos'
+       
+      } else {
 
-        nameInput.classList.remove('success')
-        nameInput.classList.add('error')
-    }
+        markAsInvalid(titleInput)
+        errores.title='El nombre del producto debe tener como mínimo 5 caracteres'
+      }
+    });
 
+    descriptionInput.addEventListener("keyup", function () {
+      if (
+        validator.isLength(descriptionInput.value, { min:20, max: 200 })
+        )
+       {
+        markAsValid(descriptionInput)
+        delete errores.description
+       
+      } else {
+        markAsInvalid(descriptionInput)
+        errores.description='La descripción debe tener entre 20 y 200 caracteres'
+      }
+    });
 
+    sizeInput.addEventListener("keyup", function () {
+      if (
+            !validator.isEmpty(sizeInput.value)
+      ) {
+        markAsValid(sizeInput)
+        delete errores.size
+        
+      } else {
 
-})
+        markAsInvalid(sizeInput)
+        errores.size='Campo Obligatorio'
+      }
+    });
 
-passwordlInput.addEventListener('keyup',function(){
+    priceInput.addEventListener("keyup", function () {
+      if (
+       !validator.isEmpty(priceInput.value) && validator.isInt(priceInput.value,{gt:0})
+        ) {
+        markAsValid(priceInput)
+        delete errores.price
+      } else {
+        markAsInvalid(priceInput)
+        errores.price ='El precio no puede ser negativo'
+      }
+    });
 
-    if(validator.isLength(passwordInput.value, {min:8, max:12}) && /^[A-Z]+\d{1}[A-Z]+[\$\.\-\#\(\)\=\!\+]+[A-Z]+$/.test(password.Input.value)){
+    stockInput.addEventListener("keyup", function () {
+      if (
+        !validator.isEmpty(stockInput.value)&& validator.isInt(stock.value,{gt:0, lt:101})
+        )
+       {
+        markAsValid(stockInput)
+        delete errores.stock
+      } else {
+      markAsInvalid(stockInput)
+        errores.stock = "El stock debe ser entre 0 y 100"
+      }
+    });
 
-        delete errors.password
-
-        passwordInput.classList.remove('error')
-        passwordInput.classList.add('success')
-
-    } else {
-        errors.password ='el email debe contener entre 8 y 12 caracteres, al menos una mayúscula, una minúscula'
-
-        passwordInput.classList.remove('success')
-        passwordInput.classList.add('error')
-    }
-
-
-
-})
-
-confirmationlInput.addEventListener('keyup',function(){
-
-    if(validator.equals(confirmationInput.value, passwordInput.value)){
-
-        delete errors.password_confirmation
-
-        confirmationInput.classList.remove('error')
-        confirmationInput.classList.add('success')
-
-    } else {
-        errors.name ='Los passwords deben coincidir'
-
-        confirmationInput.classList.remove('success')
-        confirmationInput.classList.add('error')
-    }
-
-
-
-})
-
-if(Object.keys(errors).length > 0){
-    e.preventDefault()
-
-    console.log('no se envia')
-
-}else {
-
-    console.log('se puede enviar')
-
-}
-
-})
-
+    
+  });

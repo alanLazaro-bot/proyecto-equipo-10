@@ -6,17 +6,20 @@
 
 <main>
 
-<h1 class="title-font space center">Cargá tu Producto</h1>
+<h1 class="title-font space center"> Cargá tu Producto </h1>
+<div class = "errores">
+    <ul></ul>
+</div>
 
 <!--nombre del producto-->        
 
-<form action="/products/create" method="POST" > <!--  Agregar enctype="multipart/form-data"-->
+<form action="/products/create" method="POST" id= "product-form" > <!--  Agregar enctype="multipart/form-data"-->
      <div class="center space"> 
         <label for="title" class="rob-14">Nombre del Producto</label>
         <input type="text" name="title" id="title"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%= data.title  %>">
      </div>  
      <% if (errors.title != undefined){ %>
-        <div><%= errors.title.msg  %> </div>
+        <div class="center space"><%= errors.title.msg  %> </div>
         <% }%>
      
 
@@ -27,10 +30,10 @@
     <div class="center space"> 
         <label for="description">Descripción:</label>
         
-        <textarea name="description" id="description" rows="10" cols="80"  ><%= data.description  %></textarea>
+        <textarea name="description" id="description" type= "text"><%= data.description  %></textarea>
     </div > 
     <% if (errors.description != undefined){ %>
-        <div><%= errors.description.msg  %> </div>
+        <div class="center space"><%= errors.description.msg  %> </div>
         <% }%>
 
 
@@ -51,7 +54,7 @@
     </div>
 </div>  
 <% if (errors.size != undefined){ %>
-    <div><%= errors.size.msg  %> </div>
+    <div class="center space"><%= errors.size.msg  %> </div>
     <% }%>
 
 
@@ -65,7 +68,7 @@
         <input type="text" name="price" id="price"  class="nombre-size" value="<%= data.price  %>">
     </div> 
     <% if (errors.price != undefined){ %>
-        <div><%= errors.price.msg  %> </div>
+        <div class="center space"><%= errors.price.msg  %> </div>
         <% }%>
     
 
@@ -78,7 +81,7 @@
 
     </div> 
     <% if (errors.stock != undefined){ %>
-        <div><%= errors.stock.msg  %> </div>
+        <div class="center space"><%= errors.stock.msg  %> </div>
         <% }%>
     
         <!--/Stock-->
@@ -106,8 +109,10 @@
   
         
          
-      
     </main>
-    
+   
+    <script src="/javacripts/productsValidator.js">
+
+    </script>
 </body>
 </html>
