@@ -1,10 +1,10 @@
 window.addEventListener("load", function(){
 
-    const { validator } = require("sequelize/types/lib/utils/validator-extras")
-    
+    /*const { validator } = require("sequelize/types/lib/utils/validator-extras")
+    */
     let registerForm=document.querySelector('#register-form')
     
-    let nameInput = document.querySelector('input[name=first_name]')
+    let nameInput = document.getElementById('first_name')
     let lastNameInput = document.querySelector('input[name=last_name]')
     
     let emailInput = document.querySelector('input[name=email]')
@@ -18,8 +18,8 @@ window.addEventListener("load", function(){
         first_name: '',
         last_name: '',
         email: '',
-        password: '',
-        password_confirmation:'',
+        password: ''/*,
+        password_confirmation:'',*/
     
     }
     
@@ -28,14 +28,15 @@ window.addEventListener("load", function(){
         first_name: '',
         last_name: '',
         email: '',
-        password: '',
-        password_confirmation:'',
+        password: ''/*,
+        password_confirmation:'',*/ 
     }
     
     registerForm.addEventListener('submit',function(e){
-    
-      
-    
+        e.preventDefault()
+        
+        console.log('enviado')
+    })
     
     
     function markAsValid(el){
@@ -72,7 +73,7 @@ window.addEventListener("load", function(){
     
         if(validator.isAlpha(nameInput.value) && validator.insLength(nameInput.value, {min:3, max:20} )){
     
-            delete errors.name
+            /*delete errors.name*/
     
             markAsValid(nameInput)
     
@@ -181,6 +182,6 @@ window.addEventListener("load", function(){
     
     }
     
-    })
+
     
     

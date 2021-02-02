@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('../partials/head.ejs')%>
+
     <style type="text/css" >
         input {
             outline:none;
         }
-
         input.success {
             border: 1px solid green;
             color: green;
         }
-
         input.error {
             border: 1px solid red;
             color: red;
@@ -19,6 +17,7 @@
     </style>
 <body>
     <%-include('../partials/header.ejs')%>
+    <script src="/javacripts/UserValidator.js" defer></script>
     <section>
         <div>
             <h1 class="center">Registrate</h1>
@@ -26,25 +25,25 @@
                 
                 <div class="center space">
                    
-                        <input  name="first_name" id="first_name" type="text" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Nombre">
+                    <input  name="first_name" id="first_name" type="text" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Nombre">
                    
                 </div>
                 <div class="center space">
                     
                         
-                        <input  name="last_name" type="text"  id="last_name" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Apellido">
+                    <input  name="last_name" type="text"  id="last_name" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Apellido">
                    
                 </div>
                 <div class="center space">
                    
                         
-                        <input name="email" type="email" id="email" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Correo Electrónico">
+                    <input name="email" type="email" id="email" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Correo Electrónico">
                     
                 </div>
                 <div class="center space">
                   
                         
-                        <input name="password" type="password" id="password" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Contraseña">
+                    <input name="password" type="password" id="password" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Contraseña">
                    
                 </div>
                 
@@ -64,6 +63,6 @@
     </section>
 
     
-    <script src="UserValidator.js"></script>
+    
 </body>
 </html>
