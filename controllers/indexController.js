@@ -8,7 +8,7 @@ let indexController ={
     index: function(req,res,next){
 		db.Productos.findAll()
 		.then(products=>{
-			res.render('index',{products, title: 'Rmarket | Inicios',ruta: undefined, stylesheet: 'index'});
+			res.render('index',{products, titulo: 'Rmarket | Inicios',ruta: undefined, stylesheet: 'index'});
 
 
 		})
@@ -27,7 +27,7 @@ let indexController ={
 
 				})
 				.then(resultado=>{
-					res.render('results',{resultado:resultado,  title: 'Rmarket | Inicio',ruta: undefined, stylesheet: 'index'})
+					res.render('results',{resultado:resultado,  titulo: 'Rmarket | Inicio',ruta: undefined, stylesheet: 'index'})
 
 				})
 				.catch (error =>{

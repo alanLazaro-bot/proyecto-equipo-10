@@ -8,7 +8,7 @@ module.exports = {
 
     create: function (req,res){
         res.render('./auth/register',{
-            linkToLogin:false, title: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'register', data: {}, errors:{}})
+            linkToLogin:false, titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'register', data: {}, errors:{}})
    
    
      },
@@ -38,7 +38,7 @@ module.exports = {
               
                    
         } else {
-          return   res.render('./auth/register',{errors:errors.mapped(), linkToLogin: true, data: req.body, title: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'register'})
+          return   res.render('./auth/register',{errors:errors.mapped(), linkToLogin: true, data: req.body, titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'register'})
           };
     },
 /*
@@ -64,7 +64,7 @@ module.exports = {
 
 
 login: function(req,res){
-    res.render('./auth/login', {title: 'Rmarket | Ingresá a tu cuenta',ruta: 'users', stylesheet: 'login', errors:{}})
+    res.render('./auth/login', {titulo: 'Rmarket | Ingresá a tu cuenta',ruta: 'users', stylesheet: 'login', errors:{}})
 },
 
 processLogin: function(req,res){
@@ -89,7 +89,7 @@ processLogin: function(req,res){
         return res.redirect('/')
 
     } else {
-                return res.render("users/user-login-form", {errors: errors.mapped(),data:req.body})
+                return res.render("./auth/login", {errors: errors.mapped(),data:req.body, titulo: 'Rmarket | Ingresá a tu cuenta',ruta: 'users', stylesheet: 'login'})
             }
 
 
@@ -123,7 +123,7 @@ if(!user){
 
 finalLogin: function(req,res){
     
-res.render('auth/user-info', {title: 'Rmarket | Bienvenid@'+ ' '+ user.email, ruta: 'users', stylesheet: 'user-info'})
+res.render('auth/user-info', {titulo: 'Rmarket | Bienvenid@', ruta: 'users', stylesheet: 'user-info'})
 
 },
 

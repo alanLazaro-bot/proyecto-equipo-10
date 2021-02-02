@@ -9,7 +9,7 @@ let productController ={
 
 		db.Productos.findAll()
 		.then(products=>{
-			res.render('./products/products',{products, title: 'Rmarket | Productos',ruta: 'products', stylesheet: 'products'});
+			res.render('./products/products',{products, titulo: 'Rmarket | Productos',ruta: 'products', stylesheet: 'products'});
 
 
 		})
@@ -21,8 +21,10 @@ let productController ={
 		console.log(req.body)
 
 		db.Productos.findByPk(req.params.id)
-		.then(resultado=>{ 
-			res.render('./products/productDetail',{resultado,  title: 'Rmarket | '+ resultado.title, ruta: 'products', stylesheet: 'productDetail'})
+		.then(prod=>{ 
+			let resultado = prod
+			
+			res.render('./products/productDetail',{resultado: prod,  titulo: 'Rmarket | ', ruta: 'products', stylesheet: 'productDetail'})
 		})
 		.catch (error =>{
 		  res.render('error',{error:error});
@@ -34,7 +36,7 @@ let productController ={
     create: function(req,res,next){
 	
 	
-		res.render('./products/productCreate',{title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd',data: {},
+		res.render('./products/productCreate',{titulo: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd',data: {},
 		errors : {}});
 		
 	},
@@ -46,7 +48,7 @@ let productController ={
 		if (!errors.isEmpty()){
 			res.render('./products/productCreate', {
 				errors : errors.mapped(),
-				data: req.body,  title: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'})
+				data: req.body,  titulo: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'})
 		}
 
 
@@ -77,7 +79,7 @@ let productController ={
 
 		db.Productos.findByPk(req.params.id)
 		.then(resultado=>{ 
-			res.render('./products/productEdit',{resultado,  title: 'Rmarket | '+ resultado.title, ruta: 'products', stylesheet: 'productDetail', data: req.body, errors : {}})
+			res.render('./products/productEdit',{resultado,  titulo: 'Rmarket | '+ resultado.title, ruta: 'products', stylesheet: 'productDetail', data: req.body, errors : {}})
 		})
 		.catch (error =>{
 		  res.render('error',{error:error});
@@ -95,7 +97,7 @@ let productController ={
 		if (!errors.isEmpty()){
 			res.render('./products/productEdit', {
 				errors : errors.mapped(),
-				data: req.body,  title: 'Rmarket | Producto ', ruta: 'products', stylesheet: 'productDetail'})
+				data: req.body,  titulo: 'Rmarket | Producto ', ruta: 'products', stylesheet: 'productDetail'})
 		}
 		
 		db.Productos.update({

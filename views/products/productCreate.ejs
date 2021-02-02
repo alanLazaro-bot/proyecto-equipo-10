@@ -6,11 +6,14 @@
 
 <main>
 
-<h1 class="title-font space center">Cargá tu Producto</h1>
+<h1 class="title-font space center"> Cargá tu Producto </h1>
+<div class = "errores">
+    <ul></ul>
+</div>
 
 <!--nombre del producto-->        
 
-<form action="/products/create" method="POST" > <!--  Agregar enctype="multipart/form-data"-->
+<form action="/products/create" method="POST" id= "product-form" > <!--  Agregar enctype="multipart/form-data"-->
      <div class="center space"> 
         <label for="title" class="rob-14">Nombre del Producto</label>
         <input type="text" name="title" id="title"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%= data.title  %>">
@@ -27,7 +30,7 @@
     <div class="center space"> 
         <label for="description">Descripción:</label>
         
-        <textarea name="description" id="description" rows="10" cols="80"  ><%= data.description  %></textarea>
+        <textarea name="description" id="description" type= "text"><%= data.description  %></textarea>
     </div > 
     <% if (errors.description != undefined){ %>
         <div class="center space"><%= errors.description.msg  %> </div>
@@ -106,8 +109,10 @@
   
         
          
-      
     </main>
-    
+   
+    <script src="/javacripts/productsValidator.js">
+
+    </script>
 </body>
 </html>
