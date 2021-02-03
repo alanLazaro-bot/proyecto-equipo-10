@@ -16,7 +16,7 @@ module.exports = {
     
      store: function (req, res) {
         const errors = validationResult(req);
-        // return res.send(errors)
+        
     
         if (errors.isEmpty()) {
     
@@ -41,15 +41,21 @@ module.exports = {
           return   res.render('./auth/register',{errors:errors.mapped(), linkToLogin: true, data: req.body, titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'register'})
           };
     },
-/*
+    profile(req, res) {
+        db.Usuarios.findByPk(req.session.user.id, {
+          
+        }).then((user) => res.render("./auth/user-info", { user }));
+      },
+    
+
     edit(req, res) {
         const user = db.Usuarios.findByPk(req.params.id);
     
-        return res.render("", { user });
+        return res.render("./auth/user-info", { user });
       },
 
       update(req, res) {
-        db.USuarios.update(req.body, {
+        db.Usuarios.update(req.body, {
           id: req.req.params.id,
         })
           .then((user) => res.redirect("" + req.params.id))
@@ -57,7 +63,7 @@ module.exports = {
       },
 
 
-*/
+
 
 
 
@@ -98,28 +104,7 @@ processLogin: function(req,res){
 },    
       
       
-      
-
-
     
-
-/*
-if(!user){
-    return res.send('Email incorrecto')
-}else if(bcryptjs.compareSync(req.body.password, user.password)){
-    req.session.user = user.email
-
-    if(req.body.recordame){
-        res.cookie('recordame',user.email,{maxAge:120 * 1000})
-    }
-
-    return res.redirect('/')
-} else {
-    return res.send('Password incorrecto')
-}
-
-
-},*/
 
 finalLogin: function(req,res){
     

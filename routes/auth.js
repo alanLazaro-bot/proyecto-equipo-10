@@ -17,7 +17,7 @@ var storage = multer.diskStorage({
 })
 let upload = multer({storage})
 */
-
+router.get('/profile/', authController.profile); /* GET - user detail */
 router.get('/register', authController.create);
 
 router.post('/register', userValidator.register,authController.store);// upload.any()
@@ -39,6 +39,9 @@ router.get('/:id',authController.finalLogin);
 
 router.post('/logout', authController.logout);
 
+
+router.get('/:id/edit/', authController.edit); /* GET - Form to create */
+router.patch('/:id', authController.update); /* PATCH - Update in DB */
 
 
 //router.get('/auth/edit', usersController.edit);

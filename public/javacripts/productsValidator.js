@@ -4,14 +4,14 @@ window.addEventListener("load", function () {
     let prodCreateForm = document.querySelector("#product-form");
     let titleInput = document.querySelector("input[name=title]");
     let descriptionInput = document.querySelector("textarea[name=description]");
-    let sizeInput = document.querySelector("select[name=size]");
+   // let sizeInput = document.querySelector("select[name=size]");
     let priceInput = document.querySelector("input[name=price]");
     let stockInput = document.querySelector("input[name=stock]");
 
     let errores = {
       title: "",
       description: "",
-      size: "",
+     // size: "",
       price: "",
       stock: "",
     };
@@ -33,13 +33,16 @@ window.addEventListener("load", function () {
 
 
     prodCreateForm = addEventListener("submit", function (e) {
-      e.preventDefault();
+   
 
       if(Object.keys(errores).length > 0){
         console.log("no se envia")
+        console.log(errores)
+        e.preventDefault();
 
       }else{
           console.log("se envía")
+          console.log(errores)
       }
 
       ;
@@ -73,7 +76,7 @@ window.addEventListener("load", function () {
         errores.description='La descripción debe tener entre 20 y 200 caracteres'
       }
     });
-
+/*
     sizeInput.addEventListener("keyup", function () {
       if (
             !validator.isEmpty(sizeInput.value)
@@ -86,14 +89,15 @@ window.addEventListener("load", function () {
         markAsInvalid(sizeInput)
         errores.size='Campo Obligatorio'
       }
-    });
+    });*/
 
     priceInput.addEventListener("keyup", function () {
       if (
-       !validator.isEmpty(priceInput.value) && validator.isInt(priceInput.value,{gt:0})
+       !validator.isEmpty(priceInput.value)
         ) {
+          delete errores.price
         markAsValid(priceInput)
-        delete errores.price
+        
       } else {
         markAsInvalid(priceInput)
         errores.price ='El precio no puede ser negativo'
@@ -102,7 +106,7 @@ window.addEventListener("load", function () {
 
     stockInput.addEventListener("keyup", function () {
       if (
-        !validator.isEmpty(stockInput.value)&& validator.isInt(stock.value,{gt:0, lt:101})
+        !validator.isEmpty(stockInput.value)
         )
        {
         markAsValid(stockInput)
