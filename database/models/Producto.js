@@ -25,6 +25,9 @@ module.exports = function(sequelize, dataTypes) {
         size_id:{
             type: dataTypes.INTEGER
         },
+        image: {
+            type: dataTypes.STRING
+        }
         
           
     }

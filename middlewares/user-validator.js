@@ -6,7 +6,7 @@ let db = require('../database/models')
 module.exports = {
 
   register :[
-    //Email
+    
 
     body("email")
     .notEmpty()
@@ -25,7 +25,7 @@ module.exports = {
       });
     }),
     
-    //First Name
+   
 
 check ('first_name')
     .notEmpty()
@@ -33,7 +33,7 @@ check ('first_name')
     .isLength({min: 2})
     .withMessage('El nombre debe tener un mínimo de dos caracteres'),
 
-    //Last Name
+ 
     
 check ('last_name')
     .notEmpty()
@@ -53,13 +53,13 @@ check('password')
 
   login:[
     
-    body("email")
+    check("email")
     .notEmpty()
     .withMessage("Campo obligatorio")
     .isEmail()
     .withMessage("Debes ingresar un email válido"),
     
-    body("password")
+    check("password")
     .notEmpty()
     .withMessage("Campo obligatorio"),
   ]

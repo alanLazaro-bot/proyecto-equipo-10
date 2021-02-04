@@ -2,6 +2,7 @@
 <html lang="en">
     <%-include('../partials/head.ejs')%>
 <body>
+     <%-include('../partials/header.ejs')%>
 
     <div class="cont-prod d-flex cont"><!--Contenedor general de todo -->
 
@@ -15,9 +16,9 @@
         </div>
        
         <div class="art-data margin-top flex-data prod-border">
-            <h1 class="prod-title">Nombre de usuario</h1>
-            <div>Cambiar Contraseña</div>
-            <div class="prod-price">Direcciones de envío</div>
+            <h1 class="prod-title"><%= user.name %></h1>
+            <div><a href="">Cambiar Contraseña</a> </div>
+            <div class="prod-price"><a href="">Direcciones de envío</a></div>
             <div class="prod-color margin-top" >Metodos de pago</div>
             <div class="prod-color margin-top">Historial de Pedidos</div>
             

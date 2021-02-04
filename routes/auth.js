@@ -1,11 +1,11 @@
 let express = require('express');
 var router = express.Router();
-//var path = require('path');
+var path = require('path');
 let authController = require ('../controllers/authController.js');
-//let multer = require ('multer')
+let multer = require ('multer')
 const userValidator = require('../middlewares/user-validator.js')
 
-/*
+
 var storage = multer.diskStorage({
 
     destination : function(req,file,cb){
@@ -15,12 +15,13 @@ var storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 })
+
 let upload = multer({storage})
-*/
+
 router.get('/profile/', authController.profile); /* GET - user detail */
 router.get('/register', authController.create);
 
-router.post('/register', userValidator.register,authController.store);// upload.any()
+router.post('/register', userValidator.register,upload.any(),authController.store);// upload.any()
 /*
 router.get('/avatar',function(req,res){
     res.render('auth/avatar-form')
@@ -41,7 +42,7 @@ router.post('/logout', authController.logout);
 
 
 router.get('/:id/edit/', authController.edit); /* GET - Form to create */
-router.patch('/:id', authController.update); /* PATCH - Update in DB */
+router.patch('/:id',upload.any() ,authController.update); /* PATCH - Update in DB */
 
 
 //router.get('/auth/edit', usersController.edit);

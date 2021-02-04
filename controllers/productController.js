@@ -55,6 +55,7 @@ let productController ={
 		db.Productos.create({
 			title: req.body.title,
 			price: req.body.price,
+			image: req.file.filename,
 			size: req.body.size,
 			description:req.body.description,
 			stock: req.body.stock,
@@ -103,6 +104,7 @@ let productController ={
 		db.Productos.update({
 			title: req.body.title,
 			price: req.body.price,
+			image: req.file.filename,
 			size: req.body.size,
 			description:req.body.description,
 			stock: req.body.stock,

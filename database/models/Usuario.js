@@ -29,7 +29,11 @@ module.exports = function(sequelize, dataTypes) {
         },
         user_type_id:{
             type:dataTypes.INTEGER
+        },
+        image: {
+            type: dataTypes.STRING
         }
+
        
        
     }

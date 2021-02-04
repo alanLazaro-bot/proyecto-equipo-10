@@ -1,6 +1,6 @@
 const path =require('path')
-const file = path.resolve(__dirname,'usersList.json')
-let users = require(file)
+const file = require('../database/models');
+let users = require(file.Usuarios)
 let fs = require('fs')
 
 function latest(){

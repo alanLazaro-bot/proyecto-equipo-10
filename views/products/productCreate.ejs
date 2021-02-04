@@ -13,7 +13,7 @@
 
 <!--nombre del producto-->        
 
-<form action="/products/create" method="POST" id= "product-form" > <!--  Agregar enctype="multipart/form-data"-->
+<form action="/products/create" method="POST" id= "product-form" enctype="multipart/form-data"> <!--  Agregar enctype="multipart/form-data"-->
      <div class="center space"> 
         <label for="title" class="rob-14">Nombre del Producto</label>
         <input type="text" name="title" id="title"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%= data.title  %>">
@@ -89,10 +89,10 @@
    
   
     <!--carga de imagenes-->
-<!--
-        <div class ="center space rob-18"><label for="foto"> Fotos del Producto </label></div>
-        <div class="center space"><input type="file" name="foto" class=""></div>
-   -->
+
+        <div class ="center space rob-18"><label for="image"> Imagen </label></div>
+        <div class="center space"><input type="file" name="image" id="image" class=""></div>
+  
     <!--/ carga imagenes-->
 
 
