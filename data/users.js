@@ -1,4 +1,4 @@
-const path =require('path')
+/*const path =require('path')
 const file = require('../database/models');
 let users = require(file.Usuarios)
 let fs = require('fs')
@@ -35,4 +35,4 @@ module.exports = {
     findByEmail,
     create,
     latest
-}
+}*/

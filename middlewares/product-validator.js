@@ -39,6 +39,7 @@ body("price")
     .custom((value, { req }) => req.body.price > 0)
     .withMessage("No se aceptan números negativos"),
 
+    
 body("price")
     .notEmpty()
     .withMessage("Campo obligatorio")

@@ -13,7 +13,7 @@ if(req.cookies.recordame && !req.session.user){
     
     }).then(user=>{
 
-        user = req.session.user = user.mail
+       req.session.user = user.email
     }).catch(error =>{
         res.render('error',{error:error});
     })

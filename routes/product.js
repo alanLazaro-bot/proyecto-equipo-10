@@ -22,7 +22,7 @@ router.get('/', productController.all);
 /*** CREATE ONE PRODUCT ***/ 
 
 router.get('/new', productController.create);
-router.post('/create', prodValidator, upload.any(),productController.store);
+router.post('/create', upload.single('image'),prodValidator,productController.store);
 
 
 /*** GET ONE PRODUCT ***/ 
@@ -33,7 +33,7 @@ router.get('/:id', productController.detail);
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/:id/edit', productController.edit);
-router.patch('/:id', prodValidator ,upload.any(),productController.update);
+router.patch('/:id', upload.single('image'),prodValidator ,productController.update);
 
 
 

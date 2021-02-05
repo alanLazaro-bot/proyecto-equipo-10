@@ -1,6 +1,6 @@
 
 const {validationResult} = require ('express-validator');
-const db = require('../database/models');
+let db = require('../database/models');
 
 
 let productController ={
@@ -45,8 +45,13 @@ let productController ={
 
 		const errors = validationResult(req);
 
+		console.log(req.file)
+
 		if (!errors.isEmpty()){
-			res.render('./products/productCreate', {
+
+			
+			console.log(errors.mapped())
+		return 	res.render('./products/productCreate', {
 				errors : errors.mapped(),
 				data: req.body,  titulo: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'})
 		}
@@ -64,6 +69,7 @@ let productController ={
 		})
 		.then(resultado=> {
 			return res.redirect('/products')
+
 		})
 		.catch (error =>{
 			res.render('error',{error:error});
@@ -79,8 +85,10 @@ let productController ={
     edit: function(req,res,next){
 
 		db.Productos.findByPk(req.params.id)
-		.then(resultado=>{ 
-			res.render('./products/productEdit',{resultado,  titulo: 'Rmarket | '+ resultado.title, ruta: 'products', stylesheet: 'productDetail', data: req.body, errors : {}})
+		.then((prod)=>{ 
+			resultado = prod
+			
+			res.render('./products/productEdit',{resultado: prod,  titulo: 'Rmarket | '+ resultado.title, ruta: 'products', stylesheet: 'productEdit', data: req.body, errors : {}})
 		})
 		.catch (error =>{
 		  res.render('error',{error:error});
@@ -96,7 +104,7 @@ let productController ={
 		const errors = validationResult(req);
 		
 		if (!errors.isEmpty()){
-			res.render('./products/productEdit', {
+			return	res.render('./products/productDetail', {
 				errors : errors.mapped(),
 				data: req.body,  titulo: 'Rmarket | Producto ', ruta: 'products', stylesheet: 'productDetail'})
 		}
@@ -118,7 +126,7 @@ let productController ={
 		  })
 		  
 		 .then(resultado =>{
-			res.redirect('/')
+			res.redirect('/products')
 			
 		 })
 
