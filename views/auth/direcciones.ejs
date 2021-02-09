@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%-include('../partials/head.ejs')%>
 <body>
+    <%-include('../partials/header.ejs')%>
+
+    <% products.forEach(function(product){ %> 
+        <div class="bg-green">
+            <a href="/products/<%= product.id %>">
+            <img src="/images/products/<%= product.image %> " alt="" class="bg-red">
+            <p class="price"><%=product.title  %> </p>
+            <p class="price">$<%= product.price %> </p>
+    
+        </a>
+        </div>
+    <% }) %>
+
+
+    <%-include('../partials/footer.ejs')%>
     
 </body>
 </html>

@@ -41,22 +41,35 @@ module.exports = {
           return   res.render('./auth/register',{errors:errors.mapped(), linkToLogin: true, data: req.body, titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'register'})
           };
     },
-    profile(req, res) {
-        db.Usuarios.findByPk(req.session.user.id, {
-          
-        }).then((user) => res.render("./auth/user-info", { user }));
-      },
-    
 
-    edit(req, res) {
-        const user = db.Usuarios.findByPk(req.params.id);
+
+    profile: function (req, res) {
+        db.Usuarios.findByPk(req.session.user.id, {
+         include : ["direccion","type"] 
+        }).then((user) => res.render("./auth/user-info", { user:user, titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'profile', data: {}, errors:{} }));
+      },
+
+
+    edit: function (req, res) {
+      console.log(req.session.user.id) 
+       db.Usuarios.findByPk(req.session.user.id, {
+          include : ["direccion","type"]
+        
+         }).then((user)=> res.render("./auth/user-info-edit", { user: user,titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'profile', data: {}, errors:{}  }))
     
-        return res.render("./auth/user-info", { user });
+      
       },
 
       update(req, res) {
-        db.Usuarios.update(req.body, {
-          id: req.req.params.id,
+        db.Usuarios.update({
+          calle:req.body.calle,
+          numero:req.body.numero,
+          localidad: req.body.numero,
+          provincia:req.body.provincia,
+          codigo_postal:req.body.codigo_postal,
+          image:req.body.file.image
+
+
         })
           .then((user) => res.redirect("" + req.params.id))
           .catch((e) => console.log(e));
@@ -83,23 +96,41 @@ processLogin: function(req,res){
           email: req.body.email,
          },
          }).then((user)=>{
-                if(!user){
-                return res.send('Email incorrecto')
-                } else if(bcryptjs.compareSync(req.body.password, user.password)){
-                req.session.user = user.email
-    
-                if(req.body.recordame){
-                 res.cookie('recordame',user.email,{maxAge:120 * 1000})
+           let _user = user;
+           req.session.user = _user
+                
+            if(req.body.remember){
+                 res.cookie('remember',_user.email,{maxAge:120 * 1000})
+
+        } else{
+          return res.redirect('/')
+
         }
+        if(req.cookies.remember && !req.session.user){
+
+
+          db.Usuarios.findOne({
+      
+              where:{
+                  email:req.cookies.remember
+              }    
+          
+          }).then(result=>{
+      
+             req.session.user = result.email
+            
+          }).catch(error =>{
+              res.render('error',{error:error});
+              
+          })
+          
+      } 
     
-        return res.redirect('/')
+}).catch((e) => console.log(e));
 
     } else {
-                return res.render("./auth/login", {errors: errors.mapped(),data:req.body, titulo: 'Rmarket | Ingresá a tu cuenta',ruta: 'users', stylesheet: 'login'})
-            }
+      return res.render("./auth/login", {errors: errors.mapped(),data:req.body, titulo: 'Rmarket | Ingresá a tu cuenta',ruta: 'users', stylesheet: 'login'})
 
-
-})
     }
 },    
       

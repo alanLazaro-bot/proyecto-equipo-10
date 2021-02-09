@@ -13,7 +13,7 @@
     <div class="item-grow-2 icono-centro">
       <% if (locals.user){ %>
         <a href="auth/user-info"><i class="fas fa-user-alt icono"></i>
-        <div> <%= locals.user %></div></a>
+        <div> <%= locals.user.email %></div></a>
         <form action="/auth/logout" method="POST">
         <button type="submit" class=" button-send">Logout</button>
        

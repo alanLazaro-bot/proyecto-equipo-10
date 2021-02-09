@@ -21,18 +21,8 @@ let upload = multer({storage})
 router.get('/profile/', authController.profile); /* GET - user detail */
 router.get('/register', authController.create);
 
-router.post('/register', userValidator.register,upload.any(),authController.store);// upload.any()
-/*
-router.get('/avatar',function(req,res){
-    res.render('auth/avatar-form')
-})
+router.post('/register', userValidator.register,authController.store);// upload.any()
 
-router.post('/avatar', function(req,res,next){
-    console.log(req.files)
-    res.send('recibido')
-})
-
-*/
 router.get('/login', authController.login);
 router.post('/login', userValidator.login ,authController.processLogin);
 
@@ -41,8 +31,9 @@ router.get('/:id',authController.finalLogin);
 router.post('/logout', authController.logout);
 
 
-router.get('/:id/edit/', authController.edit); /* GET - Form to create */
-router.patch('/:id',upload.any() ,authController.update); /* PATCH - Update in DB */
+router.get('/:id/edit/', authController.edit); 
+router.patch('/:id',upload.single('image') ,authController.update); 
+
 
 
 //router.get('/auth/edit', usersController.edit);

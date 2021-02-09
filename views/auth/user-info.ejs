@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('../partials/head.ejs')%>
-<body>
-     <%-include('../partials/header.ejs')%>
+  <%-include('../partials/head.ejs')%>
+  <body>
+    <%-include('../partials/header.ejs')%>
 
-    <div class="cont-prod d-flex cont"><!--Contenedor general de todo -->
+    <div class="cont-prod d-flex cont">
+      <!--Contenedor general de todo -->
 
-   
-      
-        <div class="img margin-top img-central">
-    
-            <img src="/images/products/img-blusa.jpeg" alt="foto-perfil" class="wd-100">
-            
-             
-        </div>
-       
-        <div class="art-data margin-top flex-data prod-border">
-            <h1 class="prod-title"><%= user.name %></h1>
-            <div><a href="">Cambiar Contraseña</a> </div>
-            <div class="prod-price"><a href="">Direcciones de envío</a></div>
-            <div class="prod-color margin-top" >Metodos de pago</div>
-            <div class="prod-color margin-top">Historial de Pedidos</div>
-            
-    
+      <div class="img margin-top img-central">
+        <% if(!user.image == null){ %>
+
+        <img
+          src="/images/user/<%= user.image %> "
+          alt="foto-perfil"
+          class="wd-100"
+        />
+
+        <% }else{ %>
+        
+          <img
+          src="/images/products/img-blusa.jpeg"
+          alt="foto-perfil"
+          class="wd-100"
+        />
+        <% } %>
+        
+         
+      </div>
+
+      <div class="art-data margin-top flex-data prod-border">
+        <h1 class="prod-title"><%= user.name %></h1>
+        <div><a href="">Cambiar Contraseña</a></div>
+        <div class="prod-price">Dirección de envío</div>
+        <div>
+          <% if(!user.address == null){ %>
+          
+            <div>Calle: <%= user.direccion.calle %></div>
+            <div>Número: <%= user.direccion.numero %></div>
+            <div>Localidad: <%= user.direccion.localidad %></div>
+            <div>Provincia: <%= user.direccion.provincia %></div>
+            <div>Código Postal: <%= user.direccion.codigo_postal %></div>
+          
+
+          <% }else{ %>
+          <div>Aún no ingresaste una direccion de envío</div>
+          <% } %>
         </div>
         
+      </div>
+
+      <a href="/auth/<%= user.id %>/edit">
+        <button type="submit" value="Enviar" class="prod-shop-cart edit">Editar</button>
+    </a>
     </div>
 
-
-
-<%-include('../partials/footer.ejs')%>
-</body>
+    <%-include('../partials/footer.ejs')%>
+  </body>
 </html>

@@ -32,9 +32,10 @@
     
     
             registerForm = addEventListener("submit", function (e) {
-              e.preventDefault();
+              
     
               if(Object.keys(errores).length > 0){
+                e.preventDefault();
                 console.log("no se envia")
                 console.log(errores)
     

@@ -25,8 +25,8 @@
                     <div class="center space"><%= errors.password.msg  %> </div>
                     <% }%>
                 <div class="center space">
-                    <label for="recordame" class="center space">Recordame</label>
-                    <input type="checkbox" name="recordame" id="recordame" class="center space">
+                    <label for="remember" class="center space">Recordame</label>
+                    <input type="checkbox" name="remember" id="remember" class="center space">
                 </div>
                 <div  class="center space">
                     <button type="submit" class=" button-send">Ingresar</button>
@@ -34,9 +34,12 @@
                 
 
             </form>
+        
         </div>
+        
         <div class="center space">¿Aún no tenés cuenta?<a href="/auth/register">Registrate</a></div>
     </section>
+    <script src= "/public/javacripts/loginValidator.js"></script>
 
     <%-include('../partials/footer.ejs')%>
 

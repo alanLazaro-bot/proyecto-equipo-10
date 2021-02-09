@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('../partials/head.ejs')%>
+  <body>
+    <%-include('../partials/header.ejs')%>
+
+    <div class="cont-prod d-flex cont">
+      <!--Contenedor general de todo -->
+
+
+       <!--formulario de edicion de datos-->
+      <form action="/auth/<%= user.id %>?_method=PATCH" method="POST" id= "userEdit-form"  enctype="multipart/form-data">
+
+ <!--Agregar imagen de perfil-->
+        <div class="center space rob-18">
+            <label for="image">Agregar Imagen de Perfil</label>
+          </div>
+          <div class="center space">
+            <input type="file" name="image" id="image" class="" />
+            <a href="" class="ruta d-flex zoom"><i class="fas fa-search-plus"></i></a>
+         
+          </div>
+           <!--/agregar imagen de perfil -->
+
+            <!--Agregar direccion de Envío-->
+
+        <div>
+            <div class="center space"> 
+                <label for="calle" class="rob-14">Calle:</label>
+                <input type="text" name="calle" id="calle"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%=user.direccion.calle %>" >
+
+                <div class="center space"> 
+                    <label for="numero" class="rob-14">Número:</label>
+                    <input type="text" name="numero" id="numero"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%=user.direccion.numero %>" >
+                 </div> 
+                 <div class="center space"> 
+                    <label for="localidad" class="rob-14">Localidad:</label>
+                    <input type="text" name="localidad" id="localidad"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%=user.direccion.numero %>" >
+                 </div> 
+                 <div class="center space"> 
+                    <label for="provincia" class="rob-14">Provincia:</label>
+                    <input type="text" name="provincia" id="provincia"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%=user.direccion.numero %>" >
+                 </div> 
+                 <div class="center space"> 
+                    <label for="codigo_postal" class="rob-14">Código Postal:</label>
+                    <input type="text" name="codigo_postal" id="codigo_postal"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%=user.direccion.numero %>" >
+                 </div> 
+
+
+             </div> 
+
+
+
+        </div>
+          <!--/Agregar direccion de Envío-->
+
+
+          <div  class="center space">
+            <button type="submit" class=" button-send">Guardar</button>
+        </div>
+
+     </div>
+
+    <%-include('../partials/footer.ejs')%>
+  </body>
+</html>
