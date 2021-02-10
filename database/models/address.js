@@ -29,13 +29,13 @@ module.exports = function(sequelize, dataTypes) {
 
     let config = {
         tableName: "address",
-        ttimestamps: false,
+        timestamps: false,
     }
 
     const Direccion = sequelize.define(alias, cols, config);
 
     Direccion.associate = function(models){
-        Direccion.belongsTo(models.Usuarios, {
+        Direccion.hasMany(models.Usuarios, {
             as: "usuarios",
             foreignKey: "address_id"
         });

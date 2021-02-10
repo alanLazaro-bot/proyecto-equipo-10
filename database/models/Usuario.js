@@ -50,8 +50,8 @@ module.exports = function(sequelize, dataTypes) {
             as: "direccion",
             foreignKey: "address_id"
         });
-    }
-    Usuario.associate = function(models){
+   
+    
         Usuario.belongsTo(models.Tipo_usuarios, {
             as: "type",
             foreignKey: "User_type_id"
