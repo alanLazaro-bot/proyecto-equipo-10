@@ -41,13 +41,12 @@ module.exports = function(sequelize, dataTypes) {
 
     
     Producto.associate = function(models){
-        Producto.belongsTo(models.Carrito, {
+   /*     Producto.belongsTo(models.Carrito, {
             as: "carrito",
             foreignKey: "carrito_id"
         });
-    }
-
-    Producto.associate = function(models){
+    
+*/
         Producto.belongsTo(models.Talles, { 
             as: "talles",
             foreignKey: "size_id"

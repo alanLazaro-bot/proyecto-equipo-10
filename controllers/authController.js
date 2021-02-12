@@ -48,7 +48,7 @@ module.exports = {
         include:["direccion"]
         
       }).then((user) =>{
-      console.log(user) 
+      
       
       res.render("./auth/user-info", { user:user, titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'profile', data: {}, errors:{} })})
       
@@ -56,11 +56,15 @@ module.exports = {
     
     
     edit: function (req, res) {
-      console.log(req.session.user.id) 
+      
       db.Usuarios.findByPk(req.session.user.id, {
-        include : ["direccion","type"]
+        include : ["direccion"]
         
-      }).then((user)=> res.render("./auth/user-info-edit", { user: user,titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'profile', data: {}, errors:{}  }))
+      }).then((user)=>{ 
+        console.log(user)
+        
+       
+         res.render("./auth/user-info-edit", { user: user,titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'profile', data: {} })})
       
       
     },

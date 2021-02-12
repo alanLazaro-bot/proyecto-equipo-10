@@ -31,16 +31,15 @@ module.exports = function(sequelize, dataTypes) {
             as: "carrito",
             foreignKey: "id_carrito"
         });
-    }
-
-    carrito.associate = function(models){
+    
+/*
+   
         carrito.belongsTo(models.Productos, {
             as: "items",
             foreignKey: "id_cart"
         })
-    }
-
-    carrito.associate = function(models){
+  */  
+ 
         carrito.belongsTo(models.Direcciones, {
             as: "direccion",
             foreignKey: "id_Carrito"

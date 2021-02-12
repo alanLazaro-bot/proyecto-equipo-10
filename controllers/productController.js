@@ -88,7 +88,7 @@ let productController ={
 		.then((prod)=>{ 
 			resultado = prod
 			
-			res.render('./products/productEdit',{resultado: prod,  titulo: 'Rmarket | '+ resultado.title, ruta: 'products', stylesheet: 'productEdit', data: req.body, errors : {}})
+			  res.render('./products/productEdit',{resultado: prod,  titulo: 'Rmarket | '+ resultado.title, ruta: 'products', stylesheet: 'productEdit', data: req.body, errors : {}})
 		})
 		.catch (error =>{
 		  res.render('error',{error:error});
