@@ -141,7 +141,7 @@ module.exports = {
     logout: function(req,res){
       
       req.session.destroy()
-      res.cookie('recordame', null, {maxAge: 0})
+      res.cookie('remember', null, {maxAge: 0})
       return res.redirect('/')
     }
     
