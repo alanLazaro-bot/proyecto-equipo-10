@@ -1,7 +1,6 @@
 window.addEventListener("load", function(){
 
-    /*const { validator } = require("sequelize/types/lib/utils/validator-extras")
-    */
+
     let registerForm=document.querySelector('#register-form')
     
     let nameInput = document.getElementById('first_name')
