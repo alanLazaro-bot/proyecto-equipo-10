@@ -83,16 +83,20 @@
        
           
         
-            
+          
        
         <div class="d-flex margin-top">
+            <% if(locals.user && locals.user.tipo.user_type == 'admin'){ %>  
             <a href="/products/<%= resultado.id %>/edit">
                 <button type="submit" value="Enviar" class="prod-shop-cart edit">Editar</button>
             </a>
             <form action="/products/<%=resultado.id%>?_method=DELETE" method="POST">
                 <button type="submit" class="prod-shop-cart delete">Eliminar</button>
             </form>
-            
+            <% }else{ %>
+                
+            <div></div>    
+            <% } %> 
         </div>
         
 

@@ -23,7 +23,7 @@ module.exports = function(sequelize, dataTypes) {
 
     TipoUsuario.associate = function(models){
         TipoUsuario.hasMany(models.Usuarios, {
-            as: "type",
+            as: "usuario",
             foreignKey: "user_type_id"
         });
     }

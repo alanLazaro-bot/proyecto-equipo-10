@@ -9,8 +9,10 @@
         <input type="search" id="search" name="search" placeholder="Buscar producto, marca o vendedor"/>
         <button type="submit"><i class="fas fa-search icono-lupa"></i></button>
     </form>
+    
    
     <div class="item-grow-2 icono-centro">
+
       <% if (locals.user){ %>
         <a href="/auth/profile"><i class="fas fa-user-alt icono"></i>
         <div> <%= locals.user.email %></div>
@@ -36,12 +38,16 @@
   <nav>
     
       <a href='/products'>LISTADO DE PRODUCTOS</a>
-<%# if(locals.user.user_type== 'admin'){ %> 
+      
+    <% if(locals.user){%>
+
+    <%if( locals.user.tipo.user_type == 'admin' && locals.user.tipo.user_type != null ){ %>  %>  
 
       <a href='/products/new'>AGREGAR PRODUCTO</a>
-<%# }else{ %> 
+<% }else{ %> 
 
-<%# } %> 
+<% } %> 
+<% } %> 
       <a href='/contacto'>AYUDA</a>
   </nav>
   <div class="menu">

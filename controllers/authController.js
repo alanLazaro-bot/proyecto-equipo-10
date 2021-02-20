@@ -45,10 +45,10 @@ module.exports = {
     profile: function (req, res) {
       console.log(req.session.user.id) 
       db.Usuarios.findByPk(req.session.user.id, {
-        include:["direccion"]
+        include:["direccion","tipo"]
         
       }).then((user) =>{
-      
+      console.log(user)
       
       res.render("./auth/user-info", { user:user, titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'profile', data: {}, errors:{} })})
       
@@ -61,7 +61,7 @@ module.exports = {
         include : ["direccion"]
         
       }).then((user)=>{ 
-        console.log(user)
+        
         
        
          res.render("./auth/user-info-edit", { user: user,titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'profile', data: {} })})
@@ -88,13 +88,6 @@ module.exports = {
       .catch((e) => console.log(e));
     },
     
-    
-    
-    
-    
-    
-    
-    
     login: function(req,res){
       res.render('./auth/login', {titulo: 'Rmarket | Ingresá a tu cuenta',ruta: 'users', stylesheet: 'login', errors:{}})
     },
@@ -105,16 +98,23 @@ module.exports = {
       
       if (errors.isEmpty()) {
         db.Usuarios.findOne({
+          
           where: {
             email: req.body.email,
           },
+          include:['tipo'],
+
+
+          
+
+
         }).then((user)=>{
           let _user = user;
           req.session.user = _user
           console.log(_user)    
           if(req.body.remember){
             res.cookie('remember',_user.email,{maxAge:120 * 1000})
-            console.log(_user)
+            
             
             return res.redirect('/')
             

@@ -53,7 +53,7 @@ module.exports = function(sequelize, dataTypes) {
    
     
         Usuario.belongsTo(models.Tipo_usuarios, {
-            as: "type",
+            as: "tipo",
             foreignKey: "user_type_id"
         });
     }
