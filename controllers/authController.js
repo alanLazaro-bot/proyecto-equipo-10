@@ -23,7 +23,8 @@ module.exports = {
           first_name: req.body.first_name,
           last_name: req.body.last_name,
           email: req.body.email,
-          password: bcryptjs.hashSync(req.body.password,10)            
+          password: bcryptjs.hashSync(req.body.password,10) , 
+          user_type_id:2          
           
         })
         .then(resultado =>{
@@ -34,7 +35,6 @@ module.exports = {
         .catch(error =>{
           res.render('error',{error:error})
         })
-        
         
       } else {
         return   res.render('./auth/register',{errors:errors.mapped(), linkToLogin: true, data: req.body, titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'register'})
