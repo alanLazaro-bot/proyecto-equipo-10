@@ -8,23 +8,23 @@ module.exports = function(sequelize, dataTypes) {
             autoIncrement: true,
             notNull:true
         },
-        tipo: {
+        user_type: {
             type: dataTypes.STRING
         }
  
     }
 
     let config = {
-        tableName: "User_Type",
+        tableName: "user_type",
         timestamps: false,
     }
 
     const TipoUsuario = sequelize.define(alias, cols, config);
 
     TipoUsuario.associate = function(models){
-        TipoUsuario.belongsTo(models.Usuarios, {
+        TipoUsuario.hasMany(models.Usuarios, {
             as: "type",
-            foreignKey: "User_type_id"
+            foreignKey: "user_type_id"
         });
     }
     

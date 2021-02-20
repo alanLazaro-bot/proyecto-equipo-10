@@ -6,7 +6,7 @@
     </div>
 
     <form action="/search" method="GET">
-        <input type="search" id="search" name="nombre" placeholder="Buscar producto, marca o vendedor"/>
+        <input type="search" id="search" name="search" placeholder="Buscar producto, marca o vendedor"/>
         <button type="submit"><i class="fas fa-search icono-lupa"></i></button>
     </form>
    
@@ -36,7 +36,12 @@
   <nav>
     
       <a href='/products'>LISTADO DE PRODUCTOS</a>
+<%# if(locals.user.user_type== 'admin'){ %> 
+
       <a href='/products/new'>AGREGAR PRODUCTO</a>
+<%# }else{ %> 
+
+<%# } %> 
       <a href='/contacto'>AYUDA</a>
   </nav>
   <div class="menu">

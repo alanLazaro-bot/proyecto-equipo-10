@@ -69,18 +69,22 @@ module.exports = {
       
     },
     
-    update(req, res) {
+    update: (req, res)=>
+   
+    {
       db.Usuarios.update({
         calle:req.body.calle,
         numero:req.body.numero,
         localidad: req.body.numero,
         provincia:req.body.provincia,
         codigo_postal:req.body.codigo_postal,
-        image:req.body.file.image
+        image:req.file.filename
         
         
       })
-      .then((user) => res.redirect("" + req.params.id))
+    
+
+      .then((user) => res.redirect("/auth/profile"))
       .catch((e) => console.log(e));
     },
     
@@ -110,7 +114,7 @@ module.exports = {
           console.log(_user)    
           if(req.body.remember){
             res.cookie('remember',_user.email,{maxAge:120 * 1000})
-            console.log(req.body.remember)
+            console.log(_user)
             
             return res.redirect('/')
             

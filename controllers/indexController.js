@@ -1,5 +1,6 @@
 
-let db = require('../database/models')
+const db= require('../database/models');
+
 
 
 
@@ -15,6 +16,33 @@ let indexController ={
        
        
     },
+	search: function(req, res) {
+
+		let products =  db.Productos.findAll({
+			where: {
+				title: {
+					title:{[db.sequelize.Op.like]: req.body.search }
+				}
+			},
+			limit: 12
+		})
+
+		.then(resultado=>{
+			return res.render('results',{resultado:resultado,  titulo: 'Rmarket | Inicio',ruta: undefined, stylesheet: 'index'})
+
+		})
+		.catch (error =>{
+			res.render('error.ejs',{error:error});
+		
+		  })
+
+
+	}
+}
+
+
+
+	/*
 
     search: (req, res) => {
 
@@ -38,7 +66,7 @@ let indexController ={
 
 			}
 
+    */
     
-    }
     
     module.exports=indexController;

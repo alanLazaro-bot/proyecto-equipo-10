@@ -13,19 +13,13 @@
             </div>
             <% if(resultado){ %> 
             <% resultado.forEach(function(product){ %> 
-                <div class="">
-                    <section class="">
-                        <a href="/products/detail/<%=product.id%>">
-                            
-                            <article class="">
-                                <h2>$<%= product.price%></h2>
-                                
-                                <p><%= product.title %></p>
-                                
-                            </article>
-                        </a>
-                    </section>
-                
+                <div class="bg-green">
+                    <a href="/products/<%= product.id %>">
+                    <img src="/images/products/<%= product.image %> " alt="" class="bg-red">
+                    <p class="price"><%=product.title  %> </p>
+                    <p class="price">$<%= product.price %> </p>
+            
+                </a>
                 </div>
             <% })}else{ %> 
             

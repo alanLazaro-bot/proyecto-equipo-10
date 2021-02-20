@@ -3,7 +3,8 @@ var router = express.Router();
 var path = require('path');
 let authController = require ('../controllers/authController.js');
 let multer = require ('multer')
-const userValidator = require('../middlewares/user-validator.js')
+let userValidator = require('../middlewares/user-validator.js')
+
 
 
 var storage = multer.diskStorage({

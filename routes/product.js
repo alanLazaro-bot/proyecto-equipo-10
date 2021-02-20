@@ -4,6 +4,7 @@ let multer = require ('multer')
 const path = require('path');
 let productController = require ('../controllers/productController.js');
 let prodValidator = require('../middlewares/product-validator.js')
+let authMiddleware = require('../middlewares/auth.js')
 
 var storage = multer.diskStorage({
 
@@ -21,8 +22,8 @@ router.get('/', productController.all);
 
 /*** CREATE ONE PRODUCT ***/ 
 
-router.get('/new', productController.create);
-router.post('/create', upload.single('image'),prodValidator,productController.store);
+router.get('/new',authMiddleware, productController.create);
+router.post('/create',authMiddleware, upload.single('image'),prodValidator,productController.store);
 
 
 /*** GET ONE PRODUCT ***/ 
