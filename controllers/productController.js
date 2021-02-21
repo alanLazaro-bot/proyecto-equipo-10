@@ -87,7 +87,7 @@ let productController ={
 		db.Productos.findByPk(req.params.id)
 		.then((prod)=>{ 
 			resultado = prod
-			
+			console.log(resultado)
 			  res.render('./products/productEdit',{resultado: prod,  titulo: 'Rmarket | '+ resultado.title, ruta: 'products', stylesheet: 'productEdit', data: req.body, errors : {}})
 		})
 		.catch (error =>{

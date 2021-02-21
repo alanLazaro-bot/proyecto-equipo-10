@@ -92,6 +92,9 @@
 
         <div class ="center space rob-18"><label for="image"> Imagen </label></div>
         <div class="center space"><input type="file" name="image" id="image" class=""></div>
+        <% if (errors.image != undefined){ %>
+            <div class="center space"><%= errors.image.msg  %> </div>
+            <% }%>
   
     <!--/ carga imagenes-->
 
@@ -111,7 +114,7 @@
          
     </main>
    
-    <script src="/javacripts/productsValidator.js">
+    <script src="/javacripts/createProdValidator.js">
 
     </script>
 </body>

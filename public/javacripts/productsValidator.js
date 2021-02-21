@@ -49,7 +49,7 @@ window.addEventListener("load", function () {
 
     });
 
-    titleInput.addEventListener("keyup", function () {
+    titleInput.addEventListener("mouseover", function () {
       if (!validator.isEmpty(titleInput.value)&& validator.isLength(titleInput.value,{min:5})) {
           
         markAsValid(titleInput)
@@ -63,7 +63,7 @@ window.addEventListener("load", function () {
       }
     });
 
-    descriptionInput.addEventListener("keyup", function () {
+    descriptionInput.addEventListener("mouseover", function () {
       if (
         validator.isLength(descriptionInput.value, { min:20, max: 200 })
         )
@@ -91,7 +91,7 @@ window.addEventListener("load", function () {
       }
     });*/
 
-    priceInput.addEventListener("keyup", function () {
+    priceInput.addEventListener("mouseover", function () {
       if (
        !validator.isEmpty(priceInput.value)
         ) {
@@ -104,7 +104,7 @@ window.addEventListener("load", function () {
       }
     });
 
-    stockInput.addEventListener("keyup", function () {
+    stockInput.addEventListener("mouseover", function () {
       if (
         !validator.isEmpty(stockInput.value)
         )

@@ -8,7 +8,13 @@
     <section>
       <div>
         <h1 class="center">Registrate</h1>
-        <form action="/auth/register" method="POST" id="register-form" >
+
+        <div class = "errores">
+          <ul> </ul>
+      </div>
+
+
+        <form action="/auth/register" method="POST" class="register" >
           <!--enctype="multipart/form-data"-->
 
           <div class="center space">
@@ -98,8 +104,10 @@
       <%-include('../partials/footer.ejs')%>
     </section>
 
-    <script src="/javacripts/registerValidator.js">
+    <script>
 
+
+      
     </script>
   </body>
 </html>

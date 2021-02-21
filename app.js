@@ -10,6 +10,8 @@ const authRouter = require('./routes/auth');
 const productRouter = require('./routes/product');
 const cartRouter = require('./routes/cart');
 const infoRouter = require('./routes/info');
+//const apiProducts = require ('./routes/api/productsRouter.js') // Rutas /api
+//const apiUsers = require('./routes/api/usersRouter.js')
 //const apiRouter = require('./routes/api');
 //let checkIp = require('./middlewares/check-ip')
 let remember = require('./middlewares/rememberMiddleware')
@@ -48,6 +50,9 @@ app.use('/auth', authRouter);
 app.use('/products', productRouter);
 app.use('/', cartRouter);
 app.use('/info', infoRouter);
+//app.use('/api/users', apiUsers);
+//app.use('/api/products', apiProducts)
+
 //app.use('/api',apiRouter);
 
 

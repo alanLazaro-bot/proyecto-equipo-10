@@ -1,6 +1,6 @@
 
          window.addEventListener("load", function () {
-            let registerForm = document.querySelector("#register-form");
+            let registerForm = document.querySelector("form.register");
             let firstNameInput = document.querySelector("input[name=first_name]");
             let lastNameInput = document.querySelector("input[name=last_name]");
             let emailInput = document.querySelector("input[name=email]");
@@ -34,25 +34,12 @@
             registerForm = addEventListener("submit", function (e) {
               
     
-              if(Object.keys(errores).length > 0){
-                e.preventDefault();
-                console.log("no se envia")
-                console.log(errores)
-    
-              }else{
-                  console.log("se envía")
-              }
-    
-              ;
-    
-            });
-    
-            emailInput.addEventListener("keyup", function () {
+            emailInput.addEventListener("blur", function () {
               if (validator.isEmail(emailInput.value)) {
                   
                 markAsValid(emailInput)
                 delete errores.email
-    
+  
                
               } else {
     
@@ -60,7 +47,7 @@
                 errores.email='El email debe tener un formato válido'
               }
             });
-            firstNameInput.addEventListener("keyup", function () {
+            firstNameInput.addEventListener("blur", function () {
               if (
                 validator.isAlpha(firstNameInput.value) &&
                 validator.isLength(firstNameInput.value, { min: 2, max: 30 })
@@ -75,7 +62,7 @@
               }
             });
     
-            lastNameInput.addEventListener("keyup", function () {
+            lastNameInput.addEventListener("blur", function () {
               if (
                 validator.isAlpha(lastNameInput.value) &&
                 validator.isLength(lastNameInput.value, { min: 2, max: 30 })
@@ -91,7 +78,7 @@
               }
             });
     
-            passwordInput.addEventListener("keyup", function () {
+            passwordInput.addEventListener("blur", function () {
               if (
                 validator.isLength(passwordInput.value, { min: 8, max: 20 }) &&
                 /^(.{0,}(([a-zA-Z][^a-zA-Z])|([^a-zA-Z][a-zA-Z])).{4,})|(.{1,}(([a-zA-Z][^a-zA-Z])|([^a-zA-Z][a-zA-Z])).{3,})|(.{2,}(([a-zA-Z][^a-zA-Z])|([^a-zA-Z][a-zA-Z])).{2,})|(.{3,}(([a-zA-Z][^a-zA-Z])|([^a-zA-Z][a-zA-Z])).{1,})|(.{4,}(([a-zA-Z][^a-zA-Z])|([^a-zA-Z][a-zA-Z])).{8,20})$/.test(
@@ -107,7 +94,7 @@
               }
             });
     
-            confirmationInput.addEventListener("keyup", function () {
+            confirmationInput.addEventListener("blur", function () {
               if (
                 validator.equals(confirmationInput.value,passwordInput.value))
                {
@@ -120,22 +107,22 @@
               }
             });
     
-            passwordInput.addEventListener("copy", function (e) {
+           
+            if(Object.keys(errores).length > 0){
               e.preventDefault();
-    
-              console.log("copiando");
-            });
-    
-            passwordInput.addEventListener("cut", function (e) {
-              e.preventDefault();
-              console.log("copiando");
-            });
-    
-            passwordInput.addEventListener("paste", function (e) {
-              e.preventDefault();
-              console.log("pegando");
-            });
-
+              let ulErrores = document.querySelector("div.errores ul")
+              for(let i=0 ; i< errores.length ; i++){
+          
+          
+                ulErrores.innerHTML += '<li>'+ errores[i] +'</li>'
+              }
+            }else{
+                console.log("se envía")
+            }
+  
+            ;
+  
+          });
 
 
 

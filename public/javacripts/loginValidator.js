@@ -1,14 +1,14 @@
-window.addEventListener("load", function () {
-  let loginForm = document.querySelector("#login-form");
+/*window.addEventListener("load", function () {
+  let loginForm = document.querySelector("login-form");
   let emailInput = document.querySelector("input[name=email]");
   let passwordInput = document.querySelector("input[name=password]");
-  let confirmationInput = document.querySelector("input[name=confirmation]");
+ 
 
   let errores = {
     email: "",
     password: "",
-    confirmation: "",
-  };
+    
+  }
 
   function markAsInvalid(el) {
     el.classList.remove("success");
@@ -20,17 +20,8 @@ window.addEventListener("load", function () {
     el.classList.add("success");
   }
 
-  registerForm = addEventListener("submit", function (e) {
+  loginForm = addEventListener("submit", function (e) {
     
-
-    if (Object.keys(errores).length > 0) {
-      e.preventDefault();
-      console.log("no se envia");
-    } else {
-      console.log("se envía");
-    }
-  });
-
   emailInput.addEventListener("keyup", function () {
     if (validator.isEmail(emailInput.value)) {
       markAsValid(emailInput);
@@ -58,19 +49,19 @@ window.addEventListener("load", function () {
   });
 
 
-  passwordInput.addEventListener("copy", function (e) {
+  if (Object.keys(errores).length > 0) {
     e.preventDefault();
+    console.log(errores)
+    let ulErrores = document.querySelector("div.errores ul")
+    for(let i=0 ; i< errores.length ; i++){
 
-    console.log("copiando");
-  });
 
-  passwordInput.addEventListener("cut", function (e) {
-    e.preventDefault();
-    console.log("copiando");
-  });
+      ulErrores.innerHTML += '<li>'+ errores[i] +'</li>'
+    }
 
-  passwordInput.addEventListener("paste", function (e) {
-    e.preventDefault();
-    console.log("pegando");
-  });
+  } else {
+    console.log("se envía");
+  }
 });
+})
+*/
