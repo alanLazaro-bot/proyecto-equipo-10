@@ -1,7 +1,7 @@
 module.exports={
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "Nicolas95",
     "database": "rmarket",
     "host": "127.0.0.1",
     "dialect": "mysql"
