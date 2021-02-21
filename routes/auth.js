@@ -1,6 +1,6 @@
 let express = require('express');
 var router = express.Router();
-var path = require('path');
+const path = require('path');
 let authController = require ('../controllers/authController.js');
 let multer = require ('multer')
 let userValidator = require('../middlewares/user-validator.js')

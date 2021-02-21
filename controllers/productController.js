@@ -45,12 +45,8 @@ let productController ={
 
 		const errors = validationResult(req);
 
-		console.log(req.file)
-
 		if (!errors.isEmpty()){
-
 			
-			console.log(errors.mapped())
 		return 	res.render('./products/productCreate', {
 				errors : errors.mapped(),
 				data: req.body,  titulo: 'Rmarket | Producto Nuevo', ruta: 'products', stylesheet: 'productAdd'})
@@ -65,7 +61,6 @@ let productController ={
 			description:req.body.description,
 			stock: req.body.stock,
 			
-
 		})
 		.then(resultado=> {
 			return res.redirect('/products')
@@ -94,51 +89,38 @@ let productController ={
 		  res.render('error',{error:error});
 	  
 	  })
-
-
-		 
+ 
     },
 
-	update: (req, res) => {
+	update: function (req, res) {
 
-		const errors = validationResult(req);
-		
-		if (!errors.isEmpty()){
-			return	res.render('./products/productDetail', {
-				errors : errors.mapped(),
-				data: req.body,  titulo: 'Rmarket | Producto ', ruta: 'products', stylesheet: 'productDetail'})
-		}
-		
 		db.Productos.update({
-			title: req.body.title,
-			price: req.body.price,
-			image: req.file.filename,
-			size: req.body.size,
-			description:req.body.description,
-			stock: req.body.stock,
 
+			title:req.body.title,
+			description:req.body.description,
+			size:req.body.size,
+			price:req.body.price,
+			stock:req.body.stock,
+			
 		},
-		
 		{
 			where:{
-			  id:req.params.id
+				id:req.params.id
 			}
-		  })
-		  
-		 .then(resultado =>{
-			res.redirect('/products')
+		})
+			.then(resultado=> {
+				return res.redirect('/products')
+	
+			})
+			.catch (error =>{
+				res.render('error',{error:error});
 			
-		 })
+			})
 
-		 .catch(err =>{
-			 res.send(err)
-		 })
-		  
-		
+
 	},
 
-
-    destroy: function(req,res,next){
+	destroy: function (req,res,next){
 
 		db.Productos.destroy({
 			where:{
@@ -163,3 +145,53 @@ let productController ={
 };
 
 module.exports= productController;
+
+
+
+
+
+
+
+
+/*
+	update: (req, res) => {
+
+		const errors = validationResult(req);
+		
+		if (!errors.isEmpty()){
+			return	res.render('./products/productDetail', {
+				errors : errors.mapped(),
+				data: req.body,  titulo: 'Rmarket | Producto ', ruta: 'products', stylesheet: 'productDetail'})
+		}
+
+		let resultado = req.params.id
+
+		console.log(resultado)
+		console.log()
+		
+		db.Productos.update({
+			title: req.body.title,
+			price: req.body.price,
+			image: req.file.filename,
+			size: req.body.size,
+			description:req.body.description,
+			stock: req.body.stock,
+		},
+		
+		{
+			where:{
+			  		id:resultado
+			}
+		  })
+		  
+		  .then(resultado=>res.redirect(`/products/detail/${req.params.id}`))
+
+
+		.catch (error =>{
+			res.render('error',{error:error});
+		
+		})
+		
+	},
+*/
+    
