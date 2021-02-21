@@ -15,7 +15,7 @@
             <% resultado.forEach(function(product){ %> 
                 <div class="bg-green">
                     <a href="/products/<%= product.id %>">
-                    <img src="/images/products/<%= product.image %> " alt="" class="bg-red">
+                    <img src="/images/products/<%= product.image %> " alt="<%= product.title %>" class="bg-red">
                     <p class="price"><%=product.title  %> </p>
                     <p class="price">$<%= product.price %> </p>
             

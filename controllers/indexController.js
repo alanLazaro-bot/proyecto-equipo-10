@@ -18,13 +18,10 @@ let indexController ={
        
     },
 	search: function(req, res) {
-
 		let products =  db.Productos.findAll({
 			where: {
-				title: {
-					title:{[db.sequelize.Op.like]: req.body.search }
-				}
-			},
+					title:{[db.Sequelize.Op.substring]: req.query.search }
+				},
 			limit: 12
 		})
 
