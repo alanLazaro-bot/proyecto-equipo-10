@@ -147,7 +147,33 @@ module.exports = {
       req.session.destroy()
       res.cookie('remember', null, {maxAge: 0})
       return res.redirect('/')
-    }
+    },
+
+
+
+
+    destroy: function (req,res,next){
+
+      db.Usuarios.destroy({
+        where:{
+          id: req.params.id
+        }
+      })
+      .then(resultado=>{
+        req.session.destroy()
+        res.cookie('remember', null, {maxAge: 0})
+       res.redirect('/')
+        
+  
+      })
+      .catch(err => {
+        console.log(err)
+        res.send(err)
+        /*Aca deberia enviar una vista que aclare el error al usuario*/
+        
+      })
+          
+      }
     
   }
   

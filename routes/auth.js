@@ -35,6 +35,8 @@ router.post('/logout', authController.logout);
 router.get('/:id/edit/', authController.edit); 
 router.patch('/:id',upload.single('image') ,authController.update); 
 
+router.delete('/:id', authController.destroy)
+
 
 
 //router.get('/auth/edit', usersController.edit);
