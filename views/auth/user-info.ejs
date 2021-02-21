@@ -49,10 +49,19 @@
         </div>
         
       </div>
+      <div>
 
-      <a href="/auth/<%= user.id %>/edit">
-        <button type="submit" value="Enviar" class="prod-shop-cart edit">Editar</button>
-    </a>
+          <a href="/auth/<%= user.id %>/edit">
+                <button type="submit" value="Enviar" class="prod-shop-cart edit">Editar</button>
+          </a>
+        </div>
+        <div>
+          <a href="/auth/<%= user.id %>/edit">
+              <form action="/auth/<%=user.id%>?_method=DELETE" method="POST">
+                <button type="submit" class="prod-shop-cart delete">Eliminar</button>
+              </form>
+          </a>
+        </div>
     </div>
 
     <%-include('../partials/footer.ejs')%>
