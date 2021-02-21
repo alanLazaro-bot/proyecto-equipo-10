@@ -26,7 +26,7 @@ let indexController ={
 		})
 
 		.then(resultado=>{
-			return res.render('results',{resultado:products,  titulo: 'Rmarket | Inicio',ruta: undefined, stylesheet: 'index'})
+			return res.render('results',{resultado:resultado,  titulo: 'Rmarket | Inicio',ruta: undefined, stylesheet: 'index'})
 
 		})
 		.catch (error =>{
