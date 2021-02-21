@@ -19,27 +19,24 @@ let upload = multer({storage})
 
 /*** GET ALL PRODUCTS ***/
 router.get('/', productController.all);
+/*** GET ONE PRODUCT ***/ 
+
+router.get('/detail/:id', productController.detail);
 
 /*** CREATE ONE PRODUCT ***/ 
 
 router.get('/new',authMiddleware, productController.create);
-router.post('/create',authMiddleware, upload.single('image'),prodValidator,productController.store);
-
-
-/*** GET ONE PRODUCT ***/ 
-
-router.get('/:id', productController.detail);
-
+router.post('/create',authMiddleware, upload.single('image'),productController.store);
 
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/:id/edit', productController.edit);
-router.patch('/:id', upload.single('image'),prodValidator ,productController.update);
-
+router.patch('/:id', upload.single('image'),productController.update);
 
 
 /*** DELETE ONE PRODUCT***/
 router.delete('/:id', productController.destroy);
+
 
 
 module.exports=router;

@@ -16,6 +16,9 @@
                 <label for="title" class="rob-14">Nombre del Producto</label>
                 <input type="text" name="title" id="title"  class="nombre-prod nombre-size wdth-bar padding-text" value="<%=resultado.title %>" >
              </div>  
+             <% if (errors.title != undefined){ %>
+                <div class="center space"><%= errors.title.msg  %> </div>
+                <% }%>
              
         
             <!-- / nombre del producto-->
@@ -27,6 +30,9 @@
                 
                 <textarea name="description" id="description" type ="text"><%= resultado.description %></textarea>
             </div > 
+            <% if (errors.description != undefined){ %>
+                <div class="center space"><%= errors.description.msg  %> </div>
+                <% }%>
         
         
               <!--talles-->
@@ -45,6 +51,9 @@
                 }) %> 
             </div>
             </div>  
+            <% if (errors.size != undefined){ %>
+                <div class="center space"><%= errors.size.msg  %> </div>
+                <% }%>
         
         
             <!--/talles-->
@@ -54,6 +63,9 @@
                 <label for="price">Precio:</label>
                 <input type="text" name="price" id="price" placeholder="Precio" class="nombre-size" value="<%= resultado.price %>">
             </div> 
+            <% if (errors.price != undefined){ %>
+                <div class="center space"><%= errors.price.msg  %> </div>
+                <% }%>
             
         
             <!--/ precio del producto-->
@@ -63,6 +75,9 @@
                 <label for="stock">Stock</label>
                 <input type="text" name="stock" id="stock" class="nombre-size" value="<%= resultado.stock %>">
             </div> 
+            <% if (errors.stock != undefined){ %>
+                <div class="center space"><%= errors.stock.msg  %> </div>
+                <% }%>
             
                 <!--/Stock-->
             
@@ -71,7 +86,10 @@
             <!--carga de imagenes-->
         
                 <div class ="center space rob-18"><label for="image"> Imagen </label></div>
-                <div class="center space"><input type="file" name="image"  id="image" class=""></div>
+                <div class="center space"><input type="file" name="image"  id="image" class="" value = "<%= resultado.image %> "></div>
+                <% if (errors.image != undefined){ %>
+                    <div class="center space"><%= errors.image.msg  %> </div>
+                    <% }%>
            
             <!--/ carga imagenes-->
         
@@ -92,9 +110,9 @@
               
     </main>
     
-    <script src="/javacripts/productsValidator.js">
+    <!--<script src="/javacripts/productsValidator.js">
 
-    </script>
+    </script>-->
    
 </body>
 </html>

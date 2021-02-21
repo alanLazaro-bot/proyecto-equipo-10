@@ -46,6 +46,11 @@ body("price")
     .custom((value) => parseInt(value, 10) > 0)
     .withMessage("No se aceptan números negativos"),
 
+    body("image")
+    .custom((value, { req }) => req.file)
+    .withMessage("Debes ingresar una imagen para tu producto")
+    
+
 
 
 ]

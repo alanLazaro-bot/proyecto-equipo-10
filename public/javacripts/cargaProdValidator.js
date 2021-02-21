@@ -36,9 +36,10 @@ window.addEventListener("load", function () {
    
 
       if(Object.keys(errores).length > 0){
+        e.preventDefault();
         console.log("no se envia")
         console.log(errores)
-        e.preventDefault();
+        
 
       }else{
           console.log("se envía")
@@ -49,7 +50,7 @@ window.addEventListener("load", function () {
 
     });
 
-    titleInput.addEventListener("mouseover", function () {
+    titleInput.addEventListener("keyup", function () {
       if (!validator.isEmpty(titleInput.value)&& validator.isLength(titleInput.value,{min:5})) {
           
         markAsValid(titleInput)
@@ -63,7 +64,7 @@ window.addEventListener("load", function () {
       }
     });
 
-    descriptionInput.addEventListener("mouseover", function () {
+    descriptionInput.addEventListener("keyup", function () {
       if (
         validator.isLength(descriptionInput.value, { min:20, max: 200 })
         )
@@ -91,7 +92,7 @@ window.addEventListener("load", function () {
       }
     });*/
 
-    priceInput.addEventListener("mouseover", function () {
+    priceInput.addEventListener("keyup", function () {
       if (
        !validator.isEmpty(priceInput.value)
         ) {
@@ -104,7 +105,7 @@ window.addEventListener("load", function () {
       }
     });
 
-    stockInput.addEventListener("mouseover", function () {
+    stockInput.addEventListener("keyup", function () {
       if (
         !validator.isEmpty(stockInput.value)
         )
