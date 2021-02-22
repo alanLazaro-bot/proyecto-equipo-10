@@ -31,7 +31,7 @@
     
     
     
-            registerForm = addEventListener("submit", function (e) {
+            registerForm.addEventListener("submit", function (e) {
               
     
             emailInput.addEventListener("blur", function () {

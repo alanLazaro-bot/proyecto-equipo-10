@@ -18,7 +18,7 @@ let indexController ={
        
     },
 	search: function(req, res) {
-		let products =  db.Productos.findAll({
+		db.Productos.findAll({
 			where: {
 					title:{[db.Sequelize.Op.substring]: req.query.search }
 				},
@@ -26,7 +26,7 @@ let indexController ={
 		})
 
 		.then(resultado=>{
-			return res.render('results',{resultado:products,  titulo: 'Rmarket | Inicio',ruta: undefined, stylesheet: 'index'})
+			return res.render('results',{resultado:resultado,  titulo: 'Rmarket | Inicio',ruta: undefined, stylesheet: 'results'})
 
 		})
 		.catch (error =>{

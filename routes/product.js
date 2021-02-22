@@ -26,12 +26,12 @@ router.get('/detail/:id', productController.detail);
 /*** CREATE ONE PRODUCT ***/ 
 
 router.get('/new',authMiddleware, productController.create);
-router.post('/create',authMiddleware, upload.single('image'),productController.store);
+router.post('/create',authMiddleware, upload.single('image'),prodValidator,productController.store);
 
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/:id/edit', productController.edit);
-router.patch('/:id', upload.single('image'),productController.update);
+router.patch('/:id', upload.single('image'),prodValidator,productController.update);
 
 
 /*** DELETE ONE PRODUCT***/

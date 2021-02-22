@@ -89,7 +89,7 @@ module.exports = {
     },
     
     login: function(req,res){
-      res.render('./auth/login', {titulo: 'Rmarket | Ingresá a tu cuenta',ruta: 'users', stylesheet: 'login', errors:{}})
+      res.render('./auth/login', {titulo: 'Rmarket | Ingresá a tu cuenta',ruta: 'users', stylesheet: 'login',data:{}, errors:{}})
     },
     
     processLogin: function(req,res){
@@ -103,9 +103,6 @@ module.exports = {
             email: req.body.email,
           },
           include:['tipo'],
-
-
-          
 
 
         }).then((user)=>{
@@ -173,10 +170,43 @@ module.exports = {
         
       })
           
-      }
-    
-  }
+      },
+      address:function(req,res){
+        db.Usuarios.findByPk(req.session.user.id, {
+          include : [{association:"direccion"},{association:"tipo"}]// agregar tipo
+          
+        }).then((user)=>{ 
+          console.log(user)
+          
+          
+         
+           res.render("./auth/user-info-edit", { user: user,titulo: 'Rmarket | Registrate',ruta: 'users', stylesheet: 'profile', data: {} })})
+        
+
+
+      },
+
+      addressAdd: (req, res)=>
+   
+      {
+        db.Usuarios.update({
+          calle:req.body.calle,
+          numero:req.body.numero,
+          localidad: req.body.numero,
+          provincia:req.body.provincia,
+          codigo_postal:req.body.codigo_postal,
+          image:req.file.filename
+          
+          
+        })
+      
   
+        .then((user) => res.redirect("/auth/profile"))
+        .catch((e) => console.log(e));
+      },
+    }
+    
+
   
   
   

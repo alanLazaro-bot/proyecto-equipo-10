@@ -32,7 +32,7 @@ window.addEventListener("load", function () {
 
 
 
-    prodCreateForm = addEventListener("submit", function (e) {
+    prodCreateForm.addEventListener("submit", function (e) {
    
 
       if(Object.keys(errores).length > 0){

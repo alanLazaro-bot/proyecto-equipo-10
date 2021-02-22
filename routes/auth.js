@@ -4,6 +4,7 @@ const path = require('path');
 let authController = require ('../controllers/authController.js');
 let multer = require ('multer')
 let userValidator = require('../middlewares/user-validator.js')
+let loginValidator = require('../middlewares/loginvalidator.js')
 
 
 
@@ -25,7 +26,7 @@ router.get('/register', authController.create);
 router.post('/register', userValidator.register,authController.store);// upload.any()
 
 router.get('/login', authController.login);
-router.post('/login', userValidator.login ,authController.processLogin);
+router.post('/login', loginValidator ,authController.processLogin);
 
 router.get('/:id',authController.finalLogin);
 
@@ -34,6 +35,9 @@ router.post('/logout', authController.logout);
 
 router.get('/:id/edit/', authController.edit); 
 router.patch('/:id',upload.single('image') ,authController.update); 
+
+router.get('/:id/addAddress',authController.address)
+router.patch('/address/:id', authController.addressAdd)
 
 router.delete('/:id', authController.destroy)
 

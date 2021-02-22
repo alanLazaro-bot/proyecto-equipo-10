@@ -6,15 +6,16 @@
 
 <%-include('./partials/header.ejs')%>
 
-    <div class="">
-        <div class="">
-            <div class="">
-                <h2 class="products-title">Resultados de la búsqueda: </h2>
-            </div>
+<div class=>
+    <h2 class="products-title">Resultados de la búsqueda: </h2>
+</div>
+    
+        <div class="flex-d">
+           
             <% if(resultado){ %> 
             <% resultado.forEach(function(product){ %> 
                 <div class="bg-green">
-                    <a href="/products/<%= product.id %>">
+                    <a href="/products/detail/<%= product.id %>">
                     <img src="/images/products/<%= product.image %> " alt="<%= product.title %>" class="bg-red">
                     <p class="price"><%=product.title  %> </p>
                     <p class="price">$<%= product.price %> </p>
@@ -28,7 +29,7 @@
             </div>
         <% } %> 
         </div>
-    </div>
+    
 
     <%-include('./partials/footer.ejs')%>
     

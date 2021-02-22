@@ -7,14 +7,18 @@
 
         <h1 class="title-font space center">Ingresa tus datos para iniciar sesión</h2>
 
+            <div class ="errores">
+                <ul></ul>
+            </div>
+
        
         <div>
-            <form action="/auth/login" method="POST" id="login-form">
+            <form action="/auth/login" method="POST" class="login">
                 
                 <div class="center space">
                     <label class="rob-14">
                         
-                        <input  name="email" type="email" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Correo Electrónico">
+                        <input  name="email" type="email" class="nombre-prod nombre-size  wdth-bar padding-text" placeholder="Correo Electrónico" value="<%= data.email  %>">
                     </label>
                 </div>
                 <% if (errors.email != undefined){ %>
