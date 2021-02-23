@@ -101,6 +101,7 @@ let productController ={
 			size:req.body.size,
 			price:req.body.price,
 			stock:req.body.stock,
+			image:req.file.filename
 			
 		},
 		{
