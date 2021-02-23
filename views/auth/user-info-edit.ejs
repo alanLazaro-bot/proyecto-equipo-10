@@ -9,17 +9,11 @@
 
 
        <!--formulario de edicion de datos-->
-      <form action="/auth/<%= user.id %>?_method=PATCH" method="POST" id= "userEdit-form"  enctype="multipart/form-data">
+      <form action="/auth/address/<%= user.id %>?_method=PATCH" method="POST" id= "userEdit-form">
 
- <!--Agregar imagen de perfil-->
-        <div class="center space rob-18">
-            <label for="image">Agregar Imagen de Perfil</label>
-          </div>
-          <div class="center space">
-            <input type="file" name="image" id="image" class="" />
-            <a href="" class="ruta d-flex zoom"><i class="fas fa-search-plus"></i></a>
-         
-          </div>
+ 
+        
+          
            <!--/agregar imagen de perfil -->
 
             <!--Agregar direccion de Envío-->

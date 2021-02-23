@@ -34,7 +34,7 @@ router.post('/logout', authController.logout);
 
 
 router.get('/:id/edit/', authController.edit); 
-router.patch('/:id',upload.single('image') ,authController.update); 
+//router.patch('/:id',upload.single('image') ,authController.update); 
 
 router.get('/:id/addAddress',authController.address)
 router.patch('/address/:id', authController.addressAdd)

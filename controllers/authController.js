@@ -195,7 +195,7 @@ module.exports = {
           localidad: req.body.numero,
           provincia:req.body.provincia,
           codigo_postal:req.body.codigo_postal,
-          image:req.file.filename
+          
           
           
         })

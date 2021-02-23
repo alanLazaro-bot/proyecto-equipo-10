@@ -34,7 +34,7 @@
         <div><a href="">Cambiar Contraseña</a></div>
         <div class="prod-price">Dirección de envío</div>
         <div>
-          <% if(user.address != null){ %>
+          <% if(user.address_id != 1 ){ %>
           
             <div>Calle: <%= user.direccion.calle %></div>
             <div>Número: <%= user.direccion.numero %></div>
